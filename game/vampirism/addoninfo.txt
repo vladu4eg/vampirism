@@ -1,0 +1,66 @@
+"AddonInfo"
+{
+  "TeamCount" "2"
+  "maps"      "desert desert2x desert4x spring spring2x spring4x winter winter2x winter4x autumn autumn2x autumn4x helheim helheim2x helheim4x "
+  "IsPlayable"  "1"
+  "desert"
+  {
+    "MaxPlayers"                    "16"
+  } 
+  "desert2x"
+  {
+    "MaxPlayers"                    "16"
+  } 
+  "desert4x"
+  {
+    "MaxPlayers"                    "12"
+  } 
+  "spring"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "spring2x"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "spring4x"
+  {
+    "MaxPlayers"                    "12"
+  }
+  "winter"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "winter2x"
+  {
+    "MaxPlayers"                    "16"
+  }  
+  "winter4x"
+  {
+    "MaxPlayers"                    "12"
+  }
+  "autumn"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "autumn2x"
+  {
+    "MaxPlayers"                    "16"
+  }
+  "autumn4x"
+  {
+    "MaxPlayers"                    "12"
+  }
+  "helheim"
+  {
+    "MaxPlayers"                    "16"
+  } 
+  "helheim2x"
+  {
+    "MaxPlayers"                    "16"
+  } 
+  "helheim4x"
+  {
+    "MaxPlayers"                    "12"
+  } 
+}
