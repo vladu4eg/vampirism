@@ -1,15 +1,14 @@
 "DOTAHeroes"
 {
-	"npc_dota_hero_treant"
+	"npc_dota_hero_lina"
 	{
-		"override_hero"				"npc_dota_hero_treant"
-		"Model"						"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
-		"SoundSet"					"Hero_Wisp"
+		"override_hero"				"npc_dota_hero_lina"
+		"SoundSet"					"Hero_Lina"
 		"UnitLabel"					"builder"
 		"AbilityLayout"				"13"
-		"Ability1" 					"build_tent"
-		"Ability2" 					"build_rock_1"
-		"Ability3" 					"build_tower_1"
+		"Ability1" 					"build_house_1"
+		"Ability2" 					"build_tent"
+		"Ability3" 					"build_slayer_tavern"
 		"Ability4" 					"build_trader_1"
 		"Ability5" 					"build_workers_guild"
 		"Ability6"					"build_mother_of_nature"
@@ -60,11 +59,11 @@
 	    "VisionNighttimeRange"    "1800"                  // Range of vision at night time.
 		
 		"AttackDesire"			"0.5"
-		"DisableWearables"         "1"
+		//"DisableWearables"         "1"
 	}
-	"npc_dota_hero_troll_warlord"{
-		"override_hero"     "npc_dota_hero_troll_warlord"
-		"SoundSet"			"Hero_TrollWarlord"
+	"npc_dota_hero_terrorblade"{
+		"override_hero"     "npc_dota_hero_terrorblade"
+		"SoundSet"			"Hero_Terrorblade"
 		"AbilityLayout"     "16"
 		"Ability1" 			"reveal_area"
 		"Ability2" 			"troll_invis"
@@ -122,7 +121,6 @@
 	"npc_dota_hero_lycan"{
 		"override_hero"     "npc_dota_hero_lycan"
 		"SoundSet"			"Hero_Lycan"
-		"Model"				"models/heroes/lycan/lycan_wolf.vmdl"
 		"AbilityLayout"     "16"
 		"Ability1" 			"reveal_area"
 		"Ability2" 			"troll_teleport"
@@ -176,7 +174,6 @@
 		
 		"VisionDaytimeRange"    "1800"                  // Range of vision at night time.
 		"VisionNighttimeRange"    "1800"                  // Range of vision at night time.
-		"DisableWearables"               "1"
 	}
 	"npc_dota_hero_night_stalker"{
 		"override_hero"     "npc_dota_hero_night_stalker"

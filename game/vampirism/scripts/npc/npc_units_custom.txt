@@ -537,8 +537,8 @@
 	        "Count"     "1"
 	        "1"{
 				"unit_name"			"tent_2"
-				"gold_cost"			"50"
-				"lumber_cost"		"0"
+				"gold_cost"			"0"
+				"lumber_cost"		"800"
 			}
 	    }
 		"Requirements"{
@@ -548,7 +548,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"AbilityLayout"				"4"
-		"Ability1"					"gain_gold"
+		"Ability1"					""
 		"Ability2"					""
 		"Ability3"					""
 		"Ability4"					""
@@ -557,8 +557,8 @@
 	    // General
 	    //-----------------------------
 	    
-	    "ArmorPhysical"             "5"
-		"StatusHealth"              "30"
+	    "ArmorPhysical"             "4"
+		"StatusHealth"              "300"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -608,18 +608,17 @@
 	        "Count"     "1"
 	        "1"{
 				"unit_name"			"tent_3"
-				"gold_cost"			"100"
-				"lumber_cost"		"0"
+				"gold_cost"			"0"
+				"lumber_cost"		"2500"
 			}
 	    }
 		"Requirements"{
-			"rock_1"				"1"
 		}
 		
 		// Abilities
 		//----------------------------------------------------------------
 		"AbilityLayout"				"4"
-		"Ability1"					"gain_gold"
+		"Ability1"					""
 		"Ability2"					""
 		"Ability3"					""
 		"Ability4"					""
@@ -628,8 +627,8 @@
 	    // General
 	    //-----------------------------
 	    
-	    "ArmorPhysical"             "5"
-		"StatusHealth"              "30"
+	    "ArmorPhysical"             "4"
+		"StatusHealth"              "500"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -674,23 +673,14 @@
 	    //----------------------------- 
 	    "Level"                     "3"
 	    "BuildTime"                 "2"
-	    "Upgrades"
-	    {
-	        "Count"     "1"
-	        "1"{
-				"unit_name"			"tent_4"
-				"gold_cost"			"200"
-				"lumber_cost"		"0"
-			}
-	    }
+
 		"Requirements"{
-			"rock_4"				"1"
 		}
 		
 		// Abilities
 		//----------------------------------------------------------------
 		"AbilityLayout"				"4"
-		"Ability1"					"gain_gold"
+		"Ability1"					""
 		"Ability2"					""
 		"Ability3"					""
 		"Ability4"					""
@@ -699,8 +689,8 @@
 	    // General
 	    //-----------------------------
 	    
-	    "ArmorPhysical"             "5"
-		"StatusHealth"              "30"
+	    "ArmorPhysical"             "4"
+		"StatusHealth"              "3000"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -761,7 +751,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"AbilityLayout"				"4"
-		"Ability1"					"gain_gold"
+		"Ability1"					""
 		"Ability2"					""
 		"Ability3"					""
 		"Ability4"					""
@@ -820,7 +810,7 @@
 	    {
 	        "Count"     "1"
 	        "1"{
-				"unit_name"			"tent_6"
+				"unit_name"			""
 				"gold_cost"			"800"
 				"lumber_cost"		"32"
 			}
@@ -12011,6 +12001,1059 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+		//=================================================================================
+	// Building: npc_dota_hero_treant
+	//=================================================================================	
+	"house_1"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/props_structures/good_barracks_ranged002_lvl2.vmdl"
+		"precache"
+		{
+			"model"     "models/props_structures/good_barracks_ranged002_lvl2.vmdl"
+		}
+	    "ModelScale"                "0.70"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		"Limit"						"3"
+
+
+	    "BountyXP"          "100"                 // Experience earn.
+	    "BountyGoldMin"       "10"                   // Gold earned min.
+	    "BountyGoldMax"       "200"                   // Gold earned max.			
+
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "1"
+	    "BuildTime"                 "1"
+		"Requirements"{
+		}
+		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"house_2"
+				"gold_cost"			"0"
+				"lumber_cost"		"3000"
+			}
+		}
+
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"10"
+		"Ability1" 					"train_wood_worker_1"
+		"Ability2" 					""
+		"Ability3" 					""
+		"Ability4" 					""
+		"Ability5"					""
+		"Ability6" 					""
+		"Ability7"					""
+		"Ability8"					"spell_immunity"
+		
+	    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "200"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
+	}
+
+	"house_2"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/props_structures/good_barracks_ranged002_lvl1.vmdl"
+		"precache"
+		{
+			"model"     "models/props_structures/good_barracks_ranged002_lvl1.vmdl"
+		}
+	    "ModelScale"                "0.70"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+
+
+	    "BountyXP"          "100"                 // Experience earn.
+	    "BountyGoldMin"       "10"                   // Gold earned min.
+	    "BountyGoldMax"       "200"                   // Gold earned max.			
+
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "1"
+	    "BuildTime"                 "1"
+		"Requirements"{
+		}
+		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"house_3"
+				"gold_cost"			"0"
+				"lumber_cost"		"10000"
+			}
+		}
+
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"10"
+		"Ability1" 					"train_wood_worker_1"
+		"Ability2" 					"train_wood_worker_2"
+		"Ability3" 					""
+		"Ability4" 					""
+		"Ability5"					""
+		"Ability6" 					""
+		"Ability7"					""
+		"Ability8"					""
+		
+	    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "1000"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
+	}
+
+	"house_3"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/props_structures/good_barracks_ranged001.vmdl"
+		"precache"
+		{
+			"model"     "models/props_structures/good_barracks_ranged001.vmdl"
+		}
+	    "ModelScale"                "0.70"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+
+
+	    "BountyXP"          "100"                 // Experience earn.
+	    "BountyGoldMin"       "10"                   // Gold earned min.
+	    "BountyGoldMax"       "200"                   // Gold earned max.			
+
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "1"
+	    "BuildTime"                 "1"
+		"Requirements"{
+		}
+		
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"house_4"
+				"gold_cost"			"20"
+				"lumber_cost"		"10000"
+			}
+		}
+
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"10"
+		"Ability1" 					"train_wood_worker_1"
+		"Ability2" 					"train_wood_worker_2"
+		"Ability3" 					"train_wood_worker_3"
+		"Ability4" 					""
+		"Ability5"					"train_build_worker"
+		"Ability6" 					""
+		"Ability7"					""
+		"Ability8"					"spell_immunity"
+		
+	    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "1000"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
+	}
+
+	"house_4"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/props_structures/good_barracks_ranged002.vmdl"
+		"precache"
+		{
+			"model"     "models/props_structures/good_barracks_ranged002.vmdl"
+		}
+	    "ModelScale"                "0.70"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+
+
+	    "BountyXP"          "100"                 // Experience earn.
+	    "BountyGoldMin"       "10"                   // Gold earned min.
+	    "BountyGoldMax"       "200"                   // Gold earned max.			
+
+		
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "1"
+	    "BuildTime"                 "1"
+		"Requirements"{
+		}
+
+		"Upgrades"
+	    {
+			"Count"     "1"
+	        "1"{
+				"unit_name"			"house_5"
+				"gold_cost"			"200"
+				"lumber_cost"		"100000"
+			}
+		}
+
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"10"
+		"Ability1" 					"train_wood_worker_1"
+		"Ability2" 					"train_wood_worker_2"
+		"Ability3" 					"train_wood_worker_3"
+		"Ability4" 					"train_wood_worker_4"
+		"Ability5"					"train_build_worker"
+		"Ability6" 					""
+		"Ability7"					""//train_build_worker_2
+		"Ability8"					"spell_immunity"
+		
+	    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "1000"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
+	}
+
+		"house_5"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/props_structures/radiant_ranged_barracks001.vmdl"
+		"precache"
+		{
+			"model"     "models/props_structures/radiant_ranged_barracks001.vmdl"
+		}
+	    "ModelScale"                "0.70"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+
+
+	    "BountyXP"          "100"                 // Experience earn.
+	    "BountyGoldMin"       "10"                   // Gold earned min.
+	    "BountyGoldMax"       "200"                   // Gold earned max.			
+
+	    // Stats
+	    //----------------------------- 
+	    "Level"                     "1"
+	    "BuildTime"                 "1"
+		"Requirements"{
+		}
+
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"10"
+		"Ability1" 					"train_wood_worker_1"
+		"Ability2" 					"train_wood_worker_2"
+		"Ability3" 					"train_wood_worker_3"
+		"Ability4" 					"train_wood_worker_4"
+		"Ability5"					"train_wood_worker_5"
+		"Ability6" 					"train_build_worker"
+		"Ability7"					"train_build_worker_2"
+		"Ability8"					"spell_immunity"
+		
+	    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "1000"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "100"
+	    "RingRadius"                "100"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
+	}
+
+			//=================================================================================
+	// Building: npc_dota_hero_monkey_king
+	//=================================================================================	
+	"slayer_tavern"
+	{
+	    // Visual
+	    //-----------------------------
+		"BaseClass"                 "npc_dota_creature"
+		"Model"						"models/props_structures/good_barracks001_destruction.vmdl"
+		"precache"
+		{
+			"model"     "models/props_structures/good_barracks001_destruction.vmdl"
+		}
+	    "ModelScale"                "0.6"
+	    "ModelRotation"             "90"
+		"HealthBarOffset"			"150"
+		"PlayerCanControl"			"1"
+		"Scale"						"1"
+		"RequiresRepair"			"1"
+		"StartingBuilding"          "1"
+		"Limit"						"3"
+
+		"BountyXP"          "100"                 // Experience earn.
+	    "BountyGoldMin"       "10"                   // Gold earned min.
+	    "BountyGoldMax"       "200"                   // Gold earned max.		
+		
+	    // Stats
+	    //----------------------------- 
+		"Requirements"{
+		}
+		// Stats
+	    //----------------------------- 
+	    "Level"                     "1"
+	    "BuildTime"                 "5"
+
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		"Ability1" 					"train_invoker"
+		"Ability2" 					"train_morta"
+		"Ability3" 					""
+		"Ability4" 					"spell_immunity"
+		
+	    
+	    // General
+	    //-----------------------------
+	    
+	    "ArmorPhysical"             "5"
+		"StatusHealth"              "10000"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	    "MagicalResistance"         "0"
+		
+		"ConstructionSize"          "4"
+	    "BlockPathingSize"          "4"
+		"CollisionSize"				"128"
+		
+	    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+	    "TeamName"                  "DOTA_TEAM_NEUTRALS"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_HERO"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "900"
+	    "VisionNighttimeRange"      "600"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "ProjectileCollisionSize"   "48"
+	    "RingRadius"                "48"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
+	}
+	"wood_worker_1"
+	{
+	  "BaseClass"     "npc_dota_creature"
+	  "Model"      "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+	  "ModelScale"    "0.8"
+	  "Level"      "1"
+	  "HealthBarOffset"    "140"
+	
+	  "vscripts"     "ai/peasant.lua"
+	
+	  "AbilityLayout"    "6"
+	  "Ability1"     "gather_lumber_worker"
+	  "Ability2"     "commit_suicide"
+	  "Ability3"     "return_resources"
+	  "Ability4"     ""
+	  "Ability5"     ""
+	
+	  "ArmorPhysical"    "0"
+	  "MagicalResistance"   "0"
+	
+	  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
+	
+	  "BountyGoldMin"    "6.0"
+	  "BountyGoldMax"    "14.0"
+	
+	  "BoundsHullName"   "DOTA_HULL_SIZE_SMALL"
+	  "RingRadius"    "40"
+	  "CollisionSize"    "16"
+	  "FormationRank"    "4"
+	
+	  "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"    "100"
+	  "MovementTurnRate"   "0.6"
+	
+	  "StatusHealth"    "10"
+	  "StatusHealthRegen"   "0.20"
+	  "StatusMana"    "5"
+	  "StatusManaRegen"    "0"
+	
+	  "VisionDaytimeRange"  "800"
+	  "VisionNighttimeRange"  "600"
+	
+	  "TeamName"     "DOTA_TEAM_GOODGUYS"
+	  "CombatClassAttack"   "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"   "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"  "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	  "Creature"
+	  {
+	    "DisableClumpingBehavior"  "1"
+	  }
+	}
+	"wood_worker_2"
+	{
+	  "BaseClass"     "npc_dota_creature"
+	  "Model"      "models/items/lone_druid/true_form/rabid_black_bear/rabid_black_bear.vmdl"
+	  "ModelScale"    "0.4"
+	  "Level"      "1"
+	  "HealthBarOffset"    "140"
+	
+	  "vscripts"     "ai/peasant.lua"
+	
+	  "AbilityLayout"    "6"
+	  "Ability1"     "gather_lumber_worker"
+	  "Ability2"     "commit_suicide"
+	  "Ability3"     "return_resources"
+	  "Ability4"     ""
+	  "Ability5"     ""
+	
+	  "ArmorPhysical"    "0"
+	  "MagicalResistance"   "0"
+	
+	  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
+	
+	  "BountyGoldMin"    "6.0"
+	  "BountyGoldMax"    "14.0"
+	
+	  "BoundsHullName"   "DOTA_HULL_SIZE_SMALL"
+	  "RingRadius"    "40"
+	  "CollisionSize"    "16"
+	  "FormationRank"    "4"
+	
+	  "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"    "100"
+	  "MovementTurnRate"   "0.6"
+	
+	  "StatusHealth"    "10"
+	  "StatusHealthRegen"   "0.20"
+	  "StatusMana"    "5"
+	  "StatusManaRegen"    "0"
+	
+	  "VisionDaytimeRange"  "800"
+	  "VisionNighttimeRange"  "600"
+	
+	  "TeamName"     "DOTA_TEAM_GOODGUYS"
+	  "CombatClassAttack"   "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"   "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"  "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	  "Creature"
+	  {
+	    "DisableClumpingBehavior"  "1"
+	  }
+	}
+	"wood_worker_3"
+	{
+	  "BaseClass"     "npc_dota_creature"
+	  "Model"      "models/heroes/sven/sven.vmdl"
+	  "ModelScale"    "0.55"
+	  "Level"      "1"
+	  "HealthBarOffset"    "140"
+	
+	  "vscripts"     "ai/peasant.lua"
+	
+	  "AbilityLayout"    "5"
+	  "Ability1"     "gather_lumber_worker"
+	  "Ability2"     "commit_suicide"
+	  "Ability3"     "return_resources"
+	  "Ability4"     ""
+	  "Ability5"     ""
+	
+	  "ArmorPhysical"    "0"
+	  "MagicalResistance"   "0"
+	
+	  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
+	
+	  "BountyGoldMin"    "11.0"
+	  "BountyGoldMax"    "31.0"
+	
+	  "BoundsHullName"   "DOTA_HULL_SIZE_REGULAR"
+	  "RingRadius"    "40"
+	
+	  "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"    "100"
+	  "MovementTurnRate"   "0.6"
+	
+	  "StatusHealth"    "6"
+	  "StatusHealthRegen"   "0.25"
+	  "StatusMana"    "5"
+	  "StatusManaRegen"    "0"
+	
+	  "VisionDaytimeRange"  "800"
+	  "VisionNighttimeRange"  "600"
+	
+	  "TeamName"     "DOTA_TEAM_GOODGUYS"
+	  "CombatClassAttack"   "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"   "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"  "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	  "Creature"
+	  {
+	    "DisableClumpingBehavior"  "1"
+		"AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "6074"}//shoulder("Pauldron of The Iron Drakken")
+		"Wearable2" {"ItemDef" "6077"}//belt("Belt of The Iron Drakken")
+		"Wearable3" {"ItemDef" "6080"}//("Breath of The Iron Drakken")
+		"Wearable4" {"ItemDef" "6081"}//arms("Gauntlet of The Iron Drakken")
+		"Wearable5" {"ItemDef" "6082"}//head("Helmet of The Iron Drakken")
+	        }
+	  }
+	}
+	"wood_worker_4"
+	{
+	  "BaseClass"     "npc_dota_creature"
+	  "Model"      "models/items/invoker/forge_spirit/arsenal_magus_forged_spirit/arsenal_magus_forged_spirit.vmdl"
+	  "ModelScale"    "0.6"
+	  "Level"      "1"
+	  "HealthBarOffset"    "140"
+	
+	  "vscripts"     "ai/peasant.lua"
+	
+	  "AbilityLayout"    "5"
+	  "Ability1"     "gather_lumber_worker"
+	  "Ability2"     "commit_suicide"
+	  "Ability3"     "return_resources"
+	  "Ability4"     ""
+	  "Ability5"     ""
+	
+	  "ArmorPhysical"    "0"
+	  "MagicalResistance"   "0"
+	
+	  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
+	
+	  "BountyGoldMin"    "11.0"
+	  "BountyGoldMax"    "31.0"
+	
+	  "BoundsHullName"   "DOTA_HULL_SIZE_REGULAR"
+	  "RingRadius"    "40"
+	
+	  "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"    "100"
+	  "MovementTurnRate"   "0.6"
+	
+	  "StatusHealth"    "6"
+	  "StatusHealthRegen"   "0.25"
+	  "StatusMana"    "5"
+	  "StatusManaRegen"    "0"
+	
+	  "VisionDaytimeRange"  "800"
+	  "VisionNighttimeRange"  "600"
+	
+	  "TeamName"     "DOTA_TEAM_GOODGUYS"
+	  "CombatClassAttack"   "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"   "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"  "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	  "Creature"
+	  {
+	    "DisableClumpingBehavior"  "1"
+	  }
+	}
+
+	"wood_worker_5"
+	{
+	  "BaseClass"     "npc_dota_creature"
+	  "Model"      "models/creeps/neutral_creeps/n_creep_satyr_a/n_creep_satyr_a.vmdl"
+	  "ModelScale"    "0.65"
+	  "Level"      "1"
+	  "HealthBarOffset"    "140"
+	
+	  "vscripts"     "ai/peasant.lua"
+	
+	  "AbilityLayout"    "5"
+	  "Ability1"     "gather_lumber_worker"
+	  "Ability2"     "commit_suicide"
+	  "Ability3"     "return_resources"
+	  "Ability4"     ""
+	  "Ability5"     ""
+	
+	  "ArmorPhysical"    "0"
+	  "MagicalResistance"   "0"
+	
+	  "AttackCapabilities"  "DOTA_UNIT_CAP_NO_ATTACK"
+	
+	  "BountyGoldMin"    "11.0"
+	  "BountyGoldMax"    "31.0"
+	
+	  "BoundsHullName"   "DOTA_HULL_SIZE_REGULAR"
+	  "RingRadius"    "40"
+	
+	  "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+	  "MovementSpeed"    "100"
+	  "MovementTurnRate"   "0.6"
+	
+	  "StatusHealth"    "6"
+	  "StatusHealthRegen"   "0.25"
+	  "StatusMana"    "5"
+	  "StatusManaRegen"    "0"
+	
+	  "VisionDaytimeRange"  "800"
+	  "VisionNighttimeRange"  "600"
+	
+	  "TeamName"     "DOTA_TEAM_GOODGUYS"
+	  "CombatClassAttack"   "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	  "CombatClassDefend"   "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	  "UnitRelationShipClass"  "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	  "Creature"
+	  {
+	    "DisableClumpingBehavior"  "1"
+	  }
+	}
+
+
+	"build_worker"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"                             "npc_dota_creature"
+		"Model"                                 "models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged_mega.vmdl"
+		"ModelScale"                            "0.8"
+		"Level"                                 "1"
+		"HealthBarOffset"                       "140"
+		"WispCost"                              "1"
+		"precache"
+		{
+			"model"                                 "models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged_mega.vmdl"
+		}
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"                         "0"
+		"MagicalResistance"                     "0"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"            		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"                       "1.0"
+		"AttackDamageMax"                       "1.0"
+		"AttackRate"                            "1.00"
+
+		"AbilityLayout"							"1"
+		"Ability1" 								"build_gold_mine_1"
+		"Ability2"								"build_gold_mine_2"
+		"Ability3"								"build_gold_mine_3"
+		"Ability4"								"build_gold_mine_4"
+		"Ability5"								"build_gold_mine_5"
+		"Ability6"								"build_gold_mine_6"
+		"Ability7"								"build_gold_mine_7"
+		"Ability8"								"build_gold_mine_8"
+		"Ability9"								"commit_suicide"
+
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"                         "0.0"
+		"BountyGoldMax"                         "0.0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
+		"RingRadius"                            "70"
+		"CollisionSize"                         "8"
+		"FormationRank"                         "0"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"					"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"                         "270"
+		"MovementTurnRate"                      "0.6"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"                          "1"
+		"StatusHealthRegen"                     "0.25"
+		"StatusMana"                            "0"
+		"StatusManaRegen"                       "0"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"								"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+	"build_worker_2"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"                             "npc_dota_creature"
+		"Model"                                 "models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
+		"ModelScale"                            "0.7"
+		"Level"                                 "1"
+		"HealthBarOffset"                       "140"
+		"WispCost"                              "1"
+		"precache"
+		{
+			"model"                                 "models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.vmdl"
+		}
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"                         "0"
+		"MagicalResistance"                     "0"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"            		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"                       "1.0"
+		"AttackDamageMax"                       "1.0"
+		"AttackRate"                            "1.00"
+
+		"AbilityLayout"							"1"
+		"Ability1" 								"build_gold_mine_1"
+		"Ability2"								"build_gold_mine_2"
+		"Ability3"								"build_gold_mine_3"
+		"Ability4"								"build_gold_mine_4"
+		"Ability5"								"build_gold_mine_5"
+		"Ability6"								"build_gold_mine_6"
+		"Ability7"								"build_gold_mine_7"
+		"Ability8"								"build_gold_mine_8"
+		"Ability9"								"commit_suicide"
+
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"                         "0.0"
+		"BountyGoldMax"                         "0.0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"                        "DOTA_HULL_SIZE_HERO"
+		"RingRadius"                            "70"
+		"CollisionSize"                         "8"
+		"FormationRank"                         "0"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"					"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"                         "270"
+		"MovementTurnRate"                      "0.6"
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"                          "1"
+		"StatusHealthRegen"                     "0.25"
+		"StatusMana"                            "0"
+		"StatusManaRegen"                       "0"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"					"300"
+		"VisionNighttimeRange"					"100"
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"								"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+	"npc_dota_hero_slayer_invoker"
+	{
+		"BaseClass"         "npc_dota_hero_invoker"
+		"Model"				"models/heroes/invoker/invoker.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/invoker/invoker.vmdl"
+		}
+		"SoundSet"			"Hero_LoneDruid"
+		"ModelScale"                            "1"
+		"Level"                                 "2"
+		"HealthBarOffset"                       "200"
+		"AbilityLayout"     "16"
+		"Ability1" 			"reveal_area" //treant_debuff
+		"Ability2" 			"troll_teleport"
+		"Ability3" 			"attack_gold_wisp"
+		"Ability4" 			""
+		"Ability5"    	    ""
+		"Ability6"    	    ""
+		"Ability7"    	    ""
+		"Ability8"    	    ""
+		"Ability9"    	    ""
+		"Ability10"   	    ""
+		"Ability11"   	    ""
+		"Ability12"   	    ""
+		"Ability13"   	    ""
+		"Ability14"   	    ""
+		"Ability15"   	    ""
+		"Ability16"   	    "antiblock"
+		
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "4233"}//back("Cape of the Burning Cabal")
+		"Wearable2" {"ItemDef" "4235"}//shoulder("Crest of the Burning Cabal")
+		"Wearable3" {"ItemDef" "4234"}//arms("Bracers of the Burning Cabal")
+		"Wearable4" {"ItemDef" "4236"}//head("Stylish Wizard's Topnot")
+	        }
+	    }
+
+		"ArmorPhysical"       "10"                 // Physical protection. 23
+		"MagicalResistance"       "0"                 // Magical protection (percentage).
+		
+		"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"			"64"
+		"AttackDamageMin"     "100"                   // Damage range min. 298
+		"AttackDamageMax"     "108"                   // Damage range max. 306
+		
+		//"AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"   "96"                   // Base strength
+		"AttributeStrengthGain"   "48"                   // Strength bonus per level.
+		"AttributeBaseIntelligence" "96"                   // Base intelligence
+		"AttributeIntelligenceGain" "48"                   // Intelligence bonus per level.
+		"AttributeBaseAgility"    "96"                   // Base agility
+		"AttributeAgilityGain"    "48"                   // Agility bonus per level.
+		
+		"BountyXP"          "0"                 // Experience earn.
+		"BountyGoldMin"       "0"                   // Gold earned min.
+		"BountyGoldMax"       "0"                   // Gold earned max.
+		
+		"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+		"RingRadius"        	"70"
+		"CollisionSize"			"48"
+		
+		"MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"       "360"                 // Speed.
+		"MovementTurnRate"      "1.0"                 // Turning rate.
+		
+		"StatusHealth"        "500"                 // Base health.
+		"StatusHealthRegen"     "0.0"                 // Health regeneration rate.
+		"StatusMana"        "0"                   // Base mana.
+		"StatusManaRegen"     "0"                 // Mana regeneration rate.
+		
+		"VisionDaytimeRange"    "1800"                  // Range of vision at night time.
+		"VisionNighttimeRange"    "1800"                  // Range of vision at night time.
+		
+				// Team
+		//----------------------------------------------------------------
+		"TeamName"								"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+	}
+
+		"npc_dota_hero_slayer_morta"
+	{
+		"BaseClass"         "npc_dota_hero_phantom_assassin"
+		"Model"				"models/heroes/phantom_assassin/phantom_assassin.vmdl"
+		"precache"
+		{
+			"model"     "models/heroes/phantom_assassin/phantom_assassin.vmdl"
+		}
+		"SoundSet"			"Hero_LoneDruid"
+		"ModelScale"                            "1"
+		"Level"                                 "2"
+		"HealthBarOffset"                       "200"
+		"AbilityLayout"     "16"
+		"Ability1" 			"reveal_area" //treant_debuff
+		"Ability2" 			"troll_teleport"
+		"Ability3" 			"attack_gold_wisp"
+		"Ability4" 			""
+		"Ability5"    	    ""
+		"Ability6"    	    ""
+		"Ability7"    	    ""
+		"Ability8"    	    ""
+		"Ability9"    	    ""
+		"Ability10"   	    ""
+		"Ability11"   	    ""
+		"Ability12"   	    ""
+		"Ability13"   	    ""
+		"Ability14"   	    ""
+		"Ability15"   	    ""
+		"Ability16"   	    "antiblock"
+		
+		"ArmorPhysical"       "10"                 // Physical protection. 23
+		"MagicalResistance"       "0"                 // Magical protection (percentage).
+		
+		"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"			"64"
+		"AttackDamageMin"     "100"                   // Damage range min. 298
+		"AttackDamageMax"     "108"                   // Damage range max. 306
+		
+		//"AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"   "96"                   // Base strength
+		"AttributeStrengthGain"   "48"                   // Strength bonus per level.
+		"AttributeBaseIntelligence" "96"                   // Base intelligence
+		"AttributeIntelligenceGain" "48"                   // Intelligence bonus per level.
+		"AttributeBaseAgility"    "96"                   // Base agility
+		"AttributeAgilityGain"    "48"                   // Agility bonus per level.
+		
+		"BountyXP"          "0"                 // Experience earn.
+		"BountyGoldMin"       "0"                   // Gold earned min.
+		"BountyGoldMax"       "0"                   // Gold earned max.
+		
+		"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+		"RingRadius"        	"70"
+		"CollisionSize"			"48"
+		
+		"MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"       "360"                 // Speed.
+		"MovementTurnRate"      "1.0"                 // Turning rate.
+		
+		"StatusHealth"        "500"                 // Base health.
+		"StatusHealthRegen"     "0.0"                 // Health regeneration rate.
+		"StatusMana"        "0"                   // Base mana.
+		"StatusManaRegen"     "0"                 // Mana regeneration rate.
+		
+		"VisionDaytimeRange"    "1800"                  // Range of vision at night time.
+		"VisionNighttimeRange"    "1800"                  // Range of vision at night time.
+		
+				// Team
+		//----------------------------------------------------------------
+		"TeamName"								"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"UnitRelationShipClass"					"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+
+		"Creature"
+	    {
+	        "AttachWearables" // Dark wood set
+	        {
+		"Wearable1" {"ItemDef" "5350"}//back("Cloak of the Dark Wraith")
+		"Wearable2" {"ItemDef" "5351"}//belt("Girdle of the Dark Wraith")
+		"Wearable3" {"ItemDef" "5352"}//head("Helm of the Dark Wraith")
+		"Wearable4" {"ItemDef" "5353"}//shoulder("Guard of the Dark Wraith")
+		"Wearable5" {"ItemDef" "5354"}//("Blade of the Dark Wraith")
+	        }
+	    }
 	}
 
 }

@@ -1,8 +1,8 @@
 MAXIMUM_ATTACK_SPEED = 600
 MINIMUM_ATTACK_SPEED = 20
 
-TROLL_HERO = "npc_dota_hero_troll_warlord"
-ELF_HERO = "npc_dota_hero_treant"
+TROLL_HERO = {"npc_dota_hero_terrorblade","npc_dota_hero_night_stalker"}
+ELF_HERO = "npc_dota_hero_lina"
 ANGEL_HERO = {"npc_dota_hero_crystal_maiden","npc_dota_hero_dark_willow"}
 WOLF_HERO = {"npc_dota_hero_lycan","npc_dota_hero_night_stalker"} 
 BEAR_HERO = "npc_dota_hero_bear"

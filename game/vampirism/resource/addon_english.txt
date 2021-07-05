@@ -153,6 +153,12 @@
 		"troll_hut_6"                                                                     "Troll Hut 6"
 		"troll_hut_7"                                                                     "Troll Hut 7"
 		
+		"house_1"                                                                            "House"
+		"house_2"                                                                            "Lumber House"
+		"house_3"                                                                            "Deforestation House"
+		"house_4"                                                                            "Insane Deforestation House"
+		"house_5"                                                                            "Goblin Lumber House"
+		
 		"flag"                                                                            "Flag"
 		"top1autumn"																	  "TOP1 AUTUMN"
 		"top2-3autumn"																	  "TOP2-3 AUTUMN"

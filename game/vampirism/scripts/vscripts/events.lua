@@ -397,6 +397,18 @@ function trollnelves2:OnEntityKilled(keys)
             local wisp = killed:GetKeyValue("WispCost")
             PlayerResource:ModifyWisp(hero, -wisp)
         end
+
+        if killed:GetUnitName() == "tent" then
+            GameRules.maxFood[killedPlayerID] = 0
+            PlayerResource:ModifyFood(hero, 0)
+        elseif killed:GetUnitName() == "tent_2" then
+            GameRules.maxFood[killedPlayerID] = 0
+            PlayerResource:ModifyFood(hero, 0)
+        elseif killed:GetUnitName() == "tent_3" then
+            GameRules.maxFood[killedPlayerID] = 0
+            PlayerResource:ModifyFood(hero, 0)
+        end
+
     end
 end
 
@@ -553,13 +565,6 @@ function ChooseHelpSide(eventSourceIndex, event)
         GetModifiedName(ANGEL_HERO[i])
         timer = ANGEL_RESPAWN_TIME
         pos = RandomAngelLocation()
-        elseif team == DOTA_TEAM_BADGUYS then
-        newHeroName = WOLF_HERO[i]
-        message = "%s1 has joined the dark side and now will help " ..
-        GetModifiedName(TROLL_HERO) .. ". %s1 is now a" ..
-        GetModifiedName(WOLF_HERO[i])
-        timer = WOLF_RESPAWN_TIME
-        pos = Vector(0, -640, 256)
     end
     PlayerResource:SetCustomTeamAssignment(playerID, team)
     Timers:CreateTimer(function()

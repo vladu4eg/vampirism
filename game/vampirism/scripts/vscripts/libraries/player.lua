@@ -130,12 +130,18 @@ end
 function CDOTA_PlayerResource:ModifyFood(hero,food)
     food = string.match(food,"[-]?%d+") or 0
     local playerID = hero:GetPlayerOwnerID()
+	if hero.food ~= nil then
+		if GameRules.maxFood[playerID] == nil then
+			GameRules.maxFood[playerID] = 30
+		end
     hero.food = hero.food + food
 	CustomGameEventManager:Send_ServerToTeam(hero:GetTeam(), "player_food_changed", {
 		playerID = playerID,
 		food = math.floor(hero.food),
-		maxFood = GameRules.maxFood,
+		maxFood = GameRules.maxFood[playerID],
 	})
+	DebugPrint("maxFood = GameRules.maxFood[playerID] " .. GameRules.maxFood[playerID])
+	end
 end
 
 function CDOTA_PlayerResource:ModifyWisp(hero,wisp)
@@ -163,7 +169,8 @@ end
 
 function CDOTA_PlayerResource:GetType(pID)
 	local heroName = PlayerResource:GetSelectedHeroName(pID)
-    return string.match(heroName,TROLL_HERO) and "troll"
+    return string.match(heroName,TROLL_HERO[1]) and "troll"
+	or string.match(heroName,TROLL_HERO[2]) and "troll"
 	or string.match(heroName,ANGEL_HERO[1]) and "angel"
 	or string.match(heroName,ANGEL_HERO[2]) and "angel"
 	or string.match(heroName,WOLF_HERO[1]) and "wolf"
@@ -275,7 +282,7 @@ function CDOTA_BaseNPC:IsElf()
     return self:GetUnitName() == ELF_HERO
 end
 function CDOTA_BaseNPC:IsTroll()
-    return self:GetUnitName() == TROLL_HERO
+    return self:GetUnitName() == TROLL_HERO[1] or self:GetUnitName() == TROLL_HERO[2] 
 end
 function CDOTA_BaseNPC:IsAngel()
 	return self:GetUnitName() == ANGEL_HERO[1] or self:GetUnitName() == ANGEL_HERO[2] 

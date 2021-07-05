@@ -2397,7 +2397,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lumber_cost"			"0"
+				"lumber_cost"			"400"
 			}
 		}
 		
@@ -5255,7 +5255,133 @@
 			}
 		}
 	}
+
+	"train_invoker"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_invoker"
+		"MaxLevel"					"1"
+		"UnitName"					"npc_dota_hero_slayer_invoker"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"32"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"3"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
 	
+	
+	"train_morta"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"train_morta"
+		"MaxLevel"					"1"
+		"UnitName"					"npc_dota_hero_slayer_morta"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"32"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"0"
+			}
+		}
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"3"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+
+
 	"train_worker_1"
 	{
 		"BaseClass"					"ability_datadriven"
@@ -10407,4 +10533,794 @@
 	}
 }
 
+
+
+		"build_slayer_tavern"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_slayer_tavern"
+		"AbilityCastRange"		"250"
+		"Building"				"1"
+		"BuildTime"				"5.0"
+		"Scale"					"1"
+		"UnitName"				"slayer_tavern"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"400"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+		"spell_immunity"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"neutral_spell_immunity"
+	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+	
+		"Modifiers"
+		{
+			"spell_immunity_modifier"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE" 			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+	"build_house_1"{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"	"build_house"
+		"AbilityCastRange"		"250"
+		"Building"				"1"
+		"BuildTime"				"6.0"
+		"Scale"					"1"
+		"UnitName"				"house_1"
+		"MaxLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_cost"				"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lumber_cost"			"400"
+			}
+		}
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"Build"
+			}
+		}
+	}
+
+	"upgrade_to_house_2"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_house"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"house_2"
+			}
+		}
+	}
+
+		"upgrade_to_house_3"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_house"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"house_3"
+			}
+		}
+	}
+
+		"upgrade_to_house_4"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_house"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"house_4"
+			}
+		}
+	}
+
+		"upgrade_to_house_5"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"build_house"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"						"1"
+		"Building"						"1"
+		"BuildTime"						"2"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"builder.lua"
+				"Function"		"UpgradeBuilding"
+				"NewName"		"house_5"
+			}
+		}
+	}
+
+"train_wood_worker_1"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"wood_worker_1"
+		"MaxLevel"					"1"
+		"UnitName"					"wood_worker_1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"0"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"5"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	
+	"train_wood_worker_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"wood_worker_2"
+		"MaxLevel"					"1"
+		"UnitName"					"wood_worker_2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"0"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"5000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"20"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	
+	"train_wood_worker_3"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"wood_worker_3"
+		"MaxLevel"					"1"
+		"UnitName"					"wood_worker_3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"15"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"30000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"30"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	
+	"train_wood_worker_4"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"wood_worker_4"
+		"MaxLevel"					"1"
+		"UnitName"					"wood_worker_4"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"75"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"40"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+
+	"train_wood_worker_5"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"wood_worker_5"
+		"MaxLevel"					"1"
+		"UnitName"					"wood_worker_5"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"300"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"90"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+
+	"train_build_worker"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"build_worker"
+		"MaxLevel"					"1"
+		"UnitName"					"build_worker"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"4"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"5000"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"5"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"train_build_worker_2"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityTextureName"		"build_worker_2"
+		"MaxLevel"					"1"
+		"UnitName"					"build_worker_2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gold_cost"			"150"
+			}	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lumber_cost"		"0"
+			}	
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"food_cost"			"0"
+			}	
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"unit_count"		"1"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"wisp_cost"			"1"
+			}
+		}
+	 
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	 
+		"AbilityChannelTime"		"1"
+		"OnSpellStart"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnSpellStart"
+			}
+		}
+		"OnChannelSucceeded"
+		{	 
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelSucceeded"
+			}
+		}
+		"OnChannelInterrupted"{
+			"RunScript"
+			{
+				"ScriptFile"		"custom_abilities.lua"
+				"Function"			"SpawnUnitOnChannelInterrupted"
+			}
+		}
+	}
+	"return_resources"
+	{
+	  "BaseClass"                 "ability_datadriven"
+	  	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+	  "AbilityTextureName"      "custom/return_resources"
+	  "MaxLevel"            "1"
+	
+	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN" //Fake Toggle
+	
+	  "OnSpellStart"
+	  {
+	    "ApplyModifier"
+	    {
+	      "ModifierName"  "modifier_returning_resources"
+	      "Target"    "CASTER"
+	    }
+	
+	    "RunScript"
+	    {
+	      "ScriptFile"  "ai/peasant.lua"
+	      "Function"    "ReturnResources"
+	    }
+	  }
+	
+	  "Modifiers"
+	  {
+	    "modifier_returning_resources_on_order_cancel"
+	    {
+	      "IsHidden"        "1"
+	
+	      "ThinkInterval"  "0.03"
+	      "OnIntervalThink"
+	      {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "ai/peasant.lua"
+	          "Function"    "CheckBuildingPosition"
+	        }
+	      }
+	
+	      "OnOrder"
+	      {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "ai/peasant.lua"
+	          "Function"    "ToggleOffReturn"
+	        }
+	      }  
+	    }
+	    "modifier_returning_resources"
+	    {
+	      "IsHidden"        "0"
+	      "TextureName"     "furion_sprout"
+	    }
+	  }
+	} 
+	
+	"gather_lumber_worker"
+	{
+	  "BaseClass"                 "ability_datadriven"
+	  	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+	  "AbilityTextureName"      "treant_living_armor"
+	  "MaxLevel"            "1"
+	
+	  "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	  "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+	  "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_BUILDING"
+	
+	  "AbilityMultiOrder" "1"
+	
+	  "AbilityCastPoint"        "0.1"
+	
+	  "OnAbilityPhaseStart"
+	  {
+	    "RunScript"
+	    {
+	      "ScriptFile"  "ai/peasant.lua"
+	      "Function"    "Gather"
+	    }
+	    "ApplyModifier"
+	    {
+	      "Target"      "CASTER"
+	      "ModifierName"    "modifier_ability_gather_lumber_no_col"
+	    }
+	  }
+	
+	  "Modifiers"
+	  {
+	    "modifier_ability_gather_lumber_no_col"
+	    {
+	      "Passive"         "1"
+	      "IsHidden"          "1"
+	      "IsBuff"          "1"
+	      "IsDebuff"          "0"
+	      
+	      "States"
+	      {
+	        "MODIFIER_STATE_NO_UNIT_COLLISION"    "MODIFIER_STATE_VALUE_ENABLED"
+	      }
+	    }
+	
+	    "modifier_gathering_lumber"
+	    {
+	      "IsHidden"        "1"
+	        
+	      "ThinkInterval"  "0.03"
+	      "OnIntervalThink"
+	      {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "ai/peasant.lua"
+	          "Function"    "CheckTreePosition"
+	        }
+	      }
+	
+	      "OnOrder"
+	      {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "ai/peasant.lua"
+	          "Function"    "ToggleOffGather"
+	          "arg" "modifier_gathering_lumber"
+	        }
+	      }
+	      
+	    }
+	
+	    "modifier_chopping_wood"
+	    {
+	      "IsHidden"        "1"
+	
+	      "OnOrder"
+	      { 
+	        "RunScript"
+	        {
+	          "ScriptFile"  "ai/peasant.lua"
+	          "Function"    "ToggleOffGather"
+	          "arg" "modifier_chopping_wood"
+	        }
+	      }
+	
+	      "OnCreated"
+	      {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "ai/peasant.lua"
+	          "Function"    "PlayAttackAnimation"
+	        }
+	      }
+	
+	      "OnDestroy"
+	      {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "ai/peasant.lua"
+	          "Function"    "StopAnimation"
+	        }
+	      }
+	
+	      "ThinkInterval"  "1.0"
+	      "OnIntervalThink"
+	      {
+	        "RunScript"
+	        {
+	          "ScriptFile"  "ai/peasant.lua"
+	          "Function"    "PlayAttackAnimation"
+	        }
+	        "RunScript"
+	        {
+	          "ScriptFile"  "ai/peasant.lua"
+	          "Function"    "GatherLumber"
+	        }
+	      }   
+	    }
+	  }
+	}
 }

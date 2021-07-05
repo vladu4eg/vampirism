@@ -175,6 +175,12 @@ function Build( event )
         --BuildingHelper:print("" ..unit:GetUnitName().. " is above half health.")        
     end)
 	
+
+    if building_name == "tent" then
+        GameRules.maxFood[playerID] = 50
+        PlayerResource:ModifyFood(hero, 0)
+    end
+
     --	if building_name == "tent" and IsInsideBaseArea(hero) == false then
 	--	local check = false
 	--	DebugPrint("Test1")
@@ -506,5 +512,14 @@ function UpgradeBuilding( event )
             UpdateUpgrades(value)
         end
     end)
+
+    if newBuilding:GetUnitName() == "tent_2" then
+        GameRules.maxFood[playerID] = 100
+        PlayerResource:ModifyFood(hero, 0)
+    elseif newBuilding:GetUnitName() == "tent_3"  then
+        GameRules.maxFood[playerID] = 300
+        PlayerResource:ModifyFood(hero, 0)
+    end
+
 end
 

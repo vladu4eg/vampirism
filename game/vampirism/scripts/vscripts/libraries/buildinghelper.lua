@@ -228,7 +228,7 @@ end
 local allRequirements = {}
 
 ParseRequirements(name, previousRequirements, allRequirements, allBuildingRequirementClasses)
-
+DebugPrint(name)
 local requirements = info["Requirements"]
 if requirements then
     ParseRequirements(name, requirements, allRequirements,
@@ -845,7 +845,7 @@ function BuildingHelper:OrderFilter(order)
             local unit_name = shop:GetUnitName()
             if string.match(unit_name, "shop") or string.match(unit_name, "troll_hut") then
                 shop.buyer = issuerID
-                if string.match(unit_name, "troll_hut") and string.match(EntIndexToHScript(abilityIndex):GetAbilityName(),"upgrade_to") and PlayerResource:GetSelectedHeroEntity(issuerID):GetUnitName() ~= TROLL_HERO then
+                if string.match(unit_name, "troll_hut") and string.match(EntIndexToHScript(abilityIndex):GetAbilityName(),"upgrade_to") and PlayerResource:GetSelectedHeroEntity(issuerID):GetUnitName() ~= TROLL_HERO[0] then
                     SendErrorMessage(issuerID, "#error_only_troll_can_upgrade")
                     return false
                 end

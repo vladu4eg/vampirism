@@ -36,7 +36,8 @@ function Precache( context )
 	-- Entire heroes (sound effects/voice/models/particles) can be precached with PrecacheUnitByNameSync
 	-- Custom units from npc_units_custom.txt can also have all of their abilities and precache{} blocks precached in this way
 	PrecacheUnitByNameSync(ELF_HERO, context)
-	PrecacheUnitByNameSync(TROLL_HERO, context)
+	PrecacheUnitByNameSync(TROLL_HERO[1], context)
+	PrecacheUnitByNameSync(TROLL_HERO[2], context)
 	PrecacheUnitByNameSync(WOLF_HERO[1], context)
 	PrecacheUnitByNameSync(WOLF_HERO[2], context)
 	PrecacheUnitByNameSync(ANGEL_HERO[1], context)
@@ -401,7 +402,7 @@ end
 function Activate()
 	GameRules.MapSpeed = tonumber(string.match(GetMapName(),"%d+")) or 1
 	GameRules.lumberPrice = STARTING_LUMBER_PRICE
-	GameRules.maxFood = STARTING_MAX_FOOD
+	GameRules.maxFood = {}
 	GameRules.maxWisp = STARTING_MAX_WISP
 	GameRules.playerTeamChoices = {}
 	GameRules.dcedChoosers = {}
