@@ -12887,7 +12887,7 @@
 
 	"npc_dota_hero_slayer_invoker"
 	{
-		"BaseClass"         "npc_dota_hero_invoker"
+		"BaseClass"         "npc_dota_creature"
 		"Model"				"models/heroes/invoker/invoker.vmdl"
 		"precache"
 		{
@@ -12972,7 +12972,7 @@
 
 		"npc_dota_hero_slayer_morta"
 	{
-		"BaseClass"         "npc_dota_hero_phantom_assassin"
+		"BaseClass"         "npc_dota_creature"
 		"Model"				"models/heroes/phantom_assassin/phantom_assassin.vmdl"
 		"precache"
 		{
