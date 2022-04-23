@@ -1,14 +1,15 @@
 "DOTAHeroes"
 {
-	"npc_dota_hero_lina"
+	"npc_dota_hero_treant"
 	{
-		"override_hero"				"npc_dota_hero_lina"
-		"SoundSet"					"Hero_Lina"
+		"override_hero"				"npc_dota_hero_treant"
+		"Model"						"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+		"SoundSet"					"Hero_Wisp"
 		"UnitLabel"					"builder"
 		"AbilityLayout"				"13"
-		"Ability1" 					"build_house_1"
-		"Ability2" 					"build_tent"
-		"Ability3" 					"build_slayer_tavern"
+		"Ability1" 					"build_tent"
+		"Ability2" 					"build_rock_1"
+		"Ability3" 					"build_tower_1"
 		"Ability4" 					"build_trader_1"
 		"Ability5" 					"build_workers_guild"
 		"Ability6"					"build_mother_of_nature"
@@ -25,7 +26,7 @@
 		
 		
 		"ArmorPhysical"       "0"                 // Physical protection.
-	    "MagicalResistance"       "0"                 // Magical protection (percentage).
+	    "MagicalResistance"       "100"                 // Magical protection (percentage).
 	
 	    "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"
 	    "AttackDamageMin"     "1"                   // Damage range min.
@@ -59,11 +60,11 @@
 	    "VisionNighttimeRange"    "1800"                  // Range of vision at night time.
 		
 		"AttackDesire"			"0.5"
-		//"DisableWearables"         "1"
+		"DisableWearables"         "1"
 	}
-	"npc_dota_hero_terrorblade"{
-		"override_hero"     "npc_dota_hero_terrorblade"
-		"SoundSet"			"Hero_Terrorblade"
+	"npc_dota_hero_troll_warlord"{
+		"override_hero"     "npc_dota_hero_troll_warlord"
+		"SoundSet"			"Hero_TrollWarlord"
 		"AbilityLayout"     "16"
 		"Ability1" 			"reveal_area"
 		"Ability2" 			"troll_invis"
@@ -121,6 +122,7 @@
 	"npc_dota_hero_lycan"{
 		"override_hero"     "npc_dota_hero_lycan"
 		"SoundSet"			"Hero_Lycan"
+		"Model"				"models/heroes/lycan/lycan_wolf.vmdl"
 		"AbilityLayout"     "16"
 		"Ability1" 			"reveal_area"
 		"Ability2" 			"troll_teleport"
@@ -174,6 +176,7 @@
 		
 		"VisionDaytimeRange"    "1800"                  // Range of vision at night time.
 		"VisionNighttimeRange"    "1800"                  // Range of vision at night time.
+		"DisableWearables"               "1"
 	}
 	"npc_dota_hero_night_stalker"{
 		"override_hero"     "npc_dota_hero_night_stalker"
@@ -348,6 +351,277 @@
 		
 		"VisionDaytimeRange"    "1800"                  // Range of vision at night time.
 		"VisionNighttimeRange"    "1800"                  // Range of vision at night time.1
+	}
+	
+	"npc_dota_hero_doom_bringer"{
+		"override_hero"     "npc_dota_hero_doom_bringer"
+		"Model"		"models/heroes/doom/doom.vmdl"
+		"SoundSet"		"Hero_DoomBringer"
+		"IdleSoundLoop"		"Hero_DoomBringer.IdleLoop"
+
+		"ModelScale"		"1.3"
+		"VersusScale"		"0.660000"
+		"LoadoutScale"		"0.700000"
+		
+		"AbilityLayout"     "16"
+		"Ability1" 			"centaur_hoof_stomp"
+		"Ability2" 			"ursa_overpower"
+		"Ability3" 			"doom_bringer_scorched_earth"
+		"Ability4" 			"shadow_shaman_mass_serpent_ward"
+		"Ability5"    	    "visage_summon_familiars"
+		"Ability6"    	    "roshan_bash"
+		"Ability7"    	    "ursa_fury_swipes2_datadriven"
+		"Ability8"    	    ""
+		"Ability9"    	    ""
+		"Ability10"   	    ""
+		"Ability11"   	    ""
+		"Ability12"   	    ""
+		"Ability13"   	    ""
+		"Ability14"   	    ""
+		"Ability15"   	    ""
+		"Ability16"   	    "attribute_antibonuses"
+		"Ability17"   	    ""
+		
+		"ArmorPhysical"       "1665"                 // Physical protection.
+		"MagicalResistance"       "0"                 // Magical protection (percentage).
+		
+		"AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackRange"			"64"
+		"AttackDamageMin"     "10000000"                   // Damage range min.
+		"AttackDamageMax"     "15000000"                   // Damage range max.
+		"AttackAnimationPoint"		"0.500000"
+		"AttackRate"		"1.90000"
+		
+		//"AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"   "10000"                   // Base strength
+		"AttributeStrengthGain"   "1000"                   // Strength bonus per level.
+		"AttributeBaseIntelligence" "10000"                   // Base intelligence
+		"AttributeIntelligenceGain" "1000"                   // Intelligence bonus per level.
+		"AttributeBaseAgility"    "0"                   // Base agility
+		"AttributeAgilityGain"    "0"                   // Agility bonus per level.
+		
+		"BountyXP"          "0"                 // Experience earn.
+		"BountyGoldMin"       "0"                   // Gold earned min.
+		"BountyGoldMax"       "0"                   // Gold earned max.
+		
+		"BoundsHullName"      "DOTA_HULL_SIZE_HERO"
+		//"RingRadius"        "70"
+		"CollisionSize"			"40"
+		
+		"MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"       "300"                 // Speed.
+		"MovementTurnRate"      "1.0"                 // Turning rate.
+		
+		"StatusHealth"        "19000000"                 // Base health.
+		"StatusHealthRegen"     "0.0"                 // Health regeneration rate.
+		"StatusMana"        "0"                   // Base mana.
+		"StatusManaRegen"     "0"                 // Mana regeneration rate.
+		
+		"VisionDaytimeRange"    "1800"                  // Range of vision at night time.
+		"VisionNighttimeRange"    "1800"                  // Range of vision at night time.
+
+		"particle_folder"		"particles/units/heroes/hero_doom_bringer"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_doom_bringer.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_doom_bringer/doom_loadout.vpcf"		"loadout"
+			}
+		}
+	}
+	"npc_dota_hero_phantom_assassin"
+	{
+		"Model"		"models/heroes/phantom_assassin/phantom_assassin.vmdl"
+		"IdleExpression"		"scenes/phantom_assassin/phantom_assassin_exp_idle_01.vcd"
+		"SoundSet"		"Hero_PhantomAssassin"
+		
+		"override_hero"     "npc_dota_hero_phantom_assassin"
+		
+		"ModelScale"		"1.5"
+		"VersusScale"		"0.930000"
+		"LoadoutScale"		"0.930000"
+		
+		
+		"Ability1"		"phantom_assassin_stifling_dagger"
+		"Ability2"		""
+		"Ability3"		"nyx_assassin_spiked_carapace"
+		"Ability4"		"venomancer_plague_ward"
+		"Ability5"		"invoker_ghost_walk"
+		"Ability6"		"monkey_king_mischief"
+		"Ability10"		"monkey_king_untransform"
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		"phantom_assassin_blur"
+		"Ability14"		"mars_bulwark"
+		"Ability15"		"venomancer_poison_sting"
+		"Ability16"		"special_bonus_unique_phantom_assassin"
+		"Ability17"		"attribute_antibonuses"
+		"ArmorPhysical"		"0"
+		"MagicalResistance"       "99"                 // Magical protection (percentage).
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
+		"StatusHealth"        "100001"                 // Base health.
+		"StatusHealthRegen"     "0.0"                 // Health regeneration rate.
+		"StatusMana"        "111"                   // Base mana.
+		"StatusManaRegen"     "3"                 // Mana regeneration rate.
+
+		//"AttributePrimary"      "DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"   "0"                   // Base strength
+		"AttributeStrengthGain"   "0"                   // Strength bonus per level.
+		"AttributeBaseIntelligence" "0"                   // Base intelligence
+		"AttributeIntelligenceGain" "0"                   // Intelligence bonus per level.
+		"AttributeBaseAgility"    "0"                   // Base agility
+		"AttributeAgilityGain"    "0"                   // Agility bonus per level.+
+
+		"MovementSpeed"		"150"
+		"MovementTurnRate"		"0.600000"
+		"HasAggressiveStance"		"1"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_phantom_assassin/phantom_assassin_loadout.vpcf"		"loadout"
+			}
+		}
+		
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_phantom_assassin"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_phantom_assassin.vsndevts"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+		
+	}
+	"npc_dota_hero_tidehunter"
+	{
+		"Model"		"models/heroes/tidehunter/tidehunter.vmdl"
+		"IdleExpression"		"scenes/tidehunter/tidehunter_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Tidehunter"
+		
+		"BotImplemented"		"1"
+		"ModelScale"		"1.5"
+		"VersusScale"		"0.670000"
+		"LoadoutScale"		"0.780000"
+		
+		"GibType"		"default"
+		"Ability1"		""
+		"Ability2"		"slardar_sprint"
+		"Ability3"		"centaur_double_edge"
+		"Ability4"		""
+		"Ability5"		""
+		"Ability6"		"tidehunter_ravage"
+		"Ability10"		"centaur_return"
+		"Ability11"		"abaddon_borrowed_time"
+		"Ability12"		"phantasm_split_4"
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		"attribute_antibonuses"
+		"ArmorPhysical"		"5500"
+		"MagicalResistance"       "80" 
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"500000000"
+		"AttackDamageMax"		"500000000"
+		"AttackRate"		"8"
+		"AttackAnimationPoint"		"0.6"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"100"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"88750"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"StatusMana"        "500"                   // Base mana.
+		"StatusManaRegen"	"5"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+
+		"MovementSpeed"		"220"
+		"CollisionSize"			"40"
+
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"particle_folder"		"particles/units/heroes/hero_tidehunter"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_tidehunter.vsndevts"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_tidehunter.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_tidehunter/tide_loadout.vpcf"		"loadout"
+			}
+		}
+		
+		
+	}
+	"npc_dota_hero_lina"
+	{
+		"Model"		"models/heroes/lina/lina.vmdl"
+		"IdleExpression"		"scenes/lina/lina_exp_idle_01.vcd"
+		"SoundSet"		"Hero_Lina"
+		"IdleSoundLoop"		"Hero_Lina.IdleLoop"
+		
+		"ModelScale"		"1.1"
+		"VersusScale"		"0.780000"
+		
+		"GibType"		"fire"
+		"Ability1"		"lina_laguna_blade"
+		"Ability2"		"beastmaster_call_of_the_wild_boar"
+		"Ability3"		""
+		"Ability4"		"phoenix_sun_ray"
+		"Ability5"		"lion_mana_drain"
+		"Ability6"		"juggernaut_healing_ward"
+		"Ability10"		"abyssal_underlord_firestorm"
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		"attribute_antibonuses"
+		"ArmorPhysical"		"10000"
+		"MagicalResistance"       "100"
+		"StatusHealth"				"750000"
+		"StatusHealthRegen"     "0.0"
+		"StatusMana"				"20000"
+		"StatusManaRegen"			"275"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"		"22500"
+		"AttackDamageMax"		"22500"
+		"AttackRate"		"1.600000"
+		"AttackAnimationPoint"		"0.650000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"670"
+		"ProjectileModel"		"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+		"ProjectileSpeed"		"1000"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+
+		"CollisionSize"			"40"
+		"MovementSpeed"		"290"
+		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_lina.vsndevts"
+		"particle_folder"		"particles/units/heroes/hero_lina"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+		"RenderablePortrait"
+		{
+			"Particles"
+			{
+				"particles/units/heroes/hero_lina/lina_loadout.vpcf"		"loadout"
+			}
+		}
+		
 	}
 	
 }

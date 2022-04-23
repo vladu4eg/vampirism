@@ -1,0 +1,8 @@
+1x1
+{
+	material materials/overviews/1x1.vmat
+	pos_x -4338
+	pos_y 880
+	scale 8.664
+}
+

@@ -1,0 +1,8 @@
+desert_halloween
+{
+	material materials/overviews/desert_halloween.vmat
+	pos_x -9024
+	pos_y 9984
+	scale 17.750
+}
+

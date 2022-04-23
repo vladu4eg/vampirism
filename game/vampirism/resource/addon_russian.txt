@@ -60,7 +60,8 @@
 		"tower_10_1"                                                                        "Tower 10 lvl 2"
 		"tower_11"                                                                        "Tower 11 lvl 1"
 		"tower_11_1"                                                                        "Tower 11 lvl 2"
-		"tower_12"                                                                        "Tower 12"
+		"tower_12"                                                                        "Tower 12 lvl 1"
+		"tower_12_1"                                                                        "Tower 12 lvl 2"
 		"tower_13"                                                                        "Tower 13"
 		"tower_14"                                                                        "Tower 14"
 		"tower_15"                                                                        "Tower 15 lvl 1"
@@ -141,7 +142,67 @@
 		
 		"event_boss"																		"Guardian of Crystals"
 		"event_line_boss"																	"Chest of the Damned"
-		
+
+		"buy_currency"						"Покупка TvE Coint."
+		"buy_currency_description"			"100 руб = 170 монет. Можно донатить через Сбер, Киви или Яндекс(Писать в Дискорде). Есть скидки за большое количество монет(Писать в Дискорде). При первой покупке от +50 монет выдается 100 монет бесплатно (Писать в Discord)."
+
+
+		"shop_button"	"Магазин"
+
+		"shop_main"		"Главная"
+		"shop_items"		"Товары"
+		"shop_pets"		"Питомцы"
+		"shop_particles"		"Эффекты"
+
+		"shop_gem"		"Предметы за Gem"
+	
+		"shop_recomended"		"Предметы со скидкой"
+	
+		"shop_all"		"Все"
+		"shop_subscribe"		"Подписка"
+		"shop_currency"		"Валюта"
+
+		"ads_name_1"		"Купить Battle Pass"
+		"ads_name_2"		"Купить Сундук"
+
+		"shop_bought"		"Куплен"
+		"shop_gold"			"В сундуке"
+		"shop_event"		"Ивент"
+		"shop_buy"			"Купить"
+		"shop_activate"		"Включить"
+		"shop_deactivate"	"Выключить"
+
+		"shop_trollchance"	"Шанс стать тролем: "
+		"shop_bonusrate"	"Бонус рейтинга: "
+		"shop_trollchance_date"			"Действует до: "
+		"shop_bonusrate_date"			"Действует до: "
+		"shop_no_money"						"Недостаточно средств на счету!"
+		"shop_nice_buy"						"Отправлен запрос на покупку. ЕСЛИ ДОНАТ НЕ БЫЛ ВЫДАН В СЛЕДУЮЩЕЙ ИГРЕ, ТО ОБРАТИТЕСЬ К РАЗРАБОТЧИКУ! Спасибо за поддержку!"
+		"shop_error_label"					"Недостаточно средств на счету!"
+
+		"BattlePass_button" "Пропуск"
+		"BattlePass_Name" 	"Battle Pass"
+		"battleshop_gives" "Получить"
+		"battleshop_locked" "Закрыто"
+		"battlepass_inbp" "В пропуске"
+		"battlepass_level" "Уровень"
+		"battlepass_free" "Бесплатно"
+		"battlepass_gives"	"ПОЛУЧЕНО"
+
+		"shop_inventory"	"Инвентарь"
+		"shop_chests"		"Сундуки"
+
+		"shop_chest_count" "Количество"
+		"shop_open"			"Открыть"
+		"shop_currency_gold"	"TvE Coint"
+		"shop_currency_gem"		"TvE Coint"
+		"shop_accept"			"Принять"
+
+		"shop_chance"	"Шанс выпадения: "
+		"shop_currency_count"	"Количество TvE Coint"
+		"shop_currency_count_from"	"от"
+		"shop_currency_count_to"	"до"
+
 		// ******************** ABILITY MODIFIERS ********************
 		"DOTA_Tooltip_modifier_gain_gold"                                                 "Gain Gold"
 		"DOTA_Tooltip_modifier_gain_gold_Description"                                     ""
@@ -219,7 +280,7 @@
 		"DOTA_Tooltip_ability_dummy_tree_Description"                                     ""
 		
 		"DOTA_Tooltip_ability_build_flag"                                                 "Build Flag" 
-		"DOTA_Tooltip_ability_build_flag_Description"                                     "Позволяет заблокировать базу от других Эльфов.<br>Можно заблокировать только 1 базу.<br>Вы можете разрешить строить на вашей базе другим Эльфам, НО они потеряют блокировку на своей базе."
+		"DOTA_Tooltip_ability_build_flag_Description"                                     "ДЕБАФФ ТРОЛЛЯ В РИДУСЕ 600!<br>Позволяет заблокировать базу от других Эльфов.<br>Можно заблокировать только 1 базу.<br>Вы можете разрешить строительство на вашей базе другим Эльфам, НО они потеряют блокировку на своей базе."
 		
 		"DOTA_Tooltip_ability_build_tent"                                                 "Build Tent"
 		"DOTA_Tooltip_ability_build_tent_Description"                                     "Постройте Tent, чтобы получать золото каждую секунду. Можно построить только один Tent. "
@@ -374,8 +435,11 @@
 		"DOTA_Tooltip_ability_upgrade_to_tower_11_1"                                        "Upgrade To Tower 11 lvl 2"
 		"DOTA_Tooltip_ability_upgrade_to_tower_11_1_Description"                            "Улучшите свою башню, чтобы защитить себя от Тролля!<br>Урон: 256000"
 
-		"DOTA_Tooltip_ability_upgrade_to_tower_12"                                        "Upgrade To Tower 12"
+		"DOTA_Tooltip_ability_upgrade_to_tower_12"                                        "Upgrade To Tower 12 lvl 1"
 		"DOTA_Tooltip_ability_upgrade_to_tower_12_Description"                            "Улучшите свою башню, чтобы защитить себя от Тролля!<br>Урон: 81920"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_12_1"                                        "Upgrade To Tower 12 lvl 2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_12_Description"                            "Улучшите свою башню, чтобы защитить себя от Тролля!<br>Урон: 256000"
 
 		"DOTA_Tooltip_ability_upgrade_to_tower_13"                                        "Upgrade To Tower 13"
 		"DOTA_Tooltip_ability_upgrade_to_tower_13_Description"                            "Улучшите свою башню, чтобы защитить себя от Тролля!<br>Урон: 500100"
@@ -506,6 +570,10 @@
 		"DOTA_Tooltip_ability_tower_frost_slow"												"Ice arrow"
 		"DOTA_Tooltip_ability_tower_frost_slow_Description"									"Стреляет ледяными стрелами, замедляя врагов при атаки на 1% скорости передвижения и 7 (не процентов) скорости атаки. Суммируется с другими ледяными стрелами. Один заряд длится 3 секунды."
 
+		"DOTA_Tooltip_ability_tower_frost_slow_2"												"Ice arrow 2"
+		"DOTA_Tooltip_ability_tower_frost_slow_2_Description"									"Стреляет ледяными стрелами, замедляя врагов при атаки на 1% скорости передвижения и 10 (не процентов) скорости атаки. Суммируется с другими ледяными стрелами. Один заряд длится 4 секунды."
+
+
 		"DOTA_Tooltip_ability_tower_poison"													"Venom"
 		"DOTA_Tooltip_ability_tower_poison_Description"	    								"Каждый удар накладывает на врага дебафф, который снижает его регенерацию на 5%. Каждый стак длится 3 секунды, регенерация HP не может быть ниже 0."
 		
@@ -549,7 +617,7 @@
 		"DOTA_Tooltip_ability_phantom_phantom_assassin_coup_de_grace_datadriven_Description"               "Наносит 1000% критического урона. Шанс 13%"		
 		
 		"DOTA_Tooltip_ability_templar_assassin_psi_blades_datadriven"								"Templar"
-		"DOTA_Tooltip_ability_templar_assassin_psi_blades_datadriven_Description"					"Psi Blades. Наносит 5000 чистого урона второй цели."
+		"DOTA_Tooltip_ability_templar_assassin_psi_blades_datadriven_Description"					"Psi Blades. Наносит 5000 чистого урона второй цели. Если вторая цель является Волком, то Башня наносит 12500 чистого урона. "
 		
 		"DOTA_Tooltip_modifier_fury_swipes_caster_datadriven"                             "Ursa"
 		"DOTA_Tooltip_modifier_fury_swipes_caster_datadriven_Description"                 "20 магического урона за удар. Действует 6 секунд."
@@ -627,7 +695,7 @@
 		"DOTA_Tooltip_modifier_buff_counter_Description"                				   "1 стак - 4 sec. 2 стака - 3 sec. 3 стака - 1.5 sec. +4 стака - 1 sec Корней"
 	
 		"DOTA_Tooltip_ability_buy_lumber_10"                                              "Buy Lumber 10"
-		"DOTA_Tooltip_ability_buy_lumber_10_Description"                                  "Купить 10 дерева(lumber)! Дерево используется для строительства/улучшения продвинутых зданий. Покупка дерева увеличивает стоимость самого дерева. Цена указана под вашими ресурсами. "
+		"DOTA_Tooltip_ability_buy_lumber_10_Description"                                  "Купить 10 дерева(lumber). Дерево используется для строительства/улучшения продвинутых зданий. Покупка дерева увеличивает стоимость самого дерева. Цена указана под вашими ресурсами. "
 
 		"DOTA_Tooltip_ability_buy_lumber_200"                                             "Buy Lumber 200"
 		"DOTA_Tooltip_ability_buy_lumber_200_Description"                                 "Купить 200 дерева(lumber)! Дерево используется для строительства/улучшения продвинутых зданий. Покупка дерева увеличивает стоимость самого дерева. Цена указана под вашими ресурсами. "
@@ -655,7 +723,7 @@
 		"DOTA_Tooltip_ability_furion_teleportation_datadriven_Description"				  "Телепортирует к ближающему союзнику."
 		
 		"DOTA_Tooltip_ability_penitence_datadriven"										  "Forest curse"
-		"DOTA_Tooltip_ability_penitence_datadriven_Description"				 			  "Снижает скорость передвижения на 55.<br>Увеличает получаемый урон на 10%. "
+		"DOTA_Tooltip_ability_penitence_datadriven_Description"				 			  "Снижает скорость передвижения на 55.<br>Увеличает получаемый урон на 25%. "
 		
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_datadriven"					"Hunter in the Night"
 		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_datadriven_Description"		"Ночью герой оказывается в своей стихии: он атакует и передвигается увеличенной скоростью.<br>Дает +1 к уклонению."
@@ -667,7 +735,7 @@
 		"DOTA_Tooltip_ability_treant_debuff_Description"  								"Ты должен был бороться со злом, а не примкнуть к нему!!! Вас проклял могущий Treant Protector и вы не можете восстанавливать свое здоровье. "
 
 		"DOTA_Tooltip_ability_block_buff"											"Хладнокровность"
-		"DOTA_Tooltip_ability_block_buff_Description"  								"Ваша броня крепчает при виде стаи Эльфов.<br>Если радиусе 900 находятся 3 и более Эльфов, то вы получаете 16 блока урона с шансом в 50%."
+		"DOTA_Tooltip_ability_block_buff_Description"  								"Ваша броня крепчает при отсутствии Флага.<br>Если радиусе 900 нет Флага, то вы получаете 50% бонус атаки, 50% магической защиты и 75% снижения урона от башен."
 
 
 		"DOTA_Tooltip_Ability_lone_druid_spirit_bear_datadriven"						"Teddy bear"
@@ -765,6 +833,21 @@
 		"DOTA_Tooltip_ability_train_worker_7_lumber_cost"                                 "LUMBER COST: "
 		"DOTA_Tooltip_ability_train_worker_7_food_cost"                                   "FOOD COST: "
 		"DOTA_Tooltip_ability_train_worker_7_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_8"                                             "Train Worker 8"
+		"DOTA_Tooltip_ability_train_worker_8_Description"                                 "Создайте рабочих. Рабочие отлично умеют ремонтировать здания! "
+		"DOTA_Tooltip_ability_train_worker_8_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_8_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_8_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_8_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_9"                                             "Train Worker 9"
+		"DOTA_Tooltip_ability_train_worker_9_Description"                                 "Создайте рабочих. Рабочие отлично умеют ремонтировать здания! "
+		"DOTA_Tooltip_ability_train_worker_9_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_9_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_9_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_9_unit_count"                                  "UNIT COUNT: "
+
 
 		"DOTA_Tooltip_ability_train_wisp_1"                                               "Train Son of Nature 1"
 		"DOTA_Tooltip_ability_train_wisp_1_Description"                                   "Создайте WISP. WISP добывает деревья(lumber) с деревьев!"
@@ -1113,7 +1196,9 @@
 		
 		"DOTA_Tooltip_ability_buy_item_troll_boots"                                         "Buy Troll Boots"
 		"DOTA_Tooltip_ability_buy_item_troll_boots_Description"                             ""
-		
+
+		"DOTA_Tooltip_Ability_bear_movespeed"                                         "Bear Movespeed"
+		"DOTA_Tooltip_Ability_bear_movespeed_Description"                             "+150 к скорости передвижения."
 		
 		"DOTA_Tooltip_ability_buy_item_disable_repair"                                                "Buy No Hammer Time! Level 1!"
 		"DOTA_Tooltip_ability_buy_item_disable_repair_Description"                                    "Не дает рабочим чинить стену! Действует 5 секунд. "
@@ -1549,7 +1634,14 @@
 
 		"DOTA_Tooltip_ability_item_troll_boots"                                           "Boots of Troll"
 		"DOTA_Tooltip_ability_item_troll_boots_Description"                               "Повышает скорость передвижения. "
-		
+
+		"DOTA_Tooltip_Ability_item_get_gem"											"Lucky Gem"
+		"DOTA_Tooltip_Ability_item_get_gem_Description"								"Дает 10 Lucky Gem.<br>Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохраняются в конце игры!<br>Можно активировать только от 12 человек."
+
+		"DOTA_Tooltip_Ability_item_get_gold"											"Мешок TvE Coint"
+		"DOTA_Tooltip_Ability_item_get_gold_Description"								"Дает 10 TvE Coint.<br>Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохраняются в конце игры!<br>Можно активировать только от 12 человек."
+
+
 		"DOTA_Tooltip_ability_item_vip"                                           	"Event Effect"
 		"DOTA_Tooltip_ability_item_vip_Description"                               	"Активируйте предмет и получите эффект сезона в следующей игре.<br>Можно активаровать только от 12 человек."
 		
@@ -1582,7 +1674,7 @@
 		"DOTA_Tooltip_ability_item_event_helheim_Description"                               "Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Выдается эффект Donater 10.<br>Можно активаровать только от 12 человек."
 
 		"DOTA_Tooltip_ability_item_event_birthday"                                           "C Днем Рождения!"
-		"DOTA_Tooltip_ability_item_event_birthday_Description"                               "Сообществу ТвЕ3 исполнился 1 год!<br>Спасибо за активную поддержку!<br>Я ценю Вашу помощь!<br>Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Выдается эффект Birthday.<br>Можно активаровать только от 12 человек."
+		"DOTA_Tooltip_ability_item_event_birthday_Description"                               "Сообществу ТвЕ3 исполнился 2 года!<br>Спасибо за активную поддержку!<br>Я ценю Вашу помощь!<br>Активируйте предмет, чтобы забрать предмет себе.<br>Неактивированные предметы не сохроняются в конце игры!<br>Выдается эффект Birthday.<br>Можно активаровать только от 12 человек."
 
 		"DOTA_Tooltip_ability_drop_gift"                                           "Chest of the Damned!"
 		"DOTA_Tooltip_ability_drop_gift_Description"                               "Спасибо за прохождение квеста!<br>Сундук Проклятых выдаст вам от 25 до 200 ивент предметов в случайное время."
@@ -1608,10 +1700,26 @@
 		"DOTA_Tooltip_ability_item_disable_repair_2_gold_cost"                                      "GOLD COST: "
 		"DOTA_Tooltip_ability_item_disable_repair_2_lumber_cost"                                    "LUMBER COST: "
 
+		"DOTA_Tooltip_Ability_smoke_screen_datadriven"												"Smoke"
+		"DOTA_Tooltip_Ability_smoke_screen_datadriven_Description"                               	"Дает замедление -35 на 10 секунд. Шанс промаха для Волков 99%."
+
+		"DOTA_Tooltip_Ability_vengefulspirit_wave_of_terror_datadriven_Description"                               	"-1000 брони на 7 секунд. 10000 чистого урона. "
+		"DOTA_Tooltip_Ability_ability_ensnare_Description"                               	"Кидает сетку на 1.5 секунды."
+
+		"DOTA_Tooltip_Ability_ability_crystal_nova_Description"                               	"Замделение атаки на -250. Замедление скорости бега на -75. 10000 чистого урона. "
+
+
         "topptext"                                      									"Лучшие игроки в общем рейтинге: "
         "topwtext"                                      									"Лучшие игроки за Эльфа: " 
         "tophtext"                                      									"Лучшие игроки за Тролля: "
 		"topetext"																			"Лучшие игроки: "
+		
+		"leaderboard_name"                                      									"Таблица лидеров"
+        "leaderboard_1"                                      									"Лучшие игроки (общий рейтинг)"
+        "leaderboard_2"                                      									"Лучшие Эльфы"
+		"leaderboard_3"                                      									"Лучшие Тролли"
+		"leaderboard_event"                                      									"Лидеры Ивента"
+		"leaderboard_button"                                      									"Лидеры"
 		
 		"summer"                                          										"Выдается за участие в Summer event."
 		"patron7"                                          										"Level 7 Donation. Доступно донатеру седьмого уровня и выше."
@@ -1637,6 +1745,7 @@
 		"patron9"                                          										"Level 9 Donation. Доступно донатеру девятого уровня и выше."
 		"patron10"                                          									"Level 10 Donation. Доступно донатеру десятого уровня и выше."
 		"patron11"                                          									"Level 11 Donation. Доступно донатеру десятого уровня и выше."
+		"patron12"                                          									"Level 12 Donation. Доступно донатеру десятого уровня и выше."
 		"coldfire"																				"Выдается вместе с эффектом 9 уровня или в особых событиях."
 		"winter2"																				"Выдается вместе с эффектом 9 уровня или в особых событиях."
 		"suprise"																				"Выдается вместе с эффектом 9 уровня или в особых событиях."
@@ -1646,6 +1755,112 @@
 		"summer2"																				"Выдается вместе с эффектом 10 уровня или в особых событиях."
 		"dirt"																				    "Выдается вместе с эффектом 10 уровня или в особых событиях."
 		"storm"																				 	"Выдается вместе с эффектом 10 уровня или в особых событиях."
+		"life"																				 	"Выдается вместе с эффектом 12 уровня или в особых событиях."
+		"toppatron"																				"Выдается за ТОП1-5 донатерам на Патреон."
+
+		"subscribe_1_description"					"Увеличивает шанс получения Тролля на 25%. Действует 1 месяц.<br>Повторная покупка шанса увеличивает срок действия шанса на 1 месяц."
+		"subscribe_2_description"					"Увеличивает шанс получения Тролля на 50%. Действует 1 месяц.<br>Повторная покупка шанса увеличивает срок действия шанса на 1 месяц."
+		"subscribe_3_description"					"Увеличивает шанс получения Тролля на 75%. Действует 1 месяц.<br>Повторная покупка шанса увеличивает срок действия шанса на 1 месяц."
+		"subscribe_4_description"					"Увеличивает бонус рейтинг всех игроков в игре на 10%."
+
+"particle_2_description" "Присуждается за участие в Summer event."
+"particle_3_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+//"particle_4_description" "Effect Tester"
+"particle_5_description" "Награждаются игроки за TOP 1-10 сезона"
+"particle_6_description" "Присуждается за участие в Spring event."
+//"particle_7_description" "Effect Dev"
+//"particle_8_description" "Effect модератора"
+"particle_9_description" "Присуждается за участие в Winter event."
+"particle_10_description" "Присуждается за участие в Autumn event."
+"particle_11_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_12_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_13_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_14_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_15_description" "Предмет, купленный за TvE Coint, действителен как минимум 1 год, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_16_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_17_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_18_description" "Предмет, купленный за TvE Coint, действителен как минимум 1 год, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_19_description" "Предмет, купленный за TvE Coint, действителен как минимум 1 год, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_20_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_21_description" "Награждаются игроки за  TOP 1 сезона"
+"particle_22_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_23_description" "Присуждается за участие в мероприятии по случаю Дня Рождения."
+"particle_24_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_25_description" "Награждаются игроки за  TOP 2-3 сезона."
+"particle_26_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_27_description" "Предмет, купленный за TvE Coint, действителен как минимум 1 год, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_28_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_29_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_30_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_31_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_32_description" "Предмет, купленный за TvE Coint, действителен как минимум 1 год, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_33_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_34_description" "Предмет, купленный за TvE Coint, действителен как минимум 1 год, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_35_description" "Предмет, купленный за TvE Coint, действителен как минимум 1 год, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_36_description" "Награждаются игроки за  TOP 2-3 сезона"
+"particle_37_description" "Награждаются игроки за  TOP 1 сезона"
+"particle_38_description" "Награждаются игроки за  TOP 1 сезона"
+"particle_39_description" "Награждаются игроки за  TOP 2 сезона"
+"particle_40_description" "Награждаются игроки за  TOP 3 сезона"
+"particle_41_description" "Награждаются игроки за  TOP 1 сезона"
+"particle_42_description" "Награждаются игроки за  TOP 2 сезона"
+"particle_43_description" "Награждаются игроки за  TOP 3 сезона"
+"particle_44_description" "Предмет, купленный за TvE Coint, действителен как минимум 1 год, купленный за Gem Lucky действителен в течение 1 месяца."
+"particle_45_description" "TOP 1-5 на Patreon."	
+
+
+	"pet_1_description" "Награждаются игроки за ТОП-1 сезона"
+"pet_2_description" "Награждаются игроки за ТОП-1 сезона"
+"pet_3_description" "Награждаются игроки за ТОП-1 сезона"
+"pet_4_description" "Награждаются игроки за ТОП-1 сезона"
+"pet_5_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_6_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_7_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_8_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_9_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_10_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_11_description" "Присуждается за участие в событии в пустыне."
+"pet_12_description" "Присуждается за участие в Зимнем событии. "
+"pet_13_description" "Присуждается за участие в весеннем событии. "
+"pet_14_description" "Присуждается за участие в весеннем событии. "
+"pet_15_description" "Будет выпущен для поддержки сообщества TvE3 в социальных сетях"
+"pet_16_description" "Выдается нашим любимым, красивым и вечно прекрасным девушкам в Discord :DDD"
+
+"pet_17_description" "Присуждается за участие в событии Helheim. "
+
+"pet_18_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_19_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_20_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_21_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_22_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_23_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_24_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_25_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_26_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_27_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_28_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_29_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_30_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_31_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_32_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_33_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+
+"pet_34_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_35_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_36_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_37_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_38_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_39_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_40_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_41_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_42_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_43_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_44_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+"pet_45_description" "Предмет, купленный за TvE Coint, действителен не менее 1 года, купленный за Gem Lucky действителен в течение 1 месяца."
+
+
+
+		"block"																				 	"Эффект заблокирован до релиза события."
 		
 		"partnote"                                          									"Описание Эффекта"
 		"partname"                                          									"Название Эффекта"
@@ -1665,6 +1880,10 @@
 		"ppatron6"																				"Доступно донатеру шестого уровня и выше. Питомцы не входят в донат эффектов."
 		"peventdesert"																			"Выдается за участие в Desert event."
 		"peventwinter"																			"Выдается за участие в Winter event."
+		"peventspring"																			"Выдается за участие в Spring event."
+		"peventsummer"																			"Выдается за участие в Summer event."
+		"discordnitro"																			"Будет выдаваться за поддержку сообщества TvE3 в социальных сетях."
+		"grils"																					"Выдается нашим любимым, красивым и вечно прекрасным девушкам в Discord)))"
 		
 		"seveasdefault"																			"Сохранить по умолчанию"
 		
@@ -1672,7 +1891,7 @@
 		"patreonbuttontext1"																"Donate PayPal Page"
 		"patreonbuttontext2"																"Donate Yandex Page"
 		"patreontext"	"Если вы хотите поддержать проект и помочь в развитии,
-то вы можете сделать пожертвования с помощью сайта https://patreon.com/troll_vs_elves3 или https://paypal.me/vladu4eg или https://donate.stream/en/vladu4eg
+то вы можете сделать пожертвования с помощью сайта https://patreon.com/troll_vs_elves3 или https://paypal.me/elves3 или https://donate.stream/en/vladu4eg
 Полученные деньги будут потрачены на обслуживание серверов и улучшение качества контента.
 Обязательно укажите ссылку на профиль в Steam, ник в Discord/Steam.
 Пожалуйста, предоставьте как можно больше информации о себе, чтобы я мог поблагодарить вас за поддержку.
@@ -1690,6 +1909,7 @@
 		"error_castable_only_on_troll_hut"													"Можно использовать только на Troll Hut!"
 		"error_not_enough_food"																"Закончилась еда! "
 		"error_not_enough_wisp"																"Превышен лимит Wisp 1-6 или Gold Wisp! "
+		"error_not_enough_mine"																"Превышен лимит Gold"
 		"error_full_inventory"																"Полный инвентарь! "
 		"error_shop_out_of_range"															"Вы не в радиусе магазина! "
 		"error_not_enough_resources"														"Вам не хватает ресурсов! "
@@ -1702,9 +1922,11 @@
 		"error_not_night"																	"Работает только ночью! "
 		"error_item_not_sellable"															"Товар не продается!"
 		"error_not_time"																	"Украсть золото можно через 5 минут! "
-		"error_place_is_taken"																"Место занято другим Эльфом! "
+		"error_place_is_taken"																"Место занято другим Эльфом или тут нельзя ставить Флаг!"
+		"error_cant_build_flag"																"Тут нельзя ставить Флаг!"
 		"error_place_is_flag"																"Тут нельзя ставить флаг!"
 		"team_choice_header"                                                                "Ты хочешь быть Троллем?"
+		"error_need_put_flag"																"Нужно построить Флаг!"
 		"team_choice_yes"                                                                   "Да"
 		"team_choice_no"                                                                    "Нет"
 		"error_not_spam_votekick"															"Голосование можно проводить один раз в 1 минуту!"
@@ -1717,7 +1939,9 @@
 		"error_no_bear_team"																"Нужно создать Медведя."
 		"error_buy_skill_only_troll"														"Купить Скилл может только Тролль."						
 		"error_bear_have_skill"																"У Медведя есть данный Скилл. "
-
+		"error_limit_queue"																	"Превышен лимит очереди построек. Максимум 20 построек. "
+		"error_limit_queue_wisp"															"Превышен лимит очереди построек."
+		"error_take_normal_builder"															"У юнита нет этой способности!<br>Выберите нужного юнита!"
 
 		"trigs1"																			"Золота много не бывает!"
 		"trigs2"																			"Ожидание окупает затраты!"
@@ -1738,10 +1962,13 @@
 		"donate1"																			"<font color='#58ACFA'>Вы можете поддержать игру на Patreon.</font>"
 		"donate2"																			"<font color='#58ACFA'>Вы можете повысить шанс на получения Тролля, увеличить количество получаемых очков или получить один из уникальных косметических эффектов, поддержав наш проект на Patreon.</font>"
 		"donate3"																			"<font color='#58ACFA'>Patreon: https://patreon.com/troll_vs_elves3</font>"
-		"donate4"																			"<font color='#58ACFA'>Discord: https://discord.gg/zwYYbex</font>"
+		"donate4"																			"<font color='#58ACFA'>Discord: https://discord.gg/tve3</font>"
 		"donate5"																			"<font color='#58ACFA'>Вы можете поделиться идеями/багами/пожеланиями на нашем сервере Discord!</font>"
 		"donate6"																			"<font color='#58ACFA'>Спасибо всем  тестирам  за  такой значительный  вклад  в развитие кастомки! Спасибо:*</font>"
-		"donate7"																			"<font color='#58ACFA'>Открыта регистрация на Турнир #1 в Discord: https://discord.gg/zwYYbex</font>"
+		"donate7"																			"<font color='#58ACFA'>Открыта регистрация на Турнир #1 в Discord: https://discord.gg/tve3</font>"
+		"donate8"																			"<font color='#58ACFA'>За нарушение правил игры предусмотрено наказание! Информация в Discord: https://discord.gg/tve3</font>"
+		"donate9"																			"<font color='#58ACFA'>СТАВЬТЕ ФЛАГ ВОЗЛЕ СВОЕГО КАМНЯ!</font>"
+		"donate10"																			"<font color='#58ACFA'>Если вам нужна помощь - пишите в Discord: https://discord.gg/tve3</font>"
 		
 		"loading_text"																		"&lt;=Щелкните здесь, чтобы получить советы!<br>
 		                                                                                    Не меняйте горячие клавиши после запуска игры.

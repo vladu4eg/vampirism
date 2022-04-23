@@ -1,0 +1,2007 @@
+﻿"lang"
+{
+	"Language"		"ukrainian"
+	"Tokens"
+	{
+		"addon_game_name"			"Troll vs Elves 3"
+		
+		// ******************** HEROES ********************
+		"npc_dota_hero_treant"                                                  "Elf"
+		"npc_dota_hero_troll_warlord"                                                     "Troll"
+		"npc_dota_hero_lycan"                                                             "Wolf"
+		"npc_dota_hero_crystal_maiden"                                                    "Angel"
+		"npc_dota_hero_dark_willow"                                                       "Forest Fairy"
+		"npc_dota_hero_bear"                                                    		  "Baby Bear"
+		"npc_dota_hero_night_stalker"                                                     "Night Hunter"
+
+		// ******************** UNITS ********************
+		"tent"                                                                            "Tent"
+		"tent_2"                                                                          "Tent 2"
+		"tent_3"                                                                          "Tent 3"
+		"tent_4"                                                                          "Tent 4"
+		"tent_5"                                                                          "Tent 5"
+		"tent_6"                                                                          "Tent 6"
+		"tent_7"                                                                          "Tent 7"
+		"barracks_1"                                                                      "Barracks 1"
+		"barracks_2"                                                                      "Barracks 2"
+		"barracks_3"                                                                      "Barracks 3"
+		"rock_1"                                                                          "Rock 1"
+		"rock_2"                                                                          "Rock 2"
+		"rock_3"                                                                          "Rock 3"
+		"rock_4"                                                                          "Rock 4"
+		"rock_5"                                                                          "Rock 5"
+		"rock_6"                                                                    "Ultra Wall 1"
+		"rock_7"                                                                    "Ultra Wall 2"
+		"rock_8"                                                                    "Ultra Wall 3"
+		"rock_9"                                                                    "Ultra Wall 4"
+		"rock_10"                                                                    "Ultra Wall 5"
+		"rock_11"                                                                  "Demonic Wall 1"
+		"rock_12"                                                                  "Demonic Wall 2"
+		"rock_13"                                                                  "Demonic Wall 3"
+		"rock_14"                                                                  "Demonic Wall 4"
+		"rock_15"                                                                  "Demonic Wall 5"
+		"rock_16"                                                                   "Dragon Wall 1"
+		"rock_17"                                                                   "Dragon Wall 2"
+		"rock_18"                                                              "Golden Dragon Wall"
+		"rock_19"                                                              	"Water Dragon Wall"
+		"rock_20"                                                              	"Fire Dragon Wall"
+		"rock_21"                                                              	"Crystal Golem Wall"
+		"rock_22"                                                              	"Dark Golem Wall"
+		"tower_1"                                                                         "Tower 1"
+		"tower_2"                                                                         "Tower 2"
+		"tower_3"                                                                         "Tower 3"
+		"tower_4"                                                                         "Tower 4"
+		"tower_5"                                                                         "Tower 5"
+		"tower_6"                                                                         "Tower 6"
+		"tower_7"                                                                         "Tower 7"
+		"tower_8"                                                                         "Tower 8"
+		"tower_9"                                                                         "Tower 9"
+		"tower_10"                                                                        "Tower 10 lvl 1"
+		"tower_10_1"                                                                        "Tower 10 lvl 2"
+		"tower_11"                                                                        "Tower 11 lvl 1"
+		"tower_11_1"                                                                        "Tower 11 lvl 2"
+		"tower_12"                                                                        "Tower 12 lvl 1"
+		"tower_12_1"                                                                        "Tower 12 lvl 2"
+		"tower_13"                                                                        "Tower 13"
+		"tower_14"                                                                        "Tower 14"
+		"tower_15"                                                                        "Tower 15 lvl 1"
+		"tower_15_1"                                                                      "Tower 15 lvl 2"
+		"tower_16"                                                                        "Tower 16"
+		"tower_17"                                                                        "Tower 17"
+		"tower_18"                                                                        "Tower 18"
+		"tower_19"                                                                        "Tower 19 lvl 1(3 min!) NO DAMAGE!!!"
+		"tower_19_1"                                                                      "Tower 19 lvl 2(3 min!) NO DAMAGE!!!"
+		"tower_19_2"                                                                      "Tower 19 lvl 3(3 min!) NO DAMAGE!!!"
+		"tower_20"                                                                        "End Game"
+		"tower_21"                                                                        "Tower 21"
+		"true_sight_tower"                                                                "True Sight Tower"
+		"trader_1"                                                                        "Trader 1"
+		"trader_2"                                                                        "Trader 2"
+		"trader_3"                                                                        "Trader 3"
+		"workers_guild"                                                                   "Workers Guild"
+		"mother_of_nature"                                                                "Mother Of Nature"
+		"research_lab"                                                                    "Research Lab 1"
+		"research_lab_2"                                                                  "Research Lab 2"
+		"research_lab_3"                                                                  "Research Lab 3"
+		
+		"research_lab_4_1"                                                                "Research Lab 4 LVL 1"
+		"research_lab_4_2"                                                                "Research Lab 4 LVL 2"
+		"research_lab_4_3"                                                                "Research Lab 4 LVL 3"
+		"research_lab_4_4"                                                                "Research Lab 4 LVL 4"
+		"research_lab_4_5"                                                                "Research Lab 4 LVL 5"
+		
+		"research_lab_5_1"                                                                "Research Lab 5 LVL 1"
+		"research_lab_5_2"                                                                "Research Lab 5 LVL 2"
+		"research_lab_5_3"                                                                "Research Lab 5 LVL 3"
+		"research_lab_5_4"                                                                "Research Lab 5 LVL 4"
+		"research_lab_5_5"                                                                "Research Lab 5 LVL 5"
+		
+		"research_lab_6_1"                                                                "Research Lab 6 LVL 1"
+		"research_lab_6_2"                                                                "Research Lab 6 LVL 2"
+		"research_lab_6_3"                                                                "Research Lab 6 LVL 3"
+		"research_lab_6_4"                                                                "Research Lab 6 LVL 4"
+		"research_lab_6_5"                                                                "Research Lab 6 LVL 5"
+		
+		"research_lab_7_1"                                                                "Research Lab 7"
+		"worker_1"                                                                        "Worker 1"
+		"worker_2"                                                                        "Worker 2"
+		"worker_3"                                                                        "Worker 3"
+		"worker_4"                                                                        "Worker 4"
+		"worker_5"                                                                        "Worker 5"
+		"worker_6"                                                                        "Worker 6"
+		"worker_7"                                                                        "Worker 7"
+		"wisp_1"                                                                          "Wisp 1"
+		"wisp_2"                                                                          "Wisp 2"
+		"wisp_3"                                                                          "Wisp 3"
+		"wisp_4"                                                                          "Wisp 4"
+		"wisp_5"                                                                          "Wisp 5"
+		"wisp_6"                                                                          "Wisp 6"
+		"wisp_7"                                                                          "Wisp 7"
+		"wisp_8"                                                                          "Wisp 8"
+		"gold_wisp"                                                                       "Gold Wisp"
+		"gold_mine_1"                                                                     "Gold Mine 1"
+		"gold_mine_2"                                                                     "Gold Mine 2"
+		"gold_mine_3"                                                                     "Gold Mine 3"
+		"gold_mine_4"                                                                     "Gold Mine 4"
+		"gold_mine_5"                                                                     "Gold Mine 5"
+		"gold_mine_6"                                                                     "Gold Mine 6"
+		"gold_mine_7"                                                                     "Gold Mine 7"
+		"gold_mine_8"                                                                     "Gold Mine 8"
+		"weapon_shop"                                                                     "Weapon Shop"
+		"armor_shop"                                                                      "Armor Shop"
+		"hp_shop"                                                                         "HP Shop"
+		"hp_reg_shop"                                                                     "HP Reg Shop"
+		"atk_spd_shop"                                                                    "Atk Spd Shop"
+		"troll_hut_1"                                                                     "Troll Hut 1"
+		"troll_hut_2"                                                                     "Troll Hut 2"
+		"troll_hut_3"                                                                     "Troll Hut 3"
+		"troll_hut_4"                                                                     "Troll Hut 4"
+		"troll_hut_5"                                                                     "Troll Hut 5"
+		"troll_hut_6"                                                                     "Troll Hut 6"
+		"troll_hut_7"                                                                     "Troll Hut 7"
+		
+		"event_boss"																		"Guardian of Crystals"
+		"event_line_boss"																	"Chest of the Damned"
+
+		"buy_currency"						"Покупка TvE Coint."
+		"buy_currency_description"			"100 руб = 170 монет. Є можливість донату через Сбер, Ківі або Яндекс (Писати в Дискорді). Є знижки на велику кількість монет (Писати у Дискорді). При першій покупці від 50 монет видається 100 монет безкоштовно (Писати в Discord)."
+
+
+		"shop_button"	"Магазин"
+
+		"shop_main"		"Головна"
+		"shop_items"		"Товари"
+		"shop_pets"		"Тварини"
+		"shop_particles"		"Ефекти"
+
+		"shop_gem"		"Предмети за Gem"
+	
+		"shop_recomended"		"Предмети зі знижкою"
+	
+		"shop_all"		"Все"
+		"shop_subscribe"		"Передплата"
+		"shop_currency"		"Валюта"
+
+		"ads_name_1"		"Купити Battle Pass"
+		"ads_name_2"		"Купити Сундук"
+
+		"shop_bought"		"Куплений"
+		"shop_gold"			"У скрині"
+		"shop_event"		"Івент"
+		"shop_buy"			"Купити"
+		"shop_activate"		"Увімкнути"
+		"shop_deactivate"	"Вимкнути"
+
+		"shop_trollchance"	"Шанс стати тролем: "
+		"shop_bonusrate"	"Бонус рейтингу: "
+		"shop_trollchance_date"			"Діє до: "
+		"shop_bonusrate_date"			"Діє до: "
+		"shop_no_money"						"Недостатньо коштів на рахунку!"
+		"shop_nice_buy"						"Надіслано запит на покупку. ЯКЩО ДОНАТ НЕ БУВ ВИДАНИЙ В НАСТУПНІЙ ГРІ, ТО ЗВЕРНІТЬСЯ ДО РОЗРОБНИКА! Дякую за підтримку!"
+		"shop_error_label"					"Недостатньо коштів на рахунку!"
+
+		"BattlePass_button" "Перепустка"
+		"BattlePass_Name" 	"Battle Pass"
+		"battleshop_gives" "Отримати"
+		"battleshop_locked" "Закрито"
+		"battlepass_inbp" "У перепустці"
+		"battlepass_level" "Рівень"
+		"battlepass_free" "БЕЗКОШТОВНО"
+		"battlepass_gives"	"ОТРИМАНО"
+
+		"shop_inventory"	"Інвентар"
+		"shop_chests"		"Скрині"
+
+		"shop_chest_count" "Кількість"
+		"shop_open"			"Відчинити"
+		"shop_currency_gold"	"TvE Coint"
+		"shop_currency_gem"		"TvE Coint"
+		"shop_accept"			"Прийняти"
+
+		"shop_chance"	"Шанс випадання: "
+		"shop_currency_count"	"Кількість TvE Coint"
+		"shop_currency_count_from"	"від"
+		"shop_currency_count_to"	"до"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_gain_gold"                                                 "Gain Gold"
+		"DOTA_Tooltip_modifier_gain_gold_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_gain_gold_team"                                            "Gain Gold Team"
+		"DOTA_Tooltip_modifier_gain_gold_team_Description"                                ""
+
+		"DOTA_Tooltip_modifier_truesight_datadriven"                                      "Truesight Datadriven"
+		"DOTA_Tooltip_modifier_truesight_datadriven_Description"                          ""
+
+		"DOTA_Tooltip_modifier_truesight_reveal"                                          "Truesight Reveal"
+		"DOTA_Tooltip_modifier_truesight_reveal_Description"                              ""
+
+		"DOTA_Tooltip_modifier_teleportation"                                             "Teleportation"
+		"DOTA_Tooltip_modifier_teleportation_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_builder_repairing"                                         "Builder Repairing"
+		"DOTA_Tooltip_modifier_builder_repairing_Description"                             ""
+
+		"DOTA_Tooltip_modifier_repairing_building"                                        "Repairing Building"
+		"DOTA_Tooltip_modifier_repairing_building_Description"                            ""
+
+		"DOTA_Tooltip_modifier_gathering_lumber"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_Description"                              ""
+		
+		"DOTA_Tooltip_modifier_gathering_lumber_1"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_1_Description"                              ""
+		"DOTA_Tooltip_modifier_gathering_lumber_6"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_6_Description"                              ""
+		"DOTA_Tooltip_modifier_gathering_lumber_256"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_256_Description"                              ""
+		"DOTA_Tooltip_modifier_gathering_lumber_1296"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_1296_Description"                              ""
+		"DOTA_Tooltip_modifier_gathering_lumber"                                          "Gathering Lumber"
+		"DOTA_Tooltip_modifier_gathering_lumber_Description"                              ""
+		
+		"DOTA_Tooltip_ability_gathering_lumber_1"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_1_Description"                              ""
+		"DOTA_Tooltip_ability_gathering_lumber_6"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_6_Description"                              ""
+		"DOTA_Tooltip_ability_gathering_lumber_36"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_36_Description"                              ""
+		"DOTA_Tooltip_ability_gathering_lumber_216"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_216_Description"                              ""
+		"DOTA_Tooltip_ability_gathering_lumber_1296"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_1296_Description"                              ""
+		"DOTA_Tooltip_ability_gathering_lumber"                                          "Gathering Lumber"
+		"DOTA_Tooltip_ability_gathering_lumber_Description"                              ""
+		"DOTA_Tooltip_modifier_gold_mine"                                                 "Gold Mine"
+		"DOTA_Tooltip_modifier_gold_mine_Description"                                     ""
+
+		"DOTA_Tooltip_fountain_regen"                                                     "Fountain Regen"
+		"DOTA_Tooltip_fountain_regen_Description"                                         ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+		"DOTA_Tooltip_modifier_darkness_aura_datadriven"                                  "Darkness Aura Datadriven"
+		"DOTA_Tooltip_modifier_darkness_aura_datadriven_Description"                      ""
+
+		"DOTA_Tooltip_modifier_darkness_datadriven"                                       "Darkness Datadriven"
+		"DOTA_Tooltip_modifier_darkness_datadriven_Description"                           ""
+
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_ability_building"                                           "Ability Building"
+		"DOTA_Tooltip_ability_ability_building_Description"                               ""
+
+		"DOTA_Tooltip_ability_max_building_level"                                         "Max building level"
+		"DOTA_Tooltip_ability_max_building_level_Description"                             "This ability does nothing, it's just here, so the hotkeys don't get messed up."
+
+		"DOTA_Tooltip_ability_ability_tower"                                              "Ability Tower"
+		"DOTA_Tooltip_ability_ability_tower_Description"                                  ""
+
+		"DOTA_Tooltip_ability_dummy_tree"                                                 "Dummy Tree"
+		"DOTA_Tooltip_ability_dummy_tree_Description"                                     ""
+		
+		"DOTA_Tooltip_ability_build_flag"                                                 "Build Flag" 
+		"DOTA_Tooltip_ability_build_flag_Description"                                     "ДЕБАФФ ТРОЛЛЯ В РАДІУСІ 600!<br>Дозволяє заблокувати базу від інших Ельфів.<br>Можна заблокувати тільки 1 базу.<br>Ви можете дозволити будівництво на вашій базі іншим Ельфам, АЛЕ вони втратять блокування на своїй базі."
+		
+		"DOTA_Tooltip_ability_build_tent"                                                 "Build Tent"
+		"DOTA_Tooltip_ability_build_tent_Description"                                     "Побудуйте Tent, щоб отримувати золото кожну секунду. Можна побудувати лише один Tent. "
+		"DOTA_Tooltip_ability_build_tent_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_build_tent_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_2"                                          "Upgrade To Tent 2"
+		"DOTA_Tooltip_ability_upgrade_to_tent_2_Description"                              "Поліпшити свій tent! X1:2 or X2:4 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_3"                                          "Upgrade To Tent 3"
+		"DOTA_Tooltip_ability_upgrade_to_tent_3_Description"                              "Поліпшити свій Tent! X1:4 or X2:8 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_4"                                          "Upgrade To Tent 4"
+		"DOTA_Tooltip_ability_upgrade_to_tent_4_Description"                              "Поліпшити свій Tent! X1:8 or X2:16 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_5"                                          "Upgrade To Tent 5"
+		"DOTA_Tooltip_ability_upgrade_to_tent_5_Description"                              "Поліпшити свій Tent! X1:16 or X2:32 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_6"                                          "Upgrade To Tent 6"
+		"DOTA_Tooltip_ability_upgrade_to_tent_6_Description"                              "Поліпшити свій Tent! X1:32 or X2:64 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_tent_7"                                          "Upgrade To Tent 7"
+		"DOTA_Tooltip_ability_upgrade_to_tent_7_Description"                              "Поліпшити свій Tent! X1:64 or X2:128 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_barracks_1"                                      "Upgrade To Barracks 1"
+		"DOTA_Tooltip_ability_upgrade_to_barracks_1_Description"                          "Поліпшити свій Barracks! X1:128 or X2:256 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_barracks_2"                                      "Upgrade To Barracks 2"
+		"DOTA_Tooltip_ability_upgrade_to_barracks_2_Description"                          "Поліпшити свій Barracks! X1:256 or X2:512 gold per/sec"
+
+		"DOTA_Tooltip_ability_upgrade_to_barracks_3"                                      "Upgrade To Barracks 3"
+		"DOTA_Tooltip_ability_upgrade_to_barracks_3_Description"                          "Поліпшити свій Barracks! X1:512 or X2:1024 gold per/sec"
+
+		"DOTA_Tooltip_ability_gain_gold"                                                  "Gain Gold"
+		"DOTA_Tooltip_ability_gain_gold_Description"                                      "Кожну секунду дає певну кількість золота"
+
+		"DOTA_Tooltip_ability_build_rock_1"                                                 "Build Rock"
+		"DOTA_Tooltip_ability_build_rock_1_Description"                                     "Побудуйте камінь на середині проходу, щоб заблокувати дорогу Тролю на базу. Потрібно ставити на сходах!"
+		"DOTA_Tooltip_ability_build_rock_1_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_build_rock_1_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_2"                                          "Upgrade To Rock 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_2_Description"                              "Поліпшити свій Rock!<br>HP:70<br>ARMOR:0"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_3"                                          "Upgrade To Rock 3"
+		"DOTA_Tooltip_ability_upgrade_to_rock_3_Description"                              "Поліпшити свій Rock!<br>HP:110<br>ARMOR:0"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_4"                                          "Upgrade To Rock 4"
+		"DOTA_Tooltip_ability_upgrade_to_rock_4_Description"                              "Поліпшити свій Rock!<br>HP:170<br>ARMOR:0"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_5"                                          "Upgrade To Rock 5"
+		"DOTA_Tooltip_ability_upgrade_to_rock_5_Description"                              "Поліпшити свій Rock!<br>HP:210<br>ARMOR:0"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_6"                                    "Upgrade To Ultra Wall 1"
+		"DOTA_Tooltip_ability_upgrade_to_rock_6_Description"                        "Поліпшити свій Ultra Wall!<br>HP:320<br>ARMOR:1"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_7"                                    "Upgrade To Ultra Wall 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_7_Description"                        "Поліпшити свій Ultra Wall!<br>HP:640<br>ARMOR:1"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_8"                                    "Upgrade To Ultra Wall 3"
+		"DOTA_Tooltip_ability_upgrade_to_rock_8_Description"                        "Поліпшити свій Ultra Wall!<br>HP:1280<br>ARMOR:3"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_9"                                    "Upgrade To Ultra Wall 4"
+		"DOTA_Tooltip_ability_upgrade_to_rock_9_Description"                        "Поліпшити свій Ultra Wall!<br>HP:2560<br>ARMOR:4"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_10"                                    "Upgrade To Ultra Wall 5"
+		"DOTA_Tooltip_ability_upgrade_to_rock_10_Description"                        "Поліпшити свій Ultra Wall!<br>HP:5120<br>ARMOR:5"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_11"                                  "Upgrade To Demonic Wall 1"
+		"DOTA_Tooltip_ability_upgrade_to_rock_11_Description"                      "Поліпшити свій Ultra Wall!<br>HP:10240<br>ARMOR:6"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_12"                                  "Upgrade To Demonic Wall 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_12_Description"                      "Поліпшити свій Demonic Wall!<br>HP:20480<br>ARMOR:7"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_13"                                  "Upgrade To Demonic Wall 3"
+		"DOTA_Tooltip_ability_upgrade_to_rock_13_Description"                      "Поліпшити свій Demonic Wall!<br>HP:40960<br>ARMOR:8"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_14"                                  "Upgrade To Demonic Wall 4"
+		"DOTA_Tooltip_ability_upgrade_to_rock_14_Description"                      "Поліпшити свій Demonic Wall!<br>HP:81920<br>ARMOR:10"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_15"                                  "Upgrade To Demonic Wall 5"
+		"DOTA_Tooltip_ability_upgrade_to_rock_15_Description"                      "Поліпшити свій Demonic Wall!<br>HP:163840<br>ARMOR:12"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_16"                                   "Dragon Wall 1"
+		"DOTA_Tooltip_ability_upgrade_to_rock_16_Description"                       "Поліпшити свій Demonic Wall!<br>HP:327680<br>ARMOR:14"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_17"                                   "Dragon Wall 2"
+		"DOTA_Tooltip_ability_upgrade_to_rock_17_Description"                       "Поліпшити свій Dragon Wall!<br>HP:655360<br>ARMOR:38"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_18"                              "Golden Dragon Wall"
+		"DOTA_Tooltip_ability_upgrade_to_rock_18_Description"                  "Поліпшити свій Dragon Wall!<br>HP:999999<br>ARMOR:128"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_19"                              "Water Dragon Wall"
+		"DOTA_Tooltip_ability_upgrade_to_rock_19_Description"                  "Поліпшити свій Dragon wall!<br>HP:999999<br>ARMOR:192"
+
+		"DOTA_Tooltip_ability_upgrade_to_rock_20"                              "Fire Dragon Wall"
+		"DOTA_Tooltip_ability_upgrade_to_rock_20_Description"                  "Поліпшити свій Dragon wall!<br>HP:999999<br>ARMOR:256"
+
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear"								"Buy Reveal Area for Bear"
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear_Description"					""
+		
+		"DOTA_Tooltip_Ability_buy_troll_teleport_bear"								"Buy Teleport for Bear"
+		"DOTA_Tooltip_Ability_buy_troll_teleport_bear_Description"					""
+		
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear"								"Buy Reveal Area for Bear"
+		"DOTA_Tooltip_Ability_buy_reveal_area_bear_Description"					""
+		
+		"DOTA_Tooltip_Ability_buy_skill_wisp_on_attack"								"Buy Clave for Gold Wisp"
+		"DOTA_Tooltip_Ability_buy_skill_wisp_on_attack_Description"					"Вбиває всіх Gold Wisp у радіусі 64."
+
+		"DOTA_Tooltip_Ability_attack_gold_wisp"								"Clave for Gold Wisp"
+		"DOTA_Tooltip_Ability_attack_gold_wisp_Description"					"Вбиває всіх Gold Wisp у радіусі 64."
+		
+		"DOTA_Tooltip_ability_build_tower_1"                                              "Build Tower 1"
+		"DOTA_Tooltip_ability_build_tower_1_Description"                                  "Побудуйте вежу, щоб захиститись від могутнього Троля!<br>Пошкодження: 1"
+		"DOTA_Tooltip_ability_build_tower_1_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_build_tower_1_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_2"                                         "Upgrade To Tower 2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_2_Description"                             "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 2"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_3"                                         "Upgrade To Tower 3"
+		"DOTA_Tooltip_ability_upgrade_to_tower_3_Description"                             "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 4"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_4"                                         "Upgrade To Tower 4"
+		"DOTA_Tooltip_ability_upgrade_to_tower_4_Description"                             "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 8"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_5"                                         "Upgrade To Tower 5"
+		"DOTA_Tooltip_ability_upgrade_to_tower_5_Description"                             "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 16"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_6"                                         "Upgrade To Tower 6"
+		"DOTA_Tooltip_ability_upgrade_to_tower_6_Description"                             "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 32"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_7"                                         "Upgrade To Tower 7"
+		"DOTA_Tooltip_ability_upgrade_to_tower_7_Description"                             "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 64"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_8"                                         "Upgrade To Tower 8"
+		"DOTA_Tooltip_ability_upgrade_to_tower_8_Description"                             "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 128"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_9"                                         "Upgrade To Tower 9"
+		"DOTA_Tooltip_ability_upgrade_to_tower_9_Description"                             "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 1024-2048"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_10"                                        "Upgrade To Tower 10 lvl 1"
+		"DOTA_Tooltip_ability_upgrade_to_tower_10_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 2048-4096"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_10_1"                                        "Upgrade To Tower 10 lvl 2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_10_1_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 512-10240"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_11"                                        "Upgrade To Tower 11 lvl 1"
+		"DOTA_Tooltip_ability_upgrade_to_tower_11_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 40960"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_11_1"                                        "Upgrade To Tower 11 lvl 2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_11_1_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 256000"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_12"                                        "Upgrade To Tower 12 lvl 1"
+		"DOTA_Tooltip_ability_upgrade_to_tower_12_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 81920"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_12_1"                                        "Upgrade To Tower 12 lvl 2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_12_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 256000"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_13"                                        "Upgrade To Tower 13"
+		"DOTA_Tooltip_ability_upgrade_to_tower_13_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 500100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_14"                                        "Upgrade To Tower 14"
+		"DOTA_Tooltip_ability_upgrade_to_tower_14_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 600100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_15"                                        "Upgrade To Tower 15 lvl  1"
+		"DOTA_Tooltip_ability_upgrade_to_tower_15_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 700100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_15_1"                                      "Upgrade To Tower 15 lvl  2"
+		"DOTA_Tooltip_ability_upgrade_to_tower_15_1_Description"                          "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 700100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_16"                                        "Upgrade To Tower 16"
+		"DOTA_Tooltip_ability_upgrade_to_tower_16_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 800100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_17"                                        "Upgrade To Tower 17"
+		"DOTA_Tooltip_ability_upgrade_to_tower_17_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 900100"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_18"                                        "Upgrade To Tower 18"
+		"DOTA_Tooltip_ability_upgrade_to_tower_18_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 999999"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_19"                                        "Upgrade To Tower 19 lvl 1 (3 minutes to build). The troll will receive a strong buff! NO DAMAGE!!!"
+		"DOTA_Tooltip_ability_upgrade_to_tower_19_Description"                            "Поліпшіть свою вежу, щоб розлютити Троля і надати йому сил!<br>Не завдає пошкодження!!!<br>Троль отримає сильний бафф!"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_19_1"                                      "Upgrade To Tower 19 lvl 2 (3 minutes to build). The troll will receive a strong buff! NO DAMAGE!!!"
+		"DOTA_Tooltip_ability_upgrade_to_tower_19_1_Description"                          "Поліпшіть свою вежу, щоб розлютити Троля і надати йому сил!<br>Не завдає пошкодження!!!<br>Троль отримає сильний бафф!"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_19_2"                                      "Upgrade To Tower 19 lvl 3 (3 minutes to build). The troll will receive a strong buff! NO DAMAGE!!!"
+		"DOTA_Tooltip_ability_upgrade_to_tower_19_2_Description"                          "Поліпшіть свою вежу, щоб розлютити Троля і надати йому сил!<br>Не завдає пошкодження!!!<br>Троль отримає сильний бафф!"
+		
+		"DOTA_Tooltip_ability_upgrade_to_tower_20"                                        "Upgrade To End Game Tower "
+		"DOTA_Tooltip_ability_upgrade_to_tower_20_Description"                            "GG! Закінчити гру!"
+
+		"DOTA_Tooltip_ability_upgrade_to_tower_21"                                        "Upgrade To Tower 21"
+		"DOTA_Tooltip_ability_upgrade_to_tower_21_Description"                            "Поліпшіть свою вежу, щоб захистити себе від Троля!<br>Пошкодження: 999999<br>Вміння: Fury Swipes"
+
+		"DOTA_Tooltip_ability_upgrade_to_true_sight_tower"                                "Upgrade To True Sight Tower"
+		"DOTA_Tooltip_ability_upgrade_to_true_sight_tower_Description"                    "Поліпшіть вежу, щоб відкрити навколо себе невидимих ​​юнітів. "
+
+		"DOTA_Tooltip_ability_build_trader_1"                                             "Build Trader 1"
+		"DOTA_Tooltip_ability_build_trader_1_Description"                                 "Створіть Trader, щоб обмінювати дерево(lumber) на золото(gold)! "
+		"DOTA_Tooltip_ability_build_trader_1_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_build_trader_1_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_upgrade_to_trader_2"                                        "Upgrade To Trader 2"
+		"DOTA_Tooltip_ability_upgrade_to_trader_2_Description"                            "Поліпшіть свого Trader! "
+
+		"DOTA_Tooltip_ability_upgrade_to_trader_3"                                        "Upgrade To Trader 3"
+		"DOTA_Tooltip_ability_upgrade_to_trader_3_Description"                            "Поліпшіть свого Trader! "
+
+		"DOTA_Tooltip_ability_build_workers_guild"                                        "Build Workers Guild"
+		"DOTA_Tooltip_ability_build_workers_guild_Description"                            "Тут ви можете найняти робітників, які будуть лагодити вашу стінку! "
+		"DOTA_Tooltip_ability_build_workers_guild_gold_cost"                              "GOLD COST: "
+		"DOTA_Tooltip_ability_build_workers_guild_lumber_cost"                            "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_mother_of_nature"                                                  "Build Mother of Nature"
+		"DOTA_Tooltip_ability_build_mother_of_nature_Description"                                      "Мати природи створює WISP (Віспов), які збирають дерева (lumber)! "
+		"DOTA_Tooltip_ability_build_mother_of_nature_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_build_mother_of_nature_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_research_lab"                                         "Build Research Lab 1"
+		"DOTA_Tooltip_ability_build_research_lab_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		"DOTA_Tooltip_ability_build_research_lab_gold_cost"                               "GOLD COST: "
+		"DOTA_Tooltip_ability_build_research_lab_lumber_cost"                             "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_2"                                         "Upgrade Research Lab 2"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_2_Description"                             "Збудуйте лабораторію 2 рівня, щоб мати можливість покращити свої вежі!"
+
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_3"                                         "Upgrade Research Lab 3"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_3_Description"                             "Збудуйте лабораторію 3 рівня, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_1"                                         "Upgrade Research Lab 4 LVL 1"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_1_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_2"                                         "Upgrade Research Lab 4 LVL 2"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_2_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_3"                                         "Upgrade Research Lab 4 LVL 3"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_3_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_4"                                         "Upgrade Research Lab 4 LVL 4"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_4_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_5"                                         "Upgrade Research Lab 4 LVL 5"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_4_5_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_1"                                         "Upgrade Research Lab 5 LVL 1"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_1_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_2"                                         "Upgrade Research Lab 5 LVL 2"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_2_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_3"                                         "Upgrade Research Lab 5 LVL 3"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_3_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_4"                                         "Upgrade Research Lab 5 LVL 4"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_4_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_5"                                         "Upgrade Research Lab 5 LVL 5"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_5_5_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_1"                                         "Upgrade Research Lab 6 LVL 1"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_1_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_2"                                         "Upgrade Research Lab 6 LVL 2"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_2_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_3"                                         "Upgrade Research Lab 6 LVL 3"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_3_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_4"                                         "Upgrade Research Lab 6 LVL 4"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_4_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_5"                                         "Upgrade Research Lab 6 LVL 5"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_6_5_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+		
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_7_1"                                         "Upgrade Research Lab 7"
+		"DOTA_Tooltip_ability_upgrade_to_research_lab_7_1_Description"                             "Збудуйте лабораторію, щоб мати можливість покращити свої вежі! "
+
+		"DOTA_Tooltip_ability_true_sight_ability"                                         "True Sight Ability"
+		"DOTA_Tooltip_ability_true_sight_ability_Description"                             "Розкриває невидимих ​​юнітів. Радіус дії 1100."
+		"DOTA_Tooltip_ability_true_sight_ability_radius"                                  "RADIUS: "
+		
+		"DOTA_Tooltip_ability_tower_atk_spd"												"Practise aim"
+		"DOTA_Tooltip_ability_tower_atk_spd_Description"									"Забезпечує додаткову швидкість атаки з кожним ударом. Дебафф додаткової швидкості атаки діє на ворога 10 секунд після того, як остання автоатака завдала йому удару. <br/>Bonus attack speed: 7/15/22/27/32/49/56/61/65/70"
+		
+		"DOTA_Tooltip_ability_tower_frost_slow"												"Ice arrow"
+		"DOTA_Tooltip_ability_tower_frost_slow_Description"									"Стріляє крижаними стрілами, уповільнюючи ворогів при атакі на 1% швидкості пересування та 7 (не відсотків) швидкості атаки. Підсумовується з іншими крижаними стрілами. Один заряд триває 3 секунди."
+
+		"DOTA_Tooltip_ability_tower_frost_slow_2"												"Ice arrow 2"
+		"DOTA_Tooltip_ability_tower_frost_slow_2_Description"									"Стріляє крижаними стрілами, уповільнюючи ворогів під час атаки на 1% швидкості пересування та 10 (не відсотків) швидкості атаки. Підсумовується з іншими крижаними стрілами. Один заряд триває 4 секунди."
+
+
+		"DOTA_Tooltip_ability_tower_poison"													"Venom"
+		"DOTA_Tooltip_ability_tower_poison_Description"	    								"Кожен удар накладає на ворога дебафф, який знижує його регенерацію на 5%. Кожен стак триває 3 секунди, регенерація HP не може бути нижче 0."
+		
+		"DOTA_Tooltip_modifier_poison_attack"												"Каждый стак снижает 5% регенерации."
+		
+		"DOTA_Tooltip_ability_tower_poison_2"													"Venom"
+		"DOTA_Tooltip_ability_tower_poison_2_Description"	    								"Кожен удар накладає на ворога дебафф, який знижує його регенерацію на 5%. Кожен стак триває 3 секунди, регенерація HP не може бути нижче 0."
+
+
+		"DOTA_Tooltip_modifier_poison_target"                                             "nothing"
+		"DOTA_Tooltip_modifier_poison_target_Description"                                 "gadfds"
+
+		"DOTA_Tooltip_modifier_poison_counter"                                             "Venom"
+		"DOTA_Tooltip_modifier_poison_counter_Description"                                 "Кожен стак знижує 5% регенерації."
+		
+		"DOTA_Tooltip_modifier_dark_lord_presence"                                         "Nevermore"
+		"DOTA_Tooltip_modifier_dark_lord_presence_Description"                             "Aura -1500  amor"
+
+		"DOTA_Tooltip_ability_nevermore_dark_lord_datadriven"                                         		"Nevermore"
+		"DOTA_Tooltip_ability_nevermore_dark_lord_datadriven_Description"                             	"Aura -1500  amor"
+		
+		"DOTA_Tooltip_modifier_dark_lord_presence_2"                                         "Nevermore"
+		"DOTA_Tooltip_modifier_dark_lord_presence_2_Description"                             "Aura -3065  amor"
+
+		"DOTA_Tooltip_ability_nevermore_dark_lord_datadriven_2"                                         		"Nevermore"
+		"DOTA_Tooltip_ability_nevermore_dark_lord_datadriven_2_Description"                             	"Aura -3065  amor"
+		
+		"DOTA_Tooltip_modifier_psi_blades"                                         		   "Templar"
+		"DOTA_Tooltip_modifier_psi_blades_Description"                             		   "Psi Blades. Завдає 5000 чистих пошкоджень другої цілі."
+		
+		"DOTA_Tooltip_modifier_dragon_blood_datadriven_effect"                             "Vengeful Spirit"
+		"DOTA_Tooltip_modifier_dragon_blood_datadriven_effect_Description"                 "Збільшує радіус атаки +45. Радіус дії 700."
+
+		"DOTA_Tooltip_ability_dragon_blood_datadriven"                            			 "Vengeful Spirit"
+		"DOTA_Tooltip_ability_dragon_blood_datadriven_Description"                			 "Збільшує радіус атаки +45. Радіус дії 700."
+		
+		"DOTA_Tooltip_ability_phantom_assassin_coup_de_grace_datadriven"                           "Phantom Assassin"
+		"DOTA_Tooltip_ability_phantom_assassin_coup_de_grace_datadriven_Description"               "Завдає 1000% критичного пошкодження. Шанс 13%"
+
+		"DOTA_Tooltip_ability_phantom_assassin_coup_de_grace_datadriven"                           "Phantom Assassin"
+		"DOTA_Tooltip_ability_phantom_phantom_assassin_coup_de_grace_datadriven_Description"               "Заває 1000% критичного пошкодження. Шанс 13%"		
+		
+		"DOTA_Tooltip_ability_templar_assassin_psi_blades_datadriven"								"Templar"
+		"DOTA_Tooltip_ability_templar_assassin_psi_blades_datadriven_Description"					"Psi Blades. Завдає 5000 чистого пошкодження другої цілі. Якщо друга ціль є Вовком, то Вежа завдає 12500 чистого пошкодження. "
+		
+		"DOTA_Tooltip_modifier_fury_swipes_caster_datadriven"                             "Ursa"
+		"DOTA_Tooltip_modifier_fury_swipes_caster_datadriven_Description"                 "20 магичного пошкодження за удар. Діє 6 секунд."
+		
+		"DOTA_Tooltip_ability_ursa_fury_swipes_datadriven"                             "Ursa"
+		"DOTA_Tooltip_ability_ursa_fury_swipes_datadriven_Description"                 "20 магичного пошкодження за удар. Діє 6 секунд."
+		
+		"DOTA_Tooltip_ability_luna_lunar_blessing_datadriven"                             "Lunar Blessing"
+		"DOTA_Tooltip_ability_luna_lunar_blessing_datadriven_Description"                 "Дає 150 000 пошкодження та 400 радіусу огляду вночі в радіусі 600."
+		
+		"DOTA_Tooltip_modifier_lunar_blessing_datadriven"                             "Lunar Blessing"
+		"DOTA_Tooltip_modifier_lunar_blessing_datadriven_Description"                 "Дає 150 000 пошкодження та 400 радіусу огляду вночі в радіусі 600."
+		
+		"DOTA_Tooltip_modifier_lunar_blessing_damage_effect"                             "Lunar Blessing"
+		"DOTA_Tooltip_modifier_lunar_blessing_damage_effect_Description"                 "Дає 150 000 пошкодження та 400 радіусу огляду вночі в радіусі 600."
+		
+		"DOTA_Tooltip_ability_medusa_split_shot_lua"                             "Split Shot"
+		"DOTA_Tooltip_ability_medusa_split_shot_lua_Description"                 ""
+		
+		"DOTA_Tooltip_ability_troll_warlord_convert_gold"						"Exchange of gold for lumber"
+		"DOTA_Tooltip_ability_troll_warlord_convert_gold_Description"			"Автоматичне переведення золота в дерево під час атаки."
+		
+		"DOTA_Tooltip_modifier_convert_gold"						"Exchange of gold for lumber"
+		"DOTA_Tooltip_modifier_convert_gold_Description"			"Автоматичне переведення золота в дерево під час атаки."
+
+		"DOTA_Tooltip_ability_troll_warlord_battle_trance_datadriven"                  "Buff Troll"
+		"DOTA_Tooltip_ability_troll_warlord_battle_trance_datadriven_Description"      "Buff Troll: Максимальна швидкість атаки. +6131 armor. Немає КД у скіллів. +1000 Regenaration."
+
+		"DOTA_Tooltip_ability_troll_warlord_presence_datadriven"                  "Buff Troll"
+		"DOTA_Tooltip_ability_troll_warlord_presence_datadriven_Description"      "Buff Troll: Максимальна швидкість атаки. +6131 armor. Немає КД у скіллів. +1000 Regenaration."
+		
+		"DOTA_Tooltip_modifier_troll_warlord_presence"							  "Buff Troll"
+		"DOTA_Tooltip_modifier_troll_warlord_presence_Description"				  "Buff Troll: Максимальна швидкість атаки. +6131 armor. Немає КД у скіллів. +1000 Regenaration."
+		
+		"DOTA_Tooltip_modifier_weave_friendly_datadriven"							"Shadow Wave"
+		"DOTA_Tooltip_modifier_weave_friendly_datadriven_Description"				"+1 захисту на секунду для союзників. -50 захисту для ворогів Триває 20 секунд."
+		
+		"DOTA_Tooltip_modifier_weave_enemy_datadriven"								"Shadow Wave"
+		"DOTA_Tooltip_modifier_weave_enemy_datadriven_Description"					"+1 захисту на секунду для союзників. -50 захисту для ворогів Триває 20 секунд."
+		
+		"DOTA_Tooltip_Ability_weave_datadriven"							"Shadow Wave"
+		"DOTA_Tooltip_Ability_weave_datadriven_Description"				"+1 захисту на секунду для союзників. -50 захисту для ворогів Триває 20 секунд."
+		
+		"DOTA_Tooltip_Ability_shallow_grave_datadriven"								"Shallow Grave"
+		"DOTA_Tooltip_Ability_shallow_grave_datadriven_Description"					"Дарує безсмертя на 6 секунд."
+		
+		"DOTA_Tooltip_modifier_shallow_grave_datadriven"							"Shallow Grave"
+		"DOTA_Tooltip_modifier_shallow_grave_datadriven_Description"				"Дарує безсмертя на 6 секунд."
+		
+		"DOTA_Tooltip_Ability_paralyzing_cask_datadriven"								"Paralyzing Cask"
+		"DOTA_Tooltip_Ability_paralyzing_cask_datadriven_Description"					"Стан 1.2 секунди. 3 відскоки. Завдає 10 000 магічного пошкодження. "
+		
+		"DOTA_Tooltip_modifier_paralyzing_cask_datadriven"								"Paralyzing Cask"
+		"DOTA_Tooltip_modifier_paralyzing_cask_datadriven_Description"					"Стан 1.2 секунди. 3 відскоки. Завдає 10 000 магічного пошкодження. "
+		
+		"DOTA_Tooltip_ability_troll_warlord_attack_speed_datadriven"                  "Buff/Debuff Troll"
+		"DOTA_Tooltip_ability_troll_warlord_attack_speed_datadriven_Description"      "Buff/Debuff: Швидкість атаки +600 і розкриття видимості Троля та Вовків."
+
+		"DOTA_Tooltip_ability_troll_warlord_attack_presence_datadriven"                  "Buff/Debuff"
+		"DOTA_Tooltip_ability_troll_warlord_attack_presence_datadriven_Description"      "Buff/Debuff: Швидкість атаки +600 і розкриття видимості Троля та Вовків."
+		
+		"DOTA_Tooltip_modifier_troll_warlord_attack_presence"							  "Buff/Debuff"
+		"DOTA_Tooltip_modifier_troll_warlord_attack_presence_Description"				  "Buff/Debuff: Швидкість атаки +600 і розкриття видимості Троля та Волков."
+		
+		"DOTA_Tooltip_modifier_troll_warlord_attack_speed"									"Buff/Debuff: Швидкість атаки +600 і розкриття видимості Троля та Вовків."
+		"DOTA_Tooltip_modifier_troll_warlord_anti"											"Buff/Debuff: Швидкість атаки +600 і розкриття видимості Троля та Вовків."
+
+		"DOTA_Tooltip_ability_heartstopper_aura_datadriven"                  	 "End Game"
+		"DOTA_Tooltip_ability_heartstopper_aura_datadriven_Description"     	 "End Game."
+
+		"DOTA_Tooltip_ability_heartstopper_debuff_datadriven"                  	 "End Game"
+		"DOTA_Tooltip_ability_heartstopper_debuff_datadriven_Description"     	 "End Game."
+
+		"DOTA_Tooltip_modifier_buff_counter"                             				   "Root buff"
+		"DOTA_Tooltip_modifier_buff_counter_Description"                				   "1 стак - 4 sec. 2 стака - 3 sec. 3 стака - 1.5 sec. +4 стака - 1 sec Коріння"
+	
+		"DOTA_Tooltip_ability_buy_lumber_10"                                              "Buy Lumber 10"
+		"DOTA_Tooltip_ability_buy_lumber_10_Description"                                  "Купити 10 дерева (lumber). Дерево використовується для будівництва/покращення прогресивних будівель. Купівля дерева підвищує вартість самого дерева. Ціна вказана під вашими ресурсами. "
+
+		"DOTA_Tooltip_ability_buy_lumber_200"                                             "Buy Lumber 200"
+		"DOTA_Tooltip_ability_buy_lumber_200_Description"                                 "Купити 200 дерева(lumber)! Дерево використовується для будівництва/покращення прогресивних будівель. Купівля дерева підвищує вартість самого дерева. Ціна вказана під вашими ресурсами. "
+
+		"DOTA_Tooltip_ability_sell_lumber_10"                                             "Sell Lumber 10"
+		"DOTA_Tooltip_ability_sell_lumber_10_Description"                                 "Продати 10 дерева (lumber). Продаж дерева знижує вартість самого дерева. Ціна вказана під вашими ресурсами. "
+
+		"DOTA_Tooltip_ability_sell_lumber_200"                                            "Sell Lumber 200"
+		"DOTA_Tooltip_ability_sell_lumber_200_Description"                                "Продати 200 дерева (lumber). Продаж дерева знижує вартість самого дерева. Ціна вказана під вашими ресурсами. "
+
+		"DOTA_Tooltip_ability_reveal_area"                                                "Reveal Area"
+		"DOTA_Tooltip_ability_reveal_area_Description"                                    "Показує територію в радіусі 2600 (1500 на карті Стандарт/Арена) на 10 секунд. Чудово підходить для розвідки ворожих баз! Робить ворожих юнітів нездатними стати невидимими на 10 секунд. "
+		"DOTA_Tooltip_ability_reveal_area_maximum_charges"						 		"МАКС. ЧИСЛО ЕФЕКТІВ:"
+		
+		"DOTA_Tooltip_ability_troll_invis"                                                "Troll Invis"
+		"DOTA_Tooltip_ability_troll_invis_Description"                                    "Дає невидимість, щоб швидше пересуватися картою або уникнути смерті! "
+
+		"DOTA_Tooltip_ability_troll_teleport"                                             "Troll Teleport"
+		"DOTA_Tooltip_ability_troll_teleport_Description"                                 "Телепорт на базу Троля! "
+
+		"DOTA_Tooltip_ability_attack_gold"                                                "Attack Gold"
+		"DOTA_Tooltip_ability_attack_gold_Description"                                    "Дає золото щоразу, коли ви наносите пошкодження ворогові!"
+		
+		"DOTA_Tooltip_ability_furion_teleportation_datadriven"							  "Teleportation"
+		"DOTA_Tooltip_ability_furion_teleportation_datadriven_Description"				  "Телепортує до найближчого союзника"
+		
+		"DOTA_Tooltip_ability_penitence_datadriven"										  "Forest curse"
+		"DOTA_Tooltip_ability_penitence_datadriven_Description"				 			  "Знижує швидкість пересування на 55.<br>Збільшує отримуване пошкодження на 25%."
+		
+		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_datadriven"					"Hunter in the Night"
+		"DOTA_Tooltip_ability_night_stalker_hunter_in_the_night_datadriven_Description"		"Вночі герой виявляється у своїй стихії: він атакує і пересувається зі збільшеною швидкістю. Дає +1 до ухилення."
+		
+		"DOTA_Tooltip_ability_monkey_king"											"True strike."
+		"DOTA_Tooltip_ability_monkey_king_Description"  							"Ігнорує промахи"
+		
+		"DOTA_Tooltip_ability_treant_debuff"											"Treant Protector."
+		"DOTA_Tooltip_ability_treant_debuff_Description"  								"Ти повинен був боротися зі злом, а не приєднатися до нього! Вас прокляв могутній Treant Protector і ви не зможете відновлювати своє здоров'я. "
+
+		"DOTA_Tooltip_ability_block_buff"											"Холоднокровність"
+		"DOTA_Tooltip_ability_block_buff_Description"  								"Ваша броня міцніє за відсутності Прапора. Якщо радіусі 900 немає Прапора, то ви отримуєте 50% бонус атаки, 50% магічного захисту і 75% зниження шкоди від веж."
+
+
+		"DOTA_Tooltip_Ability_lone_druid_spirit_bear_datadriven"						"Teddy bear"
+		"DOTA_Tooltip_Ability_lone_druid_spirit_bear_datadriven_Description"			"Створює ручного ведмедя, який бореться на вашому боці. Якщо ведмідь помер, ви втратите 99,9% HP і зможете оживити ведмедя через 6 хвилин, а сам ведмідь втратить всі свої предмети. Вміння стає активним після покупки Troll Hut 7 рівня і якщо у команді немає Волков."
+		
+		"DOTA_Tooltip_modifier_shrapnel_stack_counter_datadriven"							"Number of charges"
+		
+		"DOTA_Tooltip_ability_repair"                                                     "Repair"
+		"DOTA_Tooltip_ability_repair_Description"                                         "Відремонтуйте свої будівлі! <br>Клацніть правою кнопкою миші для автоматичного ремонту стіни."
+		
+		"DOTA_Tooltip_ability_commit_suicide"											  "Commit Suicide"
+		"DOTA_Tooltip_ability_commit_suicide_Description"								  "Використовуйте цю здатність щоб знищити свої будівлі. Не можна використовувати, коли поряд ворог! "
+		
+		"DOTA_Tooltip_ability_gather_lumber"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_Description"                                "Використовуйте цю здатність на дерева, щоб почати добувати дерево. Дає 'Lumber amount' кожні 'Gather interval' секунд. Дерево може бути зайняте лише одним WISP!"
+		"DOTA_Tooltip_ability_gather_lumber_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_gather_lumber_8"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_8_Description"                                "Використовуйте цю здатність на дерева, щоб почати добувати дерево. Дає 'Lumber amount' кожні 'Gather interval' секунд. Дерево може бути зайняте лише одним WISP!"
+		"DOTA_Tooltip_ability_gather_lumber_8_lumber_interval"                            "LUMBER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_4"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_4_Description"                                "Використовуйте цю здатність на дерева, щоб почати добувати дерево. Дає 'Lumber amount' кожні 'Gather interval' секунд. Дерево може бути зайняте лише одним WISP!"
+		"DOTA_Tooltip_ability_gather_lumber_4_lumber_interval"                            "LUMBER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_2"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_2_Description"                                "Використовуйте цю здатність на дерева, щоб почати добувати дерево. Дає 'Lumber amount' кожні 'Gather interval' секунд. Дерево може бути зайняте лише одним WISP!"
+		"DOTA_Tooltip_ability_gather_lumber_2_lumber_interval"                            "LUMBER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_1"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_1_Description"                                "Використовуйте цю здатність на дерева, щоб почати добувати дерево. Дає 'Lumber amount' кожні 'Gather interval' секунд. Дерево може бути зайняте лише одним WISP!"
+		"DOTA_Tooltip_ability_gather_lumber_1_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_gather_lumber_6"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_6_Description"                                "Використовуйте цю здатність на дерева, щоб почати добувати дерево. Дає 'Lumber amount' кожні 'Gather interval' секунд. Дерево може бути зайняте лише одним WISP!"
+		"DOTA_Tooltip_ability_gather_lumber_6_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_gather_lumber_36"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_36_Description"                                "Використовуйте цю здатність на дерева, щоб почати добувати дерево. Дає 'Lumber amount' кожні 'Gather interval' секунд. Дерево може бути зайняте лише одним WISP!"
+		"DOTA_Tooltip_ability_gather_lumber_36_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_gather_lumber_216"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_216_Description"                                "Використовуйте цю здатність на дерева, щоб почати добувати дерево. Дає 'Lumber amount' кожні 'Gather interval' секунд. Дерево може бути зайняте лише одним WISP!"
+		"DOTA_Tooltip_ability_gather_lumber_216_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_gather_lumber_1296"                                            "Gather Lumber"
+		"DOTA_Tooltip_ability_gather_lumber_1296_Description"                                "Використовуйте цю здатність на дерева, щоб почати добувати дерево. Дає 'Lumber amount' кожні 'Gather interval' секунд. Дерево може бути зайняте лише одним WISP!"
+		"DOTA_Tooltip_ability_gather_lumber_1296_lumber_interval"                            "LUMBER INTERVAL: "
+		
+		"DOTA_Tooltip_ability_train_worker_1"                                             "Train Worker 1"
+		"DOTA_Tooltip_ability_train_worker_1_Description"                                 "Створіть робітників. Робітники чудово вміють ремонтувати будівлі! "
+		"DOTA_Tooltip_ability_train_worker_1_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_1_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_1_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_1_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_2"                                             "Train Worker 2"
+		"DOTA_Tooltip_ability_train_worker_2_Description"                                 "Створіть робітників. Робітники чудово вміють ремонтувати будівлі!"
+		"DOTA_Tooltip_ability_train_worker_2_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_2_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_2_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_2_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_3"                                             "Train Worker 3"
+		"DOTA_Tooltip_ability_train_worker_3_Description"                                 "Створіть робітників. Робітники чудово вміють ремонтувати будівлі! "
+		"DOTA_Tooltip_ability_train_worker_3_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_3_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_3_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_3_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_4"                                             "Train Worker 4"
+		"DOTA_Tooltip_ability_train_worker_4_Description"                                 "Створіть робітників. Робітники чудово вміють ремонтувати будівлі!"
+		"DOTA_Tooltip_ability_train_worker_4_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_4_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_4_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_4_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_5"                                             "Train Worker 5"
+		"DOTA_Tooltip_ability_train_worker_5_Description"                                 "Створіть робітників. Робітники чудово вміють ремонтувати будівлі! "
+		"DOTA_Tooltip_ability_train_worker_5_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_5_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_5_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_5_unit_count"                                  "UNIT COUNT: "
+		
+		"DOTA_Tooltip_ability_train_worker_6"                                             "Train Worker 6"
+		"DOTA_Tooltip_ability_train_worker_6_Description"                                 "Створіть робітників. Робітники чудово вміють ремонтувати будівлі! "
+		"DOTA_Tooltip_ability_train_worker_6_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_6_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_6_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_6_unit_count"                                  "UNIT COUNT: "
+		
+		"DOTA_Tooltip_ability_train_worker_7"                                             "Train Worker 7"
+		"DOTA_Tooltip_ability_train_worker_7_Description"                                 "Створіть робітників. Робітники чудово вміють ремонтувати будівлі! "
+		"DOTA_Tooltip_ability_train_worker_7_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_7_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_7_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_7_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_8"                                             "Train Worker 8"
+		"DOTA_Tooltip_ability_train_worker_8_Description"                                 "Створіть робітників. Робітники чудово вміють ремонтувати будівлі! "
+		"DOTA_Tooltip_ability_train_worker_8_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_8_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_8_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_8_unit_count"                                  "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_worker_9"                                             "Train Worker 9"
+		"DOTA_Tooltip_ability_train_worker_9_Description"                                 "Створіть робітників. Робітники чудово вміють ремонтувати будівлі! "
+		"DOTA_Tooltip_ability_train_worker_9_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_train_worker_9_lumber_cost"                                 "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_worker_9_food_cost"                                   "FOOD COST: "
+		"DOTA_Tooltip_ability_train_worker_9_unit_count"                                  "UNIT COUNT: "
+
+
+		"DOTA_Tooltip_ability_train_wisp_1"                                               "Train Son of Nature 1"
+		"DOTA_Tooltip_ability_train_wisp_1_Description"                                   "Створити WISP. WISP видобуває дерева(lumber) з дерев!"
+		"DOTA_Tooltip_ability_train_wisp_1_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_1_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_1_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_1_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_2"                                               "Train Son of Nature 2"
+		"DOTA_Tooltip_ability_train_wisp_2_Description"                                   "Створити WISP. WISP видобуває дерева(lumber) з дерев! "
+		"DOTA_Tooltip_ability_train_wisp_2_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_2_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_2_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_2_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_3"                                               "Train Son of Nature 3"
+		"DOTA_Tooltip_ability_train_wisp_3_Description"                                   "Створити WISP. WISP видобуває дерева(lumber) з дерев! "
+		"DOTA_Tooltip_ability_train_wisp_3_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_3_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_3_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_3_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_4"                                               "Train Son of Nature 4"
+		"DOTA_Tooltip_ability_train_wisp_4_Description"                                   "Створити WISP. WISP видобуває дерева(lumber) з дерев! "
+		"DOTA_Tooltip_ability_train_wisp_4_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_4_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_4_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_4_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_5"                                               "Train Son of Nature 5"
+		"DOTA_Tooltip_ability_train_wisp_5_Description"                                   "Створити WISP. WISP видобуває дерева(lumber) з дерев! "
+		"DOTA_Tooltip_ability_train_wisp_5_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_5_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_5_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_5_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_6"                                               "Train Son of Nature 6"
+		"DOTA_Tooltip_ability_train_wisp_6_Description"                                   "Створити WISP. WISP видобуває дерева(lumber) з дерев! "
+		"DOTA_Tooltip_ability_train_wisp_6_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_6_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_6_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_6_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_7"                                               "Train Son of Nature 7"
+		"DOTA_Tooltip_ability_train_wisp_7_Description"                                   "Створити WISP. WISP видобуває дерева(lumber) з дерев! "
+		"DOTA_Tooltip_ability_train_wisp_7_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_7_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_7_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_7_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_wisp_8"                                               "Train Son of Nature 8"
+		"DOTA_Tooltip_ability_train_wisp_8_Description"                                   "Створити WISP. WISP видобуває дерева(lumber) з дерев! "
+		"DOTA_Tooltip_ability_train_wisp_8_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_train_wisp_8_lumber_cost"                                   "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_wisp_8_food_cost"                                     "FOOD COST: "
+		"DOTA_Tooltip_ability_train_wisp_8_unit_count"                                    "UNIT COUNT: "
+
+		"DOTA_Tooltip_ability_train_gold_wisp"                                            "Train Gold Wisp"
+		"DOTA_Tooltip_ability_train_gold_wisp_Description"                                "Створити Gold Wisp. Gold Wisp може збудувати додаткові золоті шахти, але при цьому жертвують собою."
+		"DOTA_Tooltip_ability_train_gold_wisp_gold_cost"                                  "GOLD COST: "
+		"DOTA_Tooltip_ability_train_gold_wisp_lumber_cost"                                "LUMBER COST: "
+		"DOTA_Tooltip_ability_train_gold_wisp_food_cost"                                  "FOOD COST: "
+		"DOTA_Tooltip_ability_train_gold_wisp_unit_count"                                 "UNIT COUNT: "
+	
+		"DOTA_Tooltip_ability_reveal_area_radius"                                         "RADIUS: "
+		"DOTA_Tooltip_ability_reveal_area_duration"                                       "DURATION: "
+
+		"DOTA_Tooltip_ability_troll_invis_invis_duration"                                 "INVIS DURATION: "
+		"DOTA_Tooltip_ability_troll_invis_bonus_movement_speed"                           "BONUS MOVEMENT SPEED: "
+		
+		
+		
+		"DOTA_Tooltip_ability_buy_item_dmg_1"                                             "Buy Item Dmg 1"
+		"DOTA_Tooltip_ability_buy_item_dmg_1_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_1_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_1_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_1_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_2"                                             "Buy Item Dmg 2"
+		"DOTA_Tooltip_ability_buy_item_dmg_2_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_2_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_2_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_2_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_3"                                             "Buy Item Dmg 3"
+		"DOTA_Tooltip_ability_buy_item_dmg_3_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_3_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_3_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_3_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_4"                                             "Buy Item Dmg 4"
+		"DOTA_Tooltip_ability_buy_item_dmg_4_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_4_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_4_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_4_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_5"                                             "Buy Item Dmg 5"
+		"DOTA_Tooltip_ability_buy_item_dmg_5_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_5_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_5_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_5_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_6"                                             "Buy Item Dmg 6"
+		"DOTA_Tooltip_ability_buy_item_dmg_6_Description"                                 ""
+		"DOTA_Tooltip_ability_buy_item_dmg_6_bonus_damage"                                "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_buy_item_dmg_6_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_buy_item_dmg_6_lumber_cost"                                 "LUMBER COST: "
+		
+		"DOTA_Tooltip_ability_gold_mine_ability"                                          "Gold Mine Ability"
+		"DOTA_Tooltip_ability_gold_mine_ability_Description"                              ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_2"                                     "Upgrade To Troll Hut 2"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_2_Description"                         ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_3"                                     "Upgrade To Troll Hut 3"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_3_Description"                         ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_4"                                     "Upgrade To Troll Hut 4"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_4_Description"                         ""
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_5"                                     "Upgrade To Troll Hut 5"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_5_Description"                         "Швидкість атаки +600 і розкриває видимість Троля та Волков"
+
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_6"                                     "Upgrade To Troll Hut 6"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_6_Description"                         "Дозволяє купувати дерево(lumber) по всій карті."
+		
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_7"                                     "Upgrade To Troll Hut 7"
+		"DOTA_Tooltip_ability_upgrade_to_troll_hut_7_Description"                         "Дозволяє закликати Ведмедя."
+
+		"DOTA_Tooltip_ability_build_gold_mine_1"                                          "Build Gold Mine 1"
+		"DOTA_Tooltip_ability_build_gold_mine_1_Description"                              "Золота шахта дає золото, як намет. Ви можете побудувати стільки, скільки захочете, але вона зникне через 8 хв/х1 і 4 хв/х2."
+		"DOTA_Tooltip_ability_build_gold_mine_1_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_1_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_2"                                          "Build Gold Mine 2"
+		"DOTA_Tooltip_ability_build_gold_mine_2_Description"                              "Золота шахта дає золото, як намет. Ви можете побудувати стільки, скільки захочете, але вона зникне через 8 хв/х1 і 4 хв/х2."
+		"DOTA_Tooltip_ability_build_gold_mine_2_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_2_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_3"                                          "Build Gold Mine 3"
+		"DOTA_Tooltip_ability_build_gold_mine_3_Description"                              "Золота шахта дає золото, як намет. Ви можете побудувати стільки, скільки захочете, але вона зникне через 8 хв/х1 і 4 хв/х2."
+		"DOTA_Tooltip_ability_build_gold_mine_3_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_3_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_4"                                          "Build Gold Mine 4"
+		"DOTA_Tooltip_ability_build_gold_mine_4_Description"                              "Золота шахта дає золото, як намет. Ви можете побудувати стільки, скільки захочете, але вона зникне через 8 хв/х1 і 4 хв/х2."
+		"DOTA_Tooltip_ability_build_gold_mine_4_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_4_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_5"                                          "Build Gold Mine 5"
+		"DOTA_Tooltip_ability_build_gold_mine_5_Description"                              "Золота шахта дає золото, як намет. Ви можете побудувати стільки, скільки захочете, але вона зникне через 8 хв/х1 і 4 хв/х2."
+		"DOTA_Tooltip_ability_build_gold_mine_5_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_5_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_6"                                          "Build Gold Mine 6"
+		"DOTA_Tooltip_ability_build_gold_mine_6_Description"                              "Золота шахта дає золото, як намет. Ви можете побудувати стільки, скільки захочете, але вона зникне через 16 хв/х1 і 8 хв/х2."
+		"DOTA_Tooltip_ability_build_gold_mine_6_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_6_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_7"                                          "Build Gold Mine 7"
+		"DOTA_Tooltip_ability_build_gold_mine_7_Description"                              "Золота шахта дає золото, як намет. Ви можете побудувати стільки, скільки захочете, але вона зникне через 4 хв/х1 і 2 хв/х2."
+		"DOTA_Tooltip_ability_build_gold_mine_7_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_7_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_build_gold_mine_8"                                          "Build Gold Mine 8"
+		"DOTA_Tooltip_ability_build_gold_mine_8_Description"                              "Золота шахта дає золото, як намет. Ви можете побудувати стільки, скільки захочете, але вона зникне через 2 хв/х1 і 1 хв/х2."
+		"DOTA_Tooltip_ability_build_gold_mine_8_gold_cost"                                "GOLD COST: "
+		"DOTA_Tooltip_ability_build_gold_mine_8_lumber_cost"                              "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_troll_range"                                                "Troll Range"
+		"DOTA_Tooltip_ability_troll_range_Description"                                    ""
+		
+		"DOTA_Tooltip_ability_gather_lumber_36_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+		"DOTA_Tooltip_ability_gather_lumber_6_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+		"DOTA_Tooltip_ability_gather_lumber_216_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+		"DOTA_Tooltip_ability_gather_lumber_1296_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+		"DOTA_Tooltip_ability_gather_lumber_8_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_4_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_2_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+
+		"DOTA_Tooltip_ability_gather_lumber_1_lumber_per_interval"                        "LUMBER PER INTERVAL: "
+
+		"DOTA_Tooltip_ability_buy_item_dmg_7"                                             "Buy Sword Lv 7"
+		"DOTA_Tooltip_ability_buy_item_dmg_7_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_8"                                             "Buy Sword Lv 8"
+		"DOTA_Tooltip_ability_buy_item_dmg_8_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_9"                                             "Buy Sword Lv 9"
+		"DOTA_Tooltip_ability_buy_item_dmg_9_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_10"                                            "Buy Sword Lv 10"
+		"DOTA_Tooltip_ability_buy_item_dmg_10_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_11"                                            "Buy Sword Lv 11"
+		"DOTA_Tooltip_ability_buy_item_dmg_11_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_12"                                            "Buy Sword Lv 12"
+		"DOTA_Tooltip_ability_buy_item_dmg_12_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_13"                                            "Buy Sword Lv 13"
+		"DOTA_Tooltip_ability_buy_item_dmg_13_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_dmg_14"                                            "Buy Sword Lv 14"
+		"DOTA_Tooltip_ability_buy_item_dmg_14_Description"                                ""
+		
+		"DOTA_Tooltip_ability_buy_item_dmg_15"                                            "Buy Sword Lv 15"
+		"DOTA_Tooltip_ability_buy_item_dmg_15_Description"                                ""
+		
+		"DOTA_Tooltip_ability_buy_item_dmg_16"                                            "Buy Sword Lv 16"
+		"DOTA_Tooltip_ability_buy_item_dmg_16_Description"                                ""
+		
+		"DOTA_Tooltip_ability_buy_item_dmg_17"                                            "Buy Sword Lv 17"
+		"DOTA_Tooltip_ability_buy_item_dmg_17_Description"                                ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_1"                                           "Buy Armor Lv 1"
+		"DOTA_Tooltip_ability_buy_item_armor_1_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_2"                                           "Buy Armor Lv 2"
+		"DOTA_Tooltip_ability_buy_item_armor_2_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_3"                                           "Buy Armor Lv 3"
+		"DOTA_Tooltip_ability_buy_item_armor_3_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_4"                                           "Buy Armor Lv 4"
+		"DOTA_Tooltip_ability_buy_item_armor_4_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_5"                                           "Buy Armor Lv 5"
+		"DOTA_Tooltip_ability_buy_item_armor_5_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_6"                                           "Buy Armor Lv 6"
+		"DOTA_Tooltip_ability_buy_item_armor_6_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_7"                                           "Buy Armor Lv 7"
+		"DOTA_Tooltip_ability_buy_item_armor_7_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_8"                                           "Buy Armor Lv 8"
+		"DOTA_Tooltip_ability_buy_item_armor_8_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_9"                                           "Buy Armor Lv 9"
+		"DOTA_Tooltip_ability_buy_item_armor_9_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_10"                                          "Buy Armor Lv 10"
+		"DOTA_Tooltip_ability_buy_item_armor_10_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_11"                                          "Buy Armor Lv 11"
+		"DOTA_Tooltip_ability_buy_item_armor_11_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_12"                                          "Buy Armor Lv 12"
+		"DOTA_Tooltip_ability_buy_item_armor_12_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_armor_13"                                          "Buy Armor of God"
+		"DOTA_Tooltip_ability_buy_item_armor_13_Description"                              "HP: 199500<br>REGEN: 10000"
+
+		"DOTA_Tooltip_ability_buy_item_hp_1"                                              "Buy HP  Lv 1"
+		"DOTA_Tooltip_ability_buy_item_hp_1_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_2"                                              "Buy HP  Lv 2"
+		"DOTA_Tooltip_ability_buy_item_hp_2_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_3"                                              "Buy HP  Lv 3"
+		"DOTA_Tooltip_ability_buy_item_hp_3_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_4"                                              "Buy HP  Lv 4"
+		"DOTA_Tooltip_ability_buy_item_hp_4_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_5"                                              "Buy HP  Lv 5"
+		"DOTA_Tooltip_ability_buy_item_hp_5_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_6"                                              "Buy HP  Lv 6"
+		"DOTA_Tooltip_ability_buy_item_hp_6_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_7"                                              "Buy HP  Lv 7"
+		"DOTA_Tooltip_ability_buy_item_hp_7_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_8"                                              "Buy HP  Lv 8"
+		"DOTA_Tooltip_ability_buy_item_hp_8_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_9"                                              "Buy HP  Lv 9"
+		"DOTA_Tooltip_ability_buy_item_hp_9_Description"                                  ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_10"                                             "Buy HP  Lv 10"
+		"DOTA_Tooltip_ability_buy_item_hp_10_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_11"                                             "Buy HP  Lv 11"
+		"DOTA_Tooltip_ability_buy_item_hp_11_Description"                                 ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_12"                                             "Buy HP  Lv 12"
+		"DOTA_Tooltip_ability_buy_item_hp_12_Description"                                 ""   
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_1"                                          "Buy HP Reg.  Lv 1"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_1_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_2"                                          "Buy HP Reg.  Lv 2"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_2_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_3"                                          "Buy HP Reg.  Lv 3"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_3_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_4"                                          "Buy HP Reg.  Lv 4"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_4_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_5"                                          "Buy HP Reg.  Lv 5"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_5_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_6"                                          "Buy HP Reg.  Lv 6"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_6_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_7"                                          "Buy HP Reg.  Lv 7"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_7_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_8"                                          "Buy HP Reg.  Lv 8"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_8_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_9"                                          "Buy HP Reg.  Lv 9"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_9_Description"                              ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_10"                                         "Buy HP Reg.  Lv 10"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_10_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_hp_reg_11"                                         "Buy HP Reg.  Lv 11"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_11_Description"                             ""
+		
+		"DOTA_Tooltip_ability_buy_item_hp_reg_12"                                         "Buy HP Reg.  Lv 12"
+		"DOTA_Tooltip_ability_buy_item_hp_reg_12_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_1"                                         "Buy Atk. Speed Lv 1"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_1_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_2"                                         "Buy Atk. Speed Lv 2"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_2_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_3"                                         "Buy Atk. Speed Lv 3"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_3_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_4"                                         "Buy Atk. Speed Lv 4"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_4_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_5"                                         "Buy Atk. Speed Lv 5"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_5_Description"                             ""
+
+		"DOTA_Tooltip_ability_buy_item_atk_spd_6"                                         "Buy Atk. Speed Lv 6"
+		"DOTA_Tooltip_ability_buy_item_atk_spd_6_Description"                             ""
+		
+		"DOTA_Tooltip_ability_buy_item_troll_boots"                                         "Buy Troll Boots"
+		"DOTA_Tooltip_ability_buy_item_troll_boots_Description"                             ""
+
+		"DOTA_Tooltip_Ability_bear_movespeed"                                         "Bear Movespeed"
+		"DOTA_Tooltip_Ability_bear_movespeed_Description"                             "+150 до швидкості пересування."
+		
+		"DOTA_Tooltip_ability_buy_item_disable_repair"                                                "Buy No Hammer Time! Level 1!"
+		"DOTA_Tooltip_ability_buy_item_disable_repair_Description"                                    "Не дає робітникам лагодити стіну! Діє 5 секунд. "
+
+		"DOTA_Tooltip_ability_buy_item_disable_repair_2"                                                "Buy No Hammer Time! Level 2!"
+		"DOTA_Tooltip_ability_buy_item_disable_repair_2_Description"                                    "Не дає робітникам лагодити стіну! Діє 5.5 секунд. Використовує нейтральний слот. Не можна продати. Видаляється після смерті!"
+
+		"DOTA_Tooltip_ability_fountain_ability"                                           "Fountain Ability"
+		"DOTA_Tooltip_ability_fountain_ability_Description"                               ""
+
+		"DOTA_Tooltip_ability_buy_lumber_1"                                               "Buy Lumber"
+		"DOTA_Tooltip_ability_buy_lumber_1_Description"                                   "Buy 1 lumber for 64000 gold"
+
+		"DOTA_Tooltip_ability_buy_lumber_8"                                               "Buy 8 Lumber"
+		"DOTA_Tooltip_ability_buy_lumber_8_Description"                                   "Buy 8 lumber for 512000 gold"
+
+		"DOTA_Tooltip_ability_sell_lumber_1"                                              "Sell Lumber"
+		"DOTA_Tooltip_ability_sell_lumber_1_Description"                                  "Sell 1 lumber for 64000 gold"
+
+		"DOTA_Tooltip_ability_sell_lumber_8"                                              "Sell 8 Lumber"
+		"DOTA_Tooltip_ability_sell_lumber_8_Description"                                  "Sell 8 lumber for 512000 gold"
+
+		
+		"DOTA_Tooltip_ability_steal_gold"                                                 "Steal Gold"
+		"DOTA_Tooltip_ability_steal_gold_Description"                                     "Краде золото у троля. Можна використовувати лише на хатину троля! Працює після 5 хвилини!"
+
+		"DOTA_Tooltip_ability_stand_invis"                                                "Stealth"
+		"DOTA_Tooltip_ability_stand_invis_Description"                                    "Денний Ангел – Нічний Диявол. Стає невидимою на 2 секунди. Будь-який рух скасовує невидимість. Працює лише вночі. "
+
+		"DOTA_Tooltip_ability_cm_stun"                                                    "Stun"
+		"DOTA_Tooltip_ability_cm_stun_Description"                                        "Приголомшує ворога на 2 секунди. "
+
+		"DOTA_Tooltip_ability_cm_haste"                                                   "Haste"
+		"DOTA_Tooltip_ability_cm_haste_Description"                                       "Максимально збільшує швидкість пересування і дає 100% ухилення від вовків, але не від Троля."
+
+		"DOTA_Tooltip_ability_cm_heal_building"                                           "Heal Building"
+		"DOTA_Tooltip_ability_cm_heal_building_Description"                               "Використовуйте цю здатність на будівлі, щоб її вилікувати. Відновлює 300 здоров'я або 30% – залежно від того, що більше. На час відновлення здібності будинок отримує дебафф, який змушує інших ангелів лікувати утричі менше. "
+
+		"DOTA_Tooltip_ability_invul_ability"                                              "Invulnerability"
+		"DOTA_Tooltip_ability_invul_ability_Description"                                  "Робить юнітів безсмертними! "
+
+
+		// ***********************************************
+		// ******************** ITEMS ********************
+		// ***********************************************
+		
+		"DOTA_Tooltip_ability_item_building_destroy"                                      "Destroy Building"
+		"DOTA_Tooltip_ability_item_building_destroy_Description"                          "Руйнує будівлю. Ресурси не повертаються, не можна знищити, якщо поряд ворог! "
+
+		"DOTA_Tooltip_ability_item_building_cancel"                                       "Building Cancel"
+		"DOTA_Tooltip_ability_item_building_cancel_Description"                           "Відмінити будівництво"
+
+		"DOTA_Tooltip_ability_item_blink_datadriven"									  "Blink"
+		"DOTA_Tooltip_ability_item_blink_datadriven_Description"						  "Blink away from the mighty troll.<br/>Max range: 1200"
+
+		"DOTA_Tooltip_ability_item_root_ability"                                          "Root"
+		"DOTA_Tooltip_ability_item_root_ability_Description"                              "Roots the troll.<br/>Троль не зможе рухатися і його видно протягом усієї дії, але все ж таки може читати закляття. "
+
+		"DOTA_Tooltip_ability_item_silence_ability"                                       "Silence"
+		"DOTA_Tooltip_ability_item_silence_ability_Description"                           "Silences the troll.<br/>Троль не зможе читати закляття. Збиває читання заклять."
+
+		"DOTA_Tooltip_ability_item_glyph_ability"                                         "Glyph"
+		"DOTA_Tooltip_ability_item_glyph_ability_Description"                             "Робить ціль невразливою. "
+
+		"DOTA_Tooltip_ability_item_night_ability"                                         "Day?Nope"
+		"DOTA_Tooltip_ability_item_night_ability_Description"                             "О сонечко світить, птахи співають. . . Що? Ніч? Тепер? Чому? Думаю, мені доведеться змиритися з цим та рухатися далі. "
+		"DOTA_Tooltip_ability_item_night_ability_duration"                                "DURATION: "
+		"DOTA_Tooltip_ability_item_night_ability_blind_percentage"                        "BLIND PERCENTAGE: "
+		"DOTA_Tooltip_ability_item_night_ability_radius"                                  "RADIUS: "
+
+
+		"DOTA_Tooltip_ability_item_dmg_1"                                                 "Dmg 1"
+		"DOTA_Tooltip_ability_item_dmg_1_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_1_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_1_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_1_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_2"                                                 "Dmg 2"
+		"DOTA_Tooltip_ability_item_dmg_2_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_2_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_2_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_2_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_3"                                                 "Dmg 3"
+		"DOTA_Tooltip_ability_item_dmg_3_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_3_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_3_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_3_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_4"                                                 "Dmg 4"
+		"DOTA_Tooltip_ability_item_dmg_4_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_4_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_4_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_4_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_5"                                                 "Dmg 5"
+		"DOTA_Tooltip_ability_item_dmg_5_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_5_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_5_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_5_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_6"                                                 "Dmg 6"
+		"DOTA_Tooltip_ability_item_dmg_6_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_6_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_6_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_6_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_7"                                                 "Dmg 7"
+		"DOTA_Tooltip_ability_item_dmg_7_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_7_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_7_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_7_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_8"                                                 "Dmg 8"
+		"DOTA_Tooltip_ability_item_dmg_8_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_8_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_8_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_8_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_9"                                                 "Dmg 9"
+		"DOTA_Tooltip_ability_item_dmg_9_Description"                                     ""
+		"DOTA_Tooltip_ability_item_dmg_9_bonus_damage"                                    "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_9_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_9_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_10"                                                "Dmg 10"
+		"DOTA_Tooltip_ability_item_dmg_10_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_10_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_10_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_10_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_11"                                                "Dmg 11"
+		"DOTA_Tooltip_ability_item_dmg_11_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_11_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_11_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_11_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_12"                                                "Dmg 12"
+		"DOTA_Tooltip_ability_item_dmg_12_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_12_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_12_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_12_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_13"                                                "Dmg 13"
+		"DOTA_Tooltip_ability_item_dmg_13_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_13_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_13_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_13_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_dmg_14"                                                "Dmg 14"
+		"DOTA_Tooltip_ability_item_dmg_14_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_14_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_14_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_14_lumber_cost"                                    "LUMBER COST: "
+		
+		"DOTA_Tooltip_ability_item_dmg_15"                                                "Dmg 15"
+		"DOTA_Tooltip_ability_item_dmg_15_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_15_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_15_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_15_lumber_cost"                                    "LUMBER COST: "
+		
+		"DOTA_Tooltip_ability_item_dmg_16"                                                "Dmg 16"
+		"DOTA_Tooltip_ability_item_dmg_16_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_16_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_16_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_16_lumber_cost"                                    "LUMBER COST: "
+		
+		"DOTA_Tooltip_ability_item_dmg_17"                                                "Dmg 17"
+		"DOTA_Tooltip_ability_item_dmg_17_Description"                                    ""
+		"DOTA_Tooltip_ability_item_dmg_17_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_dmg_17_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_dmg_17_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_1"                                               "Armor 1"
+		"DOTA_Tooltip_ability_item_armor_1_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_1_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_1_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_1_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_2"                                               "Armor 2"
+		"DOTA_Tooltip_ability_item_armor_2_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_2_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_2_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_2_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_3"                                               "Armor 3"
+		"DOTA_Tooltip_ability_item_armor_3_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_3_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_3_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_3_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_4"                                               "Armor 4"
+		"DOTA_Tooltip_ability_item_armor_4_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_4_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_4_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_4_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_5"                                               "Armor 5"
+		"DOTA_Tooltip_ability_item_armor_5_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_5_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_5_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_5_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_6"                                               "Armor 6"
+		"DOTA_Tooltip_ability_item_armor_6_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_6_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_6_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_6_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_7"                                               "Armor 7"
+		"DOTA_Tooltip_ability_item_armor_7_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_7_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_7_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_7_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_8"                                               "Armor 8"
+		"DOTA_Tooltip_ability_item_armor_8_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_8_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_8_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_8_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_9"                                               "Armor 9"
+		"DOTA_Tooltip_ability_item_armor_9_Description"                                   ""
+		"DOTA_Tooltip_ability_item_armor_9_bonus_armor"                                   "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_9_gold_cost"                                     "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_9_lumber_cost"                                   "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_10"                                              "Armor 10"
+		"DOTA_Tooltip_ability_item_armor_10_Description"                                  ""
+		"DOTA_Tooltip_ability_item_armor_10_bonus_armor"                                  "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_10_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_10_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_11"                                              "Armor 11"
+		"DOTA_Tooltip_ability_item_armor_11_Description"                                  ""
+		"DOTA_Tooltip_ability_item_armor_11_bonus_armor"                                  "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_11_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_11_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_12"                                              "Armor 12"
+		"DOTA_Tooltip_ability_item_armor_12_Description"                                  ""
+		"DOTA_Tooltip_ability_item_armor_12_bonus_armor"                                  "BONUS ARMOR: "
+		"DOTA_Tooltip_ability_item_armor_12_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_12_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_armor_13"                                              "Armor of God"
+		"DOTA_Tooltip_ability_item_armor_13_Description"                                  "HP: 199500<br>REGEN: 10000"
+		"DOTA_Tooltip_ability_item_armor_13_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_armor_13_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_1"                                                  "Hp 1"
+		"DOTA_Tooltip_ability_item_hp_1_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_1_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_1_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_1_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_2"                                                  "Hp 2"
+		"DOTA_Tooltip_ability_item_hp_2_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_2_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_2_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_2_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_3"                                                  "Hp 3"
+		"DOTA_Tooltip_ability_item_hp_3_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_3_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_3_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_3_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_4"                                                  "Hp 4"
+		"DOTA_Tooltip_ability_item_hp_4_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_4_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_4_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_4_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_5"                                                  "Hp 5"
+		"DOTA_Tooltip_ability_item_hp_5_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_5_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_5_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_5_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_6"                                                  "Hp 6"
+		"DOTA_Tooltip_ability_item_hp_6_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_6_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_6_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_6_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_7"                                                  "Hp 7"
+		"DOTA_Tooltip_ability_item_hp_7_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_7_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_7_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_7_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_8"                                                  "Hp 8"
+		"DOTA_Tooltip_ability_item_hp_8_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_8_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_8_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_8_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_9"                                                  "Hp 9"
+		"DOTA_Tooltip_ability_item_hp_9_Description"                                      ""
+		"DOTA_Tooltip_ability_item_hp_9_bonus_hp"                                         "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_9_gold_cost"                                        "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_9_lumber_cost"                                      "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_10"                                                 "Hp 10"
+		"DOTA_Tooltip_ability_item_hp_10_Description"                                     ""
+		"DOTA_Tooltip_ability_item_hp_10_bonus_hp"                                        "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_10_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_10_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_11"                                                 "Hp 11"
+		"DOTA_Tooltip_ability_item_hp_11_Description"                                     ""
+		"DOTA_Tooltip_ability_item_hp_11_bonus_hp"                                        "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_11_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_11_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_12"                                                 "Hp 12"
+		"DOTA_Tooltip_ability_item_hp_12_Description"                                     ""
+		"DOTA_Tooltip_ability_item_hp_12_bonus_hp"                                        "BONUS HP: "
+		"DOTA_Tooltip_ability_item_hp_12_gold_cost"                                       "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_12_lumber_cost"                                     "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_1"                                              "Hp Reg 1"
+		"DOTA_Tooltip_ability_item_hp_reg_1_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_1_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_1_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_1_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_2"                                              "Hp Reg 2"
+		"DOTA_Tooltip_ability_item_hp_reg_2_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_2_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_2_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_2_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_3"                                              "Hp Reg 3"
+		"DOTA_Tooltip_ability_item_hp_reg_3_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_3_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_3_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_3_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_4"                                              "Hp Reg 4"
+		"DOTA_Tooltip_ability_item_hp_reg_4_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_4_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_4_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_4_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_5"                                              "Hp Reg 5"
+		"DOTA_Tooltip_ability_item_hp_reg_5_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_5_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_5_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_5_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_6"                                              "Hp Reg 6"
+		"DOTA_Tooltip_ability_item_hp_reg_6_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_6_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_6_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_6_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_7"                                              "Hp Reg 7"
+		"DOTA_Tooltip_ability_item_hp_reg_7_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_7_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_7_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_7_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_8"                                              "Hp Reg 8"
+		"DOTA_Tooltip_ability_item_hp_reg_8_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_8_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_8_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_8_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_9"                                              "Hp Reg 9"
+		"DOTA_Tooltip_ability_item_hp_reg_9_Description"                                  ""
+		"DOTA_Tooltip_ability_item_hp_reg_9_bonus_hp_regen"                               "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_9_gold_cost"                                    "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_9_lumber_cost"                                  "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_10"                                             "Hp Reg 10"
+		"DOTA_Tooltip_ability_item_hp_reg_10_Description"                                 ""
+		"DOTA_Tooltip_ability_item_hp_reg_10_bonus_hp_regen"                              "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_10_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_10_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_11"                                             "Hp Reg 11"
+		"DOTA_Tooltip_ability_item_hp_reg_11_Description"                                 ""
+		"DOTA_Tooltip_ability_item_hp_reg_11_bonus_hp_regen"                              "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_11_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_11_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_hp_reg_12"                                             "Hp Reg 12"
+		"DOTA_Tooltip_ability_item_hp_reg_12_Description"                                 ""
+		"DOTA_Tooltip_ability_item_hp_reg_12_bonus_hp_regen"                              "BONUS HP REGEN: "
+		"DOTA_Tooltip_ability_item_hp_reg_12_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_hp_reg_12_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_1"                                             "Atk Spd 1"
+		"DOTA_Tooltip_ability_item_atk_spd_1_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_1_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_1_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_1_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_2"                                             "Atk Spd 2"
+		"DOTA_Tooltip_ability_item_atk_spd_2_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_2_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_2_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_2_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_3"                                             "Atk Spd 3"
+		"DOTA_Tooltip_ability_item_atk_spd_3_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_3_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_3_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_3_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_4"                                             "Atk Spd 4"
+		"DOTA_Tooltip_ability_item_atk_spd_4_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_4_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_4_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_4_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_5"                                             "Atk Spd 5"
+		"DOTA_Tooltip_ability_item_atk_spd_5_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_5_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_5_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_5_lumber_cost"                                 "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_atk_spd_6"                                             "Atk Spd 6"
+		"DOTA_Tooltip_ability_item_atk_spd_6_Description"                                 ""
+		"DOTA_Tooltip_ability_item_atk_spd_6_bonus_atk_spd"                               "BONUS ATK SPD: "
+		"DOTA_Tooltip_ability_item_atk_spd_6_gold_cost"                                   "GOLD COST: "
+		"DOTA_Tooltip_ability_item_atk_spd_6_lumber_cost"                                 "LUMBER COST: "
+		
+		"DOTA_Tooltip_ability_buy_item_reveal"                                          	 "Телескоп"
+		"DOTA_Tooltip_ability_buy_item_reveal_Description"                              	 "Розкриває видимість у вибраній вами області, АЛЕ зникає після активації. "
+
+		"DOTA_Tooltip_ability_item_troll_boots"                                           "Boots of Troll"
+		"DOTA_Tooltip_ability_item_troll_boots_Description"                               "Підвищує швидкість пересування. "
+
+		"DOTA_Tooltip_Ability_item_get_gem"											"Lucky Gem"
+		"DOTA_Tooltip_Ability_item_get_gem_Description"								"Дає 10 Lucky Gem.<br>Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються наприкінці гри!<br>Можна активувати лише від 12 осіб."
+
+		"DOTA_Tooltip_Ability_item_get_gold"											"Мешок TvE Coint"
+		"DOTA_Tooltip_Ability_item_get_gold_Description"								"Дає 10 TvE Coint.<br>Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються наприкінці гри!<br>Можна активувати лише від 12 осіб."
+
+
+		"DOTA_Tooltip_ability_item_vip"                                           	"Event Effect"
+		"DOTA_Tooltip_ability_item_vip_Description"                               	"Активуйте предмет та отримайте ефект сезону в наступній грі.<br>Можна активувати лише від 12 осіб."
+		
+		"DOTA_Tooltip_ability_item_event"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_event_Description"                               "Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються наприкінці гри!<br>Можна активувати лише від 12 людей. "
+		
+		"DOTA_Tooltip_ability_item_autumn"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_autumnt_Description"                               "Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються наприкінці гри!<br>Можна активувати лише від 12 людей. "
+		
+		"DOTA_Tooltip_ability_item_winter_1"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_winter_1_Description"                               "Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються наприкінці гри!<br>Можна активувати лише від 12 людей. "
+
+		"DOTA_Tooltip_ability_item_spring"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_spring_Description"                               "Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються наприкінці гри!<br>Можна активувати лише від 12 людей. "
+
+		"DOTA_Tooltip_ability_item_summer"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_summer_Description"                               "Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються наприкінці гри!<br>Можна активувати лише від 12 людей. "
+
+
+		"DOTA_Tooltip_ability_item_winter_stress"                                           "Event Item by stresS_"
+		"DOTA_Tooltip_ability_item_winter_tree_1_Description"                               "Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються наприкінці гри!<br>Можна активувати лише від 12 людей. "
+		
+		"DOTA_Tooltip_ability_item_winter_end"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_winter_end_Description"                               "Ви вже близькі до розгадки!"
+		
+		"DOTA_Tooltip_ability_item_event_winter"                                           "Winter Event Item"
+		"DOTA_Tooltip_ability_item_event_winter_Description"                               "Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються в кінці гри!<br>Видається ефект Winter 2.<br>Можна активувати лише від 12 осіб."
+
+		"DOTA_Tooltip_ability_item_event_helheim"                                           "Helheim Event Item"
+		"DOTA_Tooltip_ability_item_event_helheim_Description"                               "Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються в кінці гри!<br>Видається ефект Winter 2.<br>Можна активувати лише від 12 осіб."
+
+		"DOTA_Tooltip_ability_item_event_birthday"                                           "C Днем Рождения!"
+		"DOTA_Tooltip_ability_item_event_birthday_Description"                               "Спільноті ТвЕ3 виповнився 1 рік! <br>Дякую за активну підтримку! <br>Я ціную Вашу допомогу! <br>Активуйте предмет, щоб забрати предмет собі. Неактивовані предмети не зберігаються в кінці гри! Видається ефект Birthday .<br>Можна активувати лише від 12 осіб."
+
+		"DOTA_Tooltip_ability_drop_gift"                                           "Chest of the Damned!"
+		"DOTA_Tooltip_ability_drop_gift_Description"                               "Дякую за проходження квесту!<br>Скриня Проклятих видасть вам від 25 до 200 івент предметів у випадковий час."
+
+		"DOTA_Tooltip_ability_item_max_move"                                          	 "Бутылка скорости."
+		"DOTA_Tooltip_ability_item_max_move_Description"                              	 "Додає +190 до швидкості бігу на 20 секунд."
+
+		"DOTA_Tooltip_ability_item_event"                                           "Event Item"
+		"DOTA_Tooltip_ability_item_event_Description"                               "Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються наприкінці гри!<br>Можна активувати лише від 12 людей. "
+		
+		"DOTA_Tooltip_ability_item_event_desert"                                           	"Desert Event Item"
+		"DOTA_Tooltip_ability_item_event_desert_Description"                               	"Активуйте предмет, щоб забрати предмет собі.<br>Неактивовані предмети не зберігаються в кінці гри!<br>Видається ефект Disert.<br>Можна активувати лише від 12 осіб."
+		
+		"DOTA_Tooltip_ability_item_disable_repair"                                                "No Hammer Time! Level 1!"
+		"DOTA_Tooltip_ability_item_disable_repair_Description"                                    "Не дає робітникам лагодити стіну! Діє 5 секунд."
+		"DOTA_Tooltip_ability_item_disable_repair_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_disable_repair_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_disable_repair_lumber_cost"                                    "LUMBER COST: "
+
+		"DOTA_Tooltip_ability_item_disable_repair_2"                                                "No Hammer Time! Level 2!"
+		"DOTA_Tooltip_ability_item_disable_repair_2_Description"                                    "Не дає робітникам лагодити стіну! Діє 5.5 секунд. Використовує нейтральний слот. Не можна продати. Видаляється після смерті!"
+		"DOTA_Tooltip_ability_item_disable_repair_2_bonus_damage"                                   "BONUS DAMAGE: "
+		"DOTA_Tooltip_ability_item_disable_repair_2_gold_cost"                                      "GOLD COST: "
+		"DOTA_Tooltip_ability_item_disable_repair_2_lumber_cost"                                    "LUMBER COST: "
+
+        "topptext"                                      									"Найкращі гравці у загальному рейтингу: "
+        "topwtext"                                      									"Найкращі гравці за Ельфа: " 
+        "tophtext"                                      									"Найкращі гравці за Троля: "
+		"topetext"																			"Найкращі гравці: "
+		
+		"leaderboard_name"                                      									"Таблиця лідерів"
+        "leaderboard_1"                                      									"Найкращі гравці (загальний рейтинг)"
+        "leaderboard_2"                                      									"Найкращі Ельфи"
+		"leaderboard_3"                                      									"Найкращі Тролі"
+		"leaderboard_event"                                      									"Лідери Івенту"
+		"leaderboard_button"                                      									"Лідери"
+		
+		"summer"                                          										"Видається за участь у Summer event."
+		"patron7"                                          										"Level 7 Donation. Доступно донатеру сьомого рівня і вище."
+		"tester"                                          										"Ефект тестувальника."
+		"top"                                          											"Нагороджуються гравці за ТОП 1-10 сезону."
+		"top1"                                          										"Нагороджуються гравці за ТОП 1 сезону."
+		"top2-3"                                          										"Нагороджуються гравці за ТОП 2-3 сезону."
+		"top2"                                          										"Нагороджуються гравці за ТОП 2 сезону."
+		"top3"                                          										"Нагороджуються гравці за ТОП 3 сезону."
+		"spring"                                          										"Видається за участь у Spring event."
+		"developer2"                                          									"Ефект розробника."
+		"moderator"                                          									"Ефект модератора."
+		"newyear"                                          										"Видається за участь у New Year event."
+		"autumn"                                          										"Видається за участь у Autumn event."
+		"patron1"                                          										"Level 1 Donation. Доступно донатеру першого рівня та вище."
+		"patron2"                                          										"Level 2 Donation. Доступно донатеру другого рівня та вище."
+		"patron3"                                          										"Level 3 Donation. Доступно донатеру третього рівня та вище."
+		"patron4"                                          										"Level 4 Donation. Доступно донатеру четвертого рівня та вище."
+		"patron5"                                          										"Level 5 Donation. Доступно донатеру п'ятого рівня та вище."
+		"patron6"                                          										"Level 6 Donation. Доступно донатеру шостого рівня та вище."
+		"birthday"                                          									"Видається за участь у Birthday event."	
+		"patron8"                                          										"Level 8 Donation. Доступно донатеру восьмого рівня та вище."
+		"patron9"                                          										"Level 9 Donation. Доступно донатеру дев'ятого рівня та вище."
+		"patron10"                                          									"Level 10 Donation. Доступно донатеру десятого рівня та вище."
+		"patron11"                                          									"Level 11 Donation. Доступно донатеру десятого рівня та вище."
+		"patron12"                                          									"Level 12 Donation. Доступно донатеру десятого рівня та вище."
+		"coldfire"																				"Видається разом із ефектом 9 рівня або в особливих подіях."
+		"winter2"																				"Видається разом із ефектом 9 рівня або в особливих подіях."
+		"suprise"																				"Видається разом із ефектом 9 рівня або в особливих подіях."
+		"winter3"																				"Видається разом із ефектом 10 рівня або в особливих подіях."
+		"spring2"																				"Видається разом із ефектом 10 рівня або в особливих подіях"
+		"autumn2"																				"Видається разом із ефектом 10 рівня або в особливих подіях"
+		"summer2"																				"Видається разом із ефектом 10 рівня або в особливих подіях"
+		"dirt"																				    "Видається разом із ефектом 10 рівня або в особливих подіях"
+		"storm"																				 	"Видається разом із ефектом 10 рівня або в особливих подіях"
+		"life"																				 	"Видається разом із ефектом 12 рівня або в особливих подіях"
+		"toppatron"																				"Видається за ТОП1-5 донатерам на Патреон."
+
+		"subscribe_1_description"					"Збільшує шанс отримання Троля на 25%. Діє 1 місяць.<br>Повторна покупка шансу збільшує термін дії шансу на 1 місяць."
+		"subscribe_2_description"					"Збільшує шанс отримання Троля на 50%. Діє 1 місяць.<br>Повторна покупка шансу збільшує термін дії шансу на 1 місяць."
+		"subscribe_3_description"					"Збільшує шанс отримання Троля на 75%. Діє 1 місяць.<br>Повторна покупка шансу збільшує термін дії шансу на 1 місяць."
+		"subscribe_4_description"					"Збільшує бонус рейтинг усіх гравців у грі на 10%."
+
+"particle_2_description" "Присуджується за участь у Summer event."
+"particle_3_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+//"particle_4_description" "Effect Tester"
+"particle_5_description" "Нагороджуються гравці за TOP 1-10 сезону"
+"particle_6_description" "Присуджується за участь у Spring event."
+//"particle_7_description" "Effect Dev"
+//"particle_8_description" "Effect модератора"
+"particle_9_description" "Присуджується за участь у Winter event."
+"particle_10_description" "Присуджується за участь у Autumn event."
+"particle_11_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_12_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_13_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_14_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_15_description" "Предмет, куплений за TvE Coint, дійсний щонайменше 1 рік, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_16_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_17_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_18_description" "Предмет, куплений за TvE Coint, дійсний щонайменше 1 рік, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_19_description" "Предмет, куплений за TvE Coint, дійсний щонайменше 1 рік, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_20_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_21_description" "Нагороджуються гравці за TOP 1 сезону"
+"particle_22_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_23_description" "Присуждается за участие в мероприятии по случаю Дня Рождения."
+"particle_24_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_25_description" "Нагороджуються гравці за  TOP 2-3 сезону."
+"particle_26_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_27_description" "Предмет, куплений за TvE Coint, дійсний щонайменше 1 рік, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_28_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_29_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_30_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_31_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_32_description" "Предмет, куплений за TvE Coint, дійсний щонайменше 1 рік, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_33_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_34_description" "Предмет, куплений за TvE Coint, дійсний щонайменше 1 рік, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_35_description" "Предмет, куплений за TvE Coint, дійсний щонайменше 1 рік, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_36_description" "Нагороджуються гравці за  TOP 2-3 сезону"
+"particle_37_description" "Нагороджуються гравці за  TOP 1 сезону"
+"particle_38_description" "Нагороджуються гравці за  TOP 1 сезону"
+"particle_39_description" "Нагороджуються гравці за  TOP 2 сезону"
+"particle_40_description" "Нагороджуються гравці за  TOP 3 сезону"
+"particle_41_description" "Нагороджуються гравці за  TOP 1 сезону"
+"particle_42_description" "Нагороджуються гравці за  TOP 2 сезону"
+"particle_43_description" "Нагороджуються гравці за  TOP 3 сезону"
+"particle_44_description" "Предмет, куплений за TvE Coint, дійсний щонайменше 1 рік, куплений за Gem Lucky дійсний протягом 1 місяця."
+"particle_45_description" "TOP 1-5 на Patreon."	
+
+
+	"pet_1_description" "Нагороджуються гравці за ТОП-1 сезону"
+"pet_2_description" "Нагороджуються гравці за ТОП-1 сезону"
+"pet_3_description" "Нагороджуються гравці за ТОП-1 сезону"
+"pet_4_description" "Нагороджуються гравці за ТОП-1 сезону"
+"pet_5_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_6_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_7_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_8_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_9_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_10_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_11_description" "Присуджується за участь у події у пустелі."
+"pet_12_description" "Присуджується за участь у Зимовій події. "
+"pet_13_description" "Присуджується за участь у весняній події. "
+"pet_14_description" "Присуджується за участь у весняній події. "
+"pet_15_description" "Буде випущений для підтримки спільноти TvE3 у соціальних мережах"
+"pet_16_description" "Видається нашим улюбленим, красивим і вічно прекрасним дівчатам у Discord :DDD"
+"pet_17_description" "Присуджується за участь у події Helheim."
+
+"pet_18_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_19_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_20_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_21_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_22_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_23_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_24_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_25_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_26_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_27_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_28_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_29_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_30_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_31_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_32_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_33_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+
+"pet_34_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_35_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_36_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_37_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_38_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_39_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_40_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_41_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_42_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_43_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_44_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+"pet_45_description" "Предмет, куплений за TvE Coint, дійсний не менше 1 року, куплений за Gem Lucky дійсний протягом 1 місяця."
+
+
+
+		"block"																				 	"Ефект заблоковано до релізу події."
+		
+		"partnote"                                          									"Опис Ефекту"
+		"partname"                                          									"Назва Ефекту"
+
+		
+		"petsnote"                                          									"Опис Тварин"
+		"petsname"                                          									"Назва Тварин"
+		
+		"ptop1autumn"																			"Нагороджується гравці за ТОП 1 сезону."									
+		"ptop1winter"																			"Нагороджується гравці за ТОП 1 сезону."																				
+		"ptop1spring"																			"Нагороджується гравці за ТОП 1 сезону."																				
+		"ptop1summer"																			"Нагороджується гравці за ТОП 1 сезону."																				
+		"ppatron1"																				"Доступно донатеру першого рівня та вище. Тварини не входять у донат ефектів."
+		"ppatron2"																				"Доступно донатеру другого рівня та вище. Тварини не входять у донат ефектів."
+		"ppatron3"																				"Доступно донатеру третього рівня та вище. Тварини не входять у донат ефектів."
+		"ppatron4"																				"Доступно донатеру четвертого рівня та вище. Тварини не входять у донат ефектів."
+		"ppatron5"																				"Доступно донатеру п'ятого рівня та вище. Тварини не входять у донат ефектів."
+		"ppatron6"																				"Доступно донатеру шостого рівня та вище. Тварини не входять у донат ефектів."
+		"peventdesert"																			"Видається за участь у Desert event."
+		"peventwinter"																			"Видається за участь у Winter event."
+		"peventspring"																			"Видається за участь у Spring event."
+		"peventsummer"																			"Видається за участь у Summer event."
+		"discordnitro"																			"Видаватиметься за підтримку спільноти TvE3 у соціальних мережах."
+		"grils"																					"Видається нашим улюбленим, красивим і вічно прекрасним дівчатам у Discord)))"
+		
+		"seveasdefault"																			"Зберегти за промовчанням"
+		
+		"patreonbuttontext"																	"Donate Patreon"
+		"patreonbuttontext1"																"Donate PayPal Page"
+		"patreonbuttontext2"																"Donate Yandex Page"
+		"patreontext"	"Якщо ви хочете підтримати проект і допомогти у розвитку,
+то ви можете зробити пожертвування за допомогою сайту https://patreon.com/troll_vs_elves3 або https://paypal.me/elves3 або https://donate.stream/en/vladu4eg
+Отримані гроші будуть витрачені на обслуговування серверів та покращення якості контенту.
+Обов'язково вкажіть посилання на профіль у Steam, нік у Discord/Steam.
+Будь ласка, надайте якнайбільше інформації про себе, щоб я міг подякувати вам за підтримку.
+Ефект видається терміном 1 рік. Ваша підтримка допомагає грі розвиватися."
+		
+		"bonus_damage"																		"Bonus Damage"
+		"bonus_armor"																		"Bonus Armor"
+		"bonus_hp"																			"Bonus HP"
+		"bonus_hp_regen"																	"Bonus HP Regenaration"
+		"bonus_atk_spd"																		"Bonus Atk. Speed"
+		"bonus_ms"																			"Bonus Movement Speed"
+		"error_not_enough_gold"																"Бракує	золота! "
+		"error_not_enough_lumber"															"Бракує дерева(lumber) "
+		"error_not_buy_wolf"																"Вовк не зможе покращувати Troll Hut! "
+		"error_castable_only_on_troll_hut"													"Можна використовувати лише на Troll Hut!"
+		"error_not_enough_food"																"Закінчилася їжа! "
+		"error_not_enough_wisp"																"Перевищено ліміт Wisp 1-6 або Gold Wisp! "
+		"error_not_enough_mine"																"Перевищено ліміт Gold"
+		"error_full_inventory"																"Повний інвентар! "
+		"error_shop_out_of_range"															"Ви не в радіусі магазину! "
+		"error_not_enough_resources"														"Вам не вистачає ресурсів! "
+		"error_type_only_digits"															"Введіть лише цифри! "
+		"error_select_only_your_allies"														"Виберіть свого союзника! "
+		"error_enemy_nearby"																"Ворог поряд! "
+		"error_invalid_build_position"														"Неправильна позиція! "
+		"error_only_troll_can_upgrade"														"Тільки Троль може покращити Troll Hut! "
+		"error_no_radar"																	"На жаль, сканування в індивидуальних іграх не зараховується у випробуванні спільноти! "
+		"error_not_night"																	"Работает только ночью! "
+		"error_item_not_sellable"															"Товар не продається!"
+		"error_not_time"																	"Вкрасти золото можна за 5 хвилин! "
+		"error_place_is_taken"																"Місце зайняте іншим Ельфом або тут не можна ставити Прапор!"
+		"error_cant_build_flag"																"Тут не можна ставити Прапор!"
+		"error_place_is_flag"																"Тут не можна ставити Прапор!"
+		"team_choice_header"                                                                "Ты хочешь быть Троллем?"
+		"error_need_put_flag"																"Потрібно збудувати Прапор!"
+		"team_choice_yes"                                                                   "Да"
+		"team_choice_no"                                                                    "Нет"
+		"error_not_spam_votekick"															"Голосування можна проводити один раз на 1 хвилину!"
+		"error_construction_for_yourself"													"Ви не можете будувати зверху Ельфа після 10 (x2) та 20 (x1) хвилини!"
+		"error_need_buy_hut_7"																"Вам потрібно покращити Troll Hut до 7 рівня!"
+		"error_not_upgrade_tower19_x4"														"Ви не можете побудувати Enigma х4."
+		"error_not_destroy_building"														"Власник не залишив гру. Дочекайтеся повного виходу із гри. "
+		"error_enter_need_money"															"Не можна передати менше 100 золота або 1 дерева (lumber)."
+		"error_not_create_wisp"																"Не можна створити Wisp 1-6 рівня після 40 хвилини у х1, 20 хвилини - х2, 10 хвилини - 1х"
+		"error_no_bear_team"																"Потрібно створити Ведмедя."
+		"error_buy_skill_only_troll"														"Купити Скілл може лише Троль."						
+		"error_bear_have_skill"																"У Ведмедя є цей Скілл. "
+		"error_limit_queue"																	"Перевищено ліміт черги будівель. Максимум 20 будівель. "
+		"error_limit_queue_wisp"															"Перевищено ліміт черги будівель."
+		"error_take_normal_builder"															"У юніта немає цієї здатності! Виберіть потрібного юніта!"
+
+		"trigs1"																			"Золота багато не буває!"
+		"trigs2"																			"Очікування окупає витрати!"
+		"trigs3"																			"Адже ми з братом могли бути Ванами..."
+		"trigs4"																			"Ти завжди молишся Тору, Фрейру та Одину..."
+		"trigs5"																			"Я повинен був потрапити до Льєсальвхейма!"
+		"trigs6"																			"Жадібність погубить всіх, навіть найменше підношення може задовольнити богів!"
+		"trigs7"																			"Подорож у світ вільних разом із Тором найкращий спогад..."
+		"trigs8"																			"Повернутися б знову до річки Ванаквісль..."
+		"trigs9"																			"Кажуть, що три світи були повністю знищені..."
+		"trigs10"																			"Які ж прекрасні Норни, я б багато чого віддав, щоб знову побачити їх..."
+		"podskazka1"																		"Для того щоб почати ритуал тобі необхідно принести кровну жертву!!!"
+		"aa2trigger"																		"Принеси підношення до їхніх ніг і тоді ти зможеш зняти прокляття, за це боги нагородять тебе."
+		"fountaingoldt"																		"Повернися до фонтану, щоб закінчити ритуал і отримати доступ до скарбів."
+		"failtrigger"																		"Боги не схвалили твого підношення, тепер ви прокляті навічно."
+		
+		
+		"donate1"																			"<font color='#58ACFA'>Ви можете підтримати гру на Patreon.</font>"
+		"donate2"																			"<font color='#58ACFA'>Ви можете підвищити шанс на отримання Троля, збільшити кількість очків або отримати один з унікальних косметичних ефектів, підтримавши наш проект на Patreon.</font>"
+		"donate3"																			"<font color='#58ACFA'>Patreon: https://patreon.com/troll_vs_elves3</font>"
+		"donate4"																			"<font color='#58ACFA'>Discord: https://discord.gg/tve3</font>"
+		"donate5"																			"<font color='#58ACFA'>Ви можете поділитись ідеями/багами/побажаннями на нашому сервері Discord!</font>"
+		"donate6"																			"<font color='#58ACFA'>Дякуємо всім тестерам за такий значний внесок у розвиток кастомки! Спасибі:*</font>"
+		"donate7"																			"<font color='#58ACFA'>Відкрито реєстрацію на Турнір #1 в Discord: https://discord.gg/tve3</font>"
+		"donate8"																			"<font color='#58ACFA'>За порушення правил гри передбачено покарання! Інформація в Discord: https://discord.gg/tve3</font>"
+		"donate9"																			"<font color='#58ACFA'>СТАВТЕ прапорець біля свого каменя!</font>"
+		"donate10"																			"<font color='#58ACFA'>Якщо вам потрібна допомога – пишіть у Discord: https://discord.gg/tve3</font>"
+		
+		"loading_text"																		"&lt;=Натисніть тут, щоб отримати поради!<br>
+		                                                                                    Не змінюйте горячі клавіші після запуску гри.
+		                                                                                    "
+		"loading_text_no_troll"																		"Не вибирайте Троля, якщо граєте вперше, будь ласка.
+		
+		"DOTA_Chat_PlayerKilled"                    ""
+        "DOTA_Chat_PlayerKilledNearby"              ""
+        "DOTA_Chat_PlayerKilledNearbySingle"        ""
+        "DOTA_Chat_PlayerKilledAssist"              ""
+        "DOTA_Chat_PlayerKilledAssistNearby"        ""
+		"DOTA_Chat_PlayerKilledAssistNearbySingle"  ""
+		
+		"elf_tips1"																		"<br><br><b>Підказки для Ельфа</b>
+		<br>·Ви можете побудувати намет на самому початку гри поряд з базою Троля, доки йдете шукати базу. Таким чином, у вас буде перевага, просто не добудовуйте намет, інакше ви не зможете його знищити, тому що Троль буде поблизу.
+		<br>·Поставте камінь у середині сходинок, щоб збоку каменя було по 1 клітинки.
+		"
+		"elf_tips2"																		"Ви можете використовувати Glyph на собі або на камені, щоб тролити троля протягом 10 секунд.
+					<br>·Хороші вежі на ранньому етапі можуть налякати троля та дати вам час добувати ресурси у спокої. Для початку достатньо 2-4 веж! Просто покращуйте їх!
+					<br>·Не забувай використовувати свої здібності! Краще почати з Root, тому що у нього менше часу відновлення, ніж у Glyph.
+					<br>·Використовуйте Glyph не тільки для того, щоб урятуватися з безвихідної ситуації, але й щоб не дати Тролю фармити.
+					<br>·Знайдіть друга, який співпрацюватиме з вами та побудуйте базу разом. Ви станете вдвічі сильнішим.
+					<br>·Клацніть правою кнопкою миші на навичку ремонту, щоб увімкнути авторемонт будівель!"
+		"elf_tips3"																	"·Поділіться своїми ресурсами. Якщо у вас є зайві ресурси, поділіться! У цій грі потрібна командна робота, щоб Троля не фідили надто швидко! "
+		
+		"troll_tips"																		"<b>Підказки для Троля/Вовка</b>
+					<br>·ВАМ НЕ МОЖНА ВМИРАТИ! Якщо Троль помре, то гра відразу закінчиться. 
+					<br>·Кожна атака дає вам золото в залежності від того, скільки пошкоджень ви нанесли
+					<br>·Купуйте предмети, щоб стати сильнішими!
+					<br>·Ви повинні замінювати предмети, продаючи їх та купуючи сильніші
+					<br>·Завжди використовуйте свою першу навичку (Reveal), щоб не витрачати час на пошуки Ельфів!
+					<br>·Спробуйте знайти ворогів, які не мають сильних веж, щоб їх було легше фарміти.
+					<br>·Не забувайте покращувати свою хатину! Це не тільки допоможе вам у тяжкі часи, але і якщо у вашій команді будуть Вовки.
+					<br>·Ви можете використовувати телепорт та невидимість разом. Таким чином, ви зможете телепортуватись, залишаючись невидимим.
+					<br>·Вдалого тролінгу цих маленьких ельфів.
+					"
+		"angel_tips"																		"<br><br><b>Підказки для Ангела</b>
+		<br/>·Пожертвуйте золото тим, хто дійсно його потребує, наприклад, Ельфу, якого спочатку гри душив Тролль.
+		<br/>·Не дозволяйте тролю вбити вас! Ваше золото піде Тролю і зробить його сильнішим!                    
+		<br/>·Завжди надсилайте золото Ельфам! ЗАВЖДИ!   
+        <br/>·Ви можете допомогти Ельфам і зцілити стіну або приголомшити Троля.       
+        <br/>·Біжи, біжи, біжи, коли приходить Троль/Вовк!
+		"
+	}
+}

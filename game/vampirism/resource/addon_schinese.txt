@@ -775,7 +775,7 @@
 		"DOTA_Tooltip_ability_cm_stun_Description"                                        "对敌方造成两秒眩晕。 "
 
 		"DOTA_Tooltip_ability_cm_haste"                                                   "加速"
-		"DOTA_Tooltip_ability_cm_haste_Description"                                       增加你的移动速度至极致， 使用这个技能逃离巨魔。"
+		"DOTA_Tooltip_ability_cm_haste_Description"                                       "增加你的移动速度至极致， 使用这个技能逃离巨魔。"
 
 		"DOTA_Tooltip_ability_cm_heal_building"                                           "修复建筑"
 		"DOTA_Tooltip_ability_cm_heal_building_Description"                               "此技能可以对建筑使用，恢复建筑300或30%其生命值，以更大值为准，同时建筑获得一个debuff，其它精灵使者对它的治疗效果减少2/3. "
