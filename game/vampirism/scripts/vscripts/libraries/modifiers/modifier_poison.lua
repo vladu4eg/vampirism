@@ -1,7 +1,16 @@
 modifier_poison = class({})
 
 function modifier_poison:OnCreated(event)
+    if not IsServer() then
+        return
+    end
     local hero = self:GetParent()
+    if hero == nil then
+        return
+    end
+    if hero:GetEntityIndex() == nil then
+        return
+    end
     if hero.hpReg == nil then
         hero.hpReg = 0
     end
@@ -17,8 +26,19 @@ function modifier_poison:OnCreated(event)
 end
 
 function modifier_poison:OnDestroy(event)
+    if not IsServer() then
+        return
+    end
     local hero = self:GetParent()
-
+    if hero == nil then
+        return
+    end
+    if hero:GetEntityIndex() == nil then
+        return
+    end
+    if hero.hpReg == nil then
+        hero.hpReg = 0
+    end
     local value = self.value
     if hero.hpRegDebuff  == nil  then
         hero.hpRegDebuff = 0

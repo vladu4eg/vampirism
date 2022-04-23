@@ -36,13 +36,15 @@ function Precache( context )
 	-- Entire heroes (sound effects/voice/models/particles) can be precached with PrecacheUnitByNameSync
 	-- Custom units from npc_units_custom.txt can also have all of their abilities and precache{} blocks precached in this way
 	PrecacheUnitByNameSync(ELF_HERO, context)
-	PrecacheUnitByNameSync(TROLL_HERO[1], context)
-	PrecacheUnitByNameSync(TROLL_HERO[2], context)
+	PrecacheUnitByNameSync(TROLL_HERO, context)
 	PrecacheUnitByNameSync(WOLF_HERO[1], context)
 	PrecacheUnitByNameSync(WOLF_HERO[2], context)
 	PrecacheUnitByNameSync(ANGEL_HERO[1], context)
 	PrecacheUnitByNameSync(ANGEL_HERO[2], context)
 	PrecacheUnitByNameSync(BEAR_HERO, context)
+	PrecacheUnitByNameSync("npc_dota_hero_doom_bringer", context)
+	PrecacheUnitByNameSync("npc_dota_hero_phantom_assassin", context)
+	PrecacheUnitByNameSync("npc_dota_hero_tidehunter", context)
 	PrecacheUnitByNameSync("tent", context)
 	PrecacheUnitByNameSync("tent_2", context)
 	PrecacheUnitByNameSync("tent_3", context)
@@ -89,6 +91,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("tower_11", context)
 	PrecacheUnitByNameSync("tower_11_1", context)
 	PrecacheUnitByNameSync("tower_12", context)
+	PrecacheUnitByNameSync("tower_12_1", context)
 	PrecacheUnitByNameSync("tower_13", context)
 	PrecacheUnitByNameSync("tower_14", context)
 	PrecacheUnitByNameSync("tower_15", context)
@@ -194,6 +197,7 @@ function Precache( context )
 	PrecacheResource("particle", "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf", context)
 	PrecacheResource("particle", "particles/econ/events/ti8/ti8_hero_effect.vpcf", context)
 	PrecacheResource("particle", "particles/econ/courier/courier_hermit_crab/hermit_crab_skady_ambient.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_mars/mars_arena_of_blood_heal.vpcf", context)
 	PrecacheResource("particle", "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf", context)
 	PrecacheResource("particle", "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf", context)
 	
@@ -357,7 +361,67 @@ function Precache( context )
 	
 	PrecacheResource("particle", "particles/econ/items/omniknight/omniknight_fall20_immortal/omniknight_fall20_immortal_degen_aura_debuff.vpcf", context)
 	PrecacheResource("particle", "particles/econ/events/ti10/aghanim_aura_ti10/agh_aura_ti10.vpcf", context)
-		
+	
+	PrecacheResource("particle", "particles/econ/events/summer_2021/summer_2021_emblem_effect.vpcf", context)
+    PrecacheResource("particle", "particles/econ/events/spring_2021/fountain_regen_spring_2021_lvl3.vpcf", context)
+    PrecacheResource("particle", "particles/econ/events/spring_2021/agh_aura_spring_2021_lvl2.vpcf", context) 
+	
+    PrecacheResource("model", "models/items/drow/drow_arcana/drow_arcana_back.vmdl", context) 
+    PrecacheResource("model", "models/items/drow/drow_arcana/drow_arcana_weapon.vmdl", context) 
+	PrecacheResource("model", "models/items/drow/drow_arcana/drow_arcana_legs.vmdl", context) 
+    PrecacheResource("model", "models/items/drow/drow_arcana/drow_arcana_quiver.vmdl", context)         
+    PrecacheResource("model", "models/items/drow/drow_arcana/drow_arcana_head.vmdl", context) 
+    PrecacheResource("model", "models/items/drow/drow_arcana/drow_arcana_shoulder.vmdl", context)  
+    PrecacheResource("model", "models/items/hoodwink/hood_2021_blossom_weapon/hood_2021_blossom_weapon.vmdl", context) 
+    PrecacheResource("model", "models/items/hoodwink/hood_2021_blossom_armor/hood_2021_blossom_armor.vmdl", context) 
+    PrecacheResource("model", "models/items/hoodwink/hood_2021_blossom_tail/hood_2021_blossom_tail.vmdl", context) 
+    PrecacheResource("model", "models/items/hoodwink/hood_2021_blossom_back/hood_2021_blossom_back.vmdl", context) 
+	PrecacheResource("particle", "particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable.vpcf", context) 
+	PrecacheResource("particle", "particles/econ/items/huskar/huskar_2021_immortal/huskar_2021_immortal_burning_spear_debuff.vpcf", context)
+
+
+	PrecacheResource("particle", "particles/econ/items/huskar/huskar_2021_immortal/huskar_2021_immortal_burning_spear_debuff.vpcf", context) -- 48 event direc
+
+    PrecacheResource("particle", "particles/econ/events/fall_2021/fountain_regen_fall_2021_lvl3.vpcf", context)  -- winter TOP2 49
+    PrecacheResource("particle", "particles/econ/items/effigies/status_fx_effigies/ambientfx_effigy_wm16_dire_lvl3.vpcf", context) -- winter TOP3 50
+    
+    PrecacheResource("particle", "particles/units/heroes/hero_templar_assassin/templar_assassin_refraction.vpcf", context) -- ивент 51
+
+    PrecacheResource("particle", "particles/units/heroes/hero_oracle/oracle_fatesedict_arc_pnt.vpcf", context) -- TOP2 52
+    PrecacheResource("particle", "particles/units/heroes/hero_oracle/oracle_fatesedict.vpcf", context)  -- TOP 1 53 
+    PrecacheResource("particle", "particles/units/heroes/hero_oracle/oracle_fatesedict_arc_thin.vpcf", context) -- TOP3 54
+
+    PrecacheResource("particle", "particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_buff.vpcf", context) -- TOP1 55
+    PrecacheResource("particle", "particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_pulse.vpcf", context) -- TOP2 56
+    PrecacheResource("particle", "particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_beam.vpcf", context) -- TOP3  57
+
+    PrecacheResource("particle", "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_flameguard.vpcf", context) -- ТОП шар 58
+
+    -- ивент гуд
+    PrecacheResource("particle", "particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8.vpcf", context) -- синяя фигня с кругом  59
+    PrecacheResource("particle", "particles/econ/items/oracle/oracle_ti10_immortal/oracle_ti10_immortal_purifyingflames.vpcf", context) -- грин с кругом  60
+    PrecacheResource("particle", "particles/econ/items/silencer/silencer_ti6/silencer_last_word_status_ti6.vpcf", context) -- фил с кругом  61
+    PrecacheResource("particle", "particles/econ/treasures/aghanim_2021_treasure/aghanim_2021_treasure_ambient.vpcf", context) -- син кольцо 62
+    PrecacheResource("particle", "particles/units/heroes/hero_spirit_breaker/spirit_breaker_haste_owner.vpcf", context) -- ивент 63
+    PrecacheResource("particle", "particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield.vpcf", context) -- сфера медузы грин 64
+    PrecacheResource("particle", "particles/econ/items/omniknight/omni_2021_immortal/omni_2021_immortal.vpcf", context) -- кольцо огня от омника 65
+
+    -- ивент
+    PrecacheResource("particle", "particles/units/heroes/hero_rubick/rubick_doom_ring.vpcf", context) -- биг метка 66
+    PrecacheResource("particle", "particles/units/heroes/hero_rubick/rubick_doom_sigil_c.vpcf", context) -- метка мини 67
+    PrecacheResource("particle", "particles/units/heroes/hero_earth_spirit/espirit_bouldersmash_pushrocks.vpcf", context) -- камни 68
+    PrecacheResource("particle", "particles/econ/items/bane/slumbering_terror/bane_slumber_nightmare.vpcf", context) -- son 69
+    PrecacheResource("particle", "particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf", context) -- аура дума кольцо ОГОнь 70
+    PrecacheResource("particle", "particles/econ/courier/courier_hermit_crab/hermit_crab_skady_ambient.vpcf", context) -- хрень топ10 71
+    PrecacheResource("particle", "particles/econ/courier/courier_hyeonmu_ambient/courier_hyeonmu_ambient.vpcf", context)  -- хрень донат7 72 
+	
+	PrecacheResource("model", "models/items/ancient_apparition/extremely_cold_shackles_tail/extremely_cold_shackles_tail.vmdl", context)
+	PrecacheResource("model", "models/items/ancient_apparition/extremely_cold_shackles_shoulder/extremely_cold_shackles_shoulder.vmdl", context)
+	PrecacheResource("model", "models/items/ancient_apparition/extremely_cold_shackles_head/extremely_cold_shackles_head.vmdl", context)
+	PrecacheResource("model", "models/items/ancient_apparition/extremely_cold_shackles_arms/extremely_cold_shackles_arms.vmdl", context)
+	PrecacheResource("model", "models/items/courier/green_jade_dragon/green_jade_dragon_flying.vmdl", context)
+	PrecacheResource("model", "models/items/wards/chinese_ward/chinese_ward.vmdl", context)
+
 	--Halloween
 --	PrecacheResource("model", "models/heroes/death_prophet/death_prophet.vmdl", context)
 --	PrecacheResource("model", "models/items/death_prophet/drowned_siren_head/drowned_siren_head.vmdl", context)
@@ -391,6 +455,12 @@ function Precache( context )
 	--PrecacheResource("model", "models/items/wraith_king/wk_ti8_creep/wk_ti8_creep.vmdl", context)
 	-- End Halloween
 	
+	PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts",context)
+    PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts",context)
+
+	-- PrecacheResource("soundfile", "soundevents/game_sounds_birzha.vsndevts", context) 
+	PrecacheResource("soundfile", "soundevents/game_sounds_birzha_new.vsndevts", context) 
+	
 	PrecacheLoad:PrecacheLoad (context)
 	
 	GameRules.pc = context
@@ -402,8 +472,9 @@ end
 function Activate()
 	GameRules.MapSpeed = tonumber(string.match(GetMapName(),"%d+")) or 1
 	GameRules.lumberPrice = STARTING_LUMBER_PRICE
-	GameRules.maxFood = {}
+	GameRules.maxFood = STARTING_MAX_FOOD
 	GameRules.maxWisp = STARTING_MAX_WISP
+	GameRules.maxMine = STARTING_MAX_MINE
 	GameRules.playerTeamChoices = {}
 	GameRules.dcedChoosers = {}
 	GameRules.trollTps = {Vector(-320,-320,256),Vector(0,-320,256),Vector(320,-320,256),Vector(-320,-640,256),Vector(0,-640,256),Vector(320,-640,256),Vector(-320,0,256),Vector(0,0,256),Vector(320,0,256),}
@@ -420,6 +491,10 @@ function Activate()
 	GameRules.goldGiven = {}
 	GameRules.lumberGiven = {}
 	GameRules.scores = {}
+
+	GameRules.isTesting = false
+	GameRules.server =   "https://tve3.us/test/"  -- "https://localhost:5001/test/" -- 
+
 	--GameRules.xp = {}
 	GameRules.types = {}
 	GameRules.trollID = nil
@@ -429,6 +504,7 @@ function Activate()
 	GameRules.BonusTrollIDs = {}
 	GameRules.PartDefaults = {}
 	GameRules.PetsDefaults = {}
+	GameRules.SkinDefaults = {}
 	GameRules.Score = {}
 	GameRules.PlayersBase = {}
 	GameRules.PlayersFPS = {}
@@ -437,7 +513,26 @@ function Activate()
 	GameRules.PlayersCount = 0
 	GameRules.KickList = {}
 	GameRules.MultiMapSpeed = 1
+	GameRules.Mute = {}
+	GameRules.countFlag = {}
+	GameRules.tent = {}
 	
+	GameRules.PoolTable = {}
+    GameRules.PoolTable[0] = {}
+    GameRules.PoolTable[1] = {}
+    GameRules.PoolTable[2] = {}
+    GameRules.PoolTable[3] = {}
+    GameRules.PoolTable[4] = {}
+    GameRules.PoolTable[5] = {}
+    GameRules.PoolTable[0][0] = {}
+    GameRules.PoolTable[1][0] = {}
+    GameRules.PoolTable[2][0] = {}
+    GameRules.PoolTable[3][0] = {}
+    GameRules.PoolTable[4][0] = {}
+    GameRules.PoolTable[4][0][0] = {}
+    GameRules.PoolTable[5][0] = {}
+
 	GameRules.trollnelves2 = trollnelves2()
 	GameRules.trollnelves2:Inittrollnelves2()
+
 end

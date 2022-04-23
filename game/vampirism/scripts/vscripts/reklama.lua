@@ -29,11 +29,22 @@ local msgs = {
 		Interval = 2000,
 		MaxCount = 3	
 	},
-	["#donate7"] = {
-		StartTime = 120,
+	["#donate8"] = {
+		StartTime = 110,
 		Interval = 300,
-		MaxCount = 5	
+		MaxCount = 18,
+	},
+	["#donate9"] = {
+		StartTime = 30,
+		Interval = 120,
+		MaxCount = 25,
+	},
+	["#donate10"] = {
+		StartTime = 150,
+		Interval = 300,
+		MaxCount = 18,
 	}
+
 }
 
 for msg, info in pairs( msgs ) do

@@ -116,10 +116,3 @@ function CDOTA_Item:Use()
         end
     end
 end
-
-function GetMoveToTreePosition( unit, target )
-  local origin = unit:GetAbsOrigin()
-  local building_pos = target:GetAbsOrigin()
-  local distance = 120
-  return building_pos + (origin - building_pos):Normalized() * distance
-end

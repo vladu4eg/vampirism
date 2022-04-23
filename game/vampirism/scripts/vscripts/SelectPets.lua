@@ -37,7 +37,7 @@ function SelectPets:SetPets()
 		if GameRules.PetsDefaults[i] ~= nil and GameRules.PetsDefaults[i] ~= "" and PlayerResource:GetConnectionState(i) == 2 then
 				local pets = CustomNetTables:GetTableValue("Pets_Tabel",tostring(i))
 				--Say(nil,"text here", false)
-				--GameRules:SendCustomMessage("<font color='#58ACFA'> использовал эффект </font>"..info.name.."#partnote".." test", 0, 0)
+				--GameRules:SendCustomMessage("<font color='#58ACFA'> использовал эффект </font>"..info.name.."partnote".." test", 0, 0)
 				local arr = {
 					i,
 					PlayerResource:GetPlayerName(i),
@@ -63,20 +63,12 @@ end
 
 function SelectPets:SetDefaultPets(event)
     local player = PlayerResource:GetPlayer(event.PlayerID)
-    if player.parttimerok == nil then player.parttimerok = true end
-    if player.parttimerok == true then
-        player.parttimerok = false
-        Timers:CreateTimer(120, function()
-            player.parttimerok = true
-            CustomGameEventManager:Send_ServerToPlayer( player, "DefaultButtonReadyPets", {})
-		end)
 		local data = {}
 		if event.part ~=  nil then
 			DebugPrint("no save")
 			data.SteamID = tostring(PlayerResource:GetSteamID(event.PlayerID))
 			data.Num = tostring(event.part)
 			data.TypeDonate = "2"
-			Stats.GetVip(data, callback)
+			Shop.GetVip(data, callback)
 		end
-	end
 end		

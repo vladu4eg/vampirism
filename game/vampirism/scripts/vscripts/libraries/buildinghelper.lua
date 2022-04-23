@@ -228,7 +228,7 @@ end
 local allRequirements = {}
 
 ParseRequirements(name, previousRequirements, allRequirements, allBuildingRequirementClasses)
-DebugPrint(name)
+
 local requirements = info["Requirements"]
 if requirements then
     ParseRequirements(name, requirements, allRequirements,
@@ -429,9 +429,18 @@ function BuildingHelper:OnTreeCut(keys)
     end)
 end
 
+function BuildingHelper:BlockBH()
+    -- Trigger zones named "bh_blocked" will block the terrain for construction
+    local blocked_map_zones = Entities:FindAllByName("*bh_blocked")
+                    -- Check if the position is inside any blocking trigger
+    for _, ent in pairs(blocked_map_zones) do
+        BuildingHelper:IsInsideEntityBounds(ent)
+    end
+end
+
 function BuildingHelper:InitGNV()
-    local worldMin = Vector(GetWorldMinX(), GetWorldMinY(), 0)
-    local worldMax = Vector(GetWorldMaxX(), GetWorldMaxY(), 0)
+    local worldMin = Vector(-11000, -11000, 0)
+    local worldMax = Vector(11000, 11000, 0)
     
     local boundX1 = GridNav:WorldToGridPosX(worldMin.x)
     local boundX2 = GridNav:WorldToGridPosX(worldMax.x)
@@ -439,10 +448,8 @@ function BuildingHelper:InitGNV()
     local boundY2 = GridNav:WorldToGridPosY(worldMax.y)
     
     BuildingHelper:print("Max World Bounds: ")
-    BuildingHelper:print(GetWorldMinX() .. ' ' .. GetWorldMaxX() .. ' ' ..
-    GetWorldMinY() .. ' ' .. GetWorldMaxY())
-    BuildingHelper:print(boundX1 .. ' ' .. boundX2 .. ' ' .. boundY1 .. ' ' ..
-    boundY2)
+    BuildingHelper:print(GetWorldMinX() .. ' ' .. GetWorldMaxX() .. ' ' .. GetWorldMinY() .. ' ' .. GetWorldMaxY())
+    BuildingHelper:print(boundX1 .. ' ' .. boundX2 .. ' ' .. boundY1 .. ' ' .. boundY2)
     
     local blockedCount = 0
     local unblockedCount = 0
@@ -451,57 +458,71 @@ function BuildingHelper:InitGNV()
     local line = {}
     local ASCII_ART = false
     
-    -- Trigger zones named "bh_blocked" will block the terrain for construction
-    local blocked_map_zones = Entities:FindAllByName("*bh_blocked")
-    local entities = Entities:FindAllByClassname("npc_dota_creature")
+   -- local entities = Entities:FindAllByClassname("npc_dota_creature")
     
+    for y = boundY1, boundY2 do
+        if BuildingHelper.Terrain[y] == nil then
+             BuildingHelper.Terrain[y] = {}
+         end
+    end
+    BuildingHelper:BlockBH()
     for y = boundY1, boundY2 do
         local shift = 4
         local byte = 0
-        BuildingHelper.Terrain[y] = {}
+        if BuildingHelper.Terrain[y] == nil then
+            BuildingHelper.Terrain[y] = {}
+        end
         for x = boundX1, boundX2 do
+           -- BuildingHelper:print("y " .. y .. " x" .. x)
             local gridX = GridNav:GridPosToWorldCenterX(x)
             local gridY = GridNav:GridPosToWorldCenterY(y)
             local position = Vector(gridX, gridY, 0)
             local treeBlocked = GridNav:IsNearbyTree(position, 30, true)
             
             -- If tree updating is enabled, trees aren't networked but detected as ent_dota_tree entities on clients
-            local terrainBlocked = not GridNav:IsTraversable(position) or
-            GridNav:IsBlocked(position)
+            local terrainBlocked = not GridNav:IsTraversable(position) or GridNav:IsBlocked(position)
             if BuildingHelper.Settings["UPDATE_TREES"] then
                 terrainBlocked = terrainBlocked and not treeBlocked
             end
-            
+                        --[[
             if not terrainBlocked then
                 -- Check if the position is inside any blocking trigger
                 for _, ent in pairs(blocked_map_zones) do
-                    local triggerBlocked =
-                    BuildingHelper:IsInsideEntityBounds(ent, position)
+                    local triggerBlocked = BuildingHelper:IsInsideEntityBounds(ent, position)
                     if triggerBlocked then
                         terrainBlocked = true
                         break
                     end
                 end
             end
-            if not terrainBlocked then
+
+                if not terrainBlocked then
                 for _, entity in pairs(entities) do
-                    local isInside =
-                    BuildingHelper:IsInsideEntityConstructionArea(entity,
-                    position)
-                    if isInside then
-                        terrainBlocked = true
-                        break
-                    end
+                local isInside =
+                BuildingHelper:IsInsideEntityConstructionArea(entity,
+                position)
+                if isInside then
+                terrainBlocked = true
+                break
                 end
+                end
+                end
+            ]]
+
+           -- BuildingHelper:print("y " .. y .. " x " .. x)
+
+            if BuildingHelper.Terrain[y][x] ~= nil then
+                --BuildingHelper:print("BuildingHelper.Terrain[y][x] == BLOCKED")
+                terrainBlocked = true
             end
-            
+
             if terrainBlocked then
                 BuildingHelper.Terrain[y][x] =
                 BuildingHelper.GridTypes["BLOCKED"]
                 byte = byte + bit.lshift(2, shift)
                 blockedCount = blockedCount + 1
                 if ASCII_ART then line[#line + 1] = '=' end
-                else
+            else
                 BuildingHelper.Terrain[y][x] =
                 BuildingHelper.GridTypes["BUILDABLE"]
                 byte = byte + bit.lshift(1, shift)
@@ -530,7 +551,7 @@ function BuildingHelper:InitGNV()
             line = {}
         end
     end
-    
+    BuildingHelper:print("local gnv_string = table.concat(gnv, '') ")
     local gnv_string = table.concat(gnv, '')
     
     -- Running-length encoding
@@ -565,7 +586,7 @@ function BuildingHelper:InitGNV()
     -- The construction grid is only known by the server
     BuildingHelper.Grid = BuildingHelper.Terrain
     
-    BuildingHelper.Encoded = gnvRLE_string
+    BuildingHelper.Encoded = BuildingHelper.Encoded .. gnvRLE_string
     BuildingHelper.squareX = squareX
     BuildingHelper.squareY = squareY
     BuildingHelper.minBoundX = boundX1
@@ -640,15 +661,15 @@ function BuildingHelper:BuildCommand(args)
         else
         builder = GetClosestToPosition(builders, location)
     end
-    
+    if builder == nil then
+        return
+    end
     -- Cancel current action
-    if not queue then
         ExecuteOrderFromTable({
             UnitIndex = builder:GetEntityIndex(),
             OrderType = DOTA_UNIT_ORDER_STOP,
             Queue = false
         })
-    end
     
     BuildingHelper:AddToQueue(builder, location, queue)
 end
@@ -700,22 +721,22 @@ function BuildingHelper:OnSelectionUpdate(event)
     local playerID = event.PlayerID
     if not playerID then return end
     
--- This is for Building Helper to know which is the currently active builder
-local mainSelected = PlayerResource:GetMainSelectedEntity(playerID)
-if not mainSelected then return end
-mainSelected = EntIndexToHScript(mainSelected)
-local player = BuildingHelper:GetPlayerTable(playerID)
-
-if IsValidEntity(mainSelected) then
-    if IsBuilder(mainSelected) then
-        player.activeBuilder = mainSelected
-        else
-        if IsValidEntity(player.activeBuilder) then
-            -- Clear ghost particles when swapping to a non-builder
-            BuildingHelper:StopGhost(player.activeBuilder)
+    -- This is for Building Helper to know which is the currently active builder
+    local mainSelected = PlayerResource:GetMainSelectedEntity(playerID)
+    if not mainSelected then return end
+    mainSelected = EntIndexToHScript(mainSelected)
+    local player = BuildingHelper:GetPlayerTable(playerID)
+    
+    if IsValidEntity(mainSelected) then
+        if IsBuilder(mainSelected) then
+            player.activeBuilder = mainSelected
+            else
+            if IsValidEntity(player.activeBuilder) then
+                -- Clear ghost particles when swapping to a non-builder
+                BuildingHelper:StopGhost(player.activeBuilder)
+            end
         end
     end
-end
 end
 
 function BuildingHelper:RightClickOrder(event)
@@ -842,11 +863,14 @@ function BuildingHelper:OrderFilter(order)
     if order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET then
         if units["0"] then
             shop = EntIndexToHScript(units["0"])
+            if shop == nil then
+                return false
+            end
             local unit_name = shop:GetUnitName()
             if string.match(unit_name, "shop") or string.match(unit_name, "troll_hut") then
                 shop.buyer = issuerID
-                if string.match(unit_name, "troll_hut") and string.match(EntIndexToHScript(abilityIndex):GetAbilityName(),"upgrade_to") and PlayerResource:GetSelectedHeroEntity(issuerID):GetUnitName() ~= TROLL_HERO[0] then
-                    SendErrorMessage(issuerID, "#error_only_troll_can_upgrade")
+                if string.match(unit_name, "troll_hut") and string.match(EntIndexToHScript(abilityIndex):GetAbilityName(),"upgrade_to") and PlayerResource:GetSelectedHeroEntity(issuerID):GetUnitName() ~= TROLL_HERO and GameRules.test2 == false then
+                    SendErrorMessage(issuerID, "error_only_troll_can_upgrade")
                     return false
                 end
             end
@@ -885,7 +909,7 @@ function BuildingHelper:OrderFilter(order)
         end
     end
     if order_type == DOTA_UNIT_ORDER_RADAR then
-        SendErrorMessage(issuerID, "#error_no_radar")
+        SendErrorMessage(issuerID, "error_no_radar")
         return false
     end
     if order_type == DOTA_UNIT_ORDER_SELL_ITEM then
@@ -1284,6 +1308,11 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     local bPlayerCanControl = GetUnitKV(newName, "PlayerCanControl") or 0
     
     local buildTime = GetUnitKV(newName, "BuildTime") or 3
+    BuildingHelper:print(newName)
+    if GameRules.MapSpeed == 4 and newName ~= "tower_19" and newName ~= "tower_19_1" and newName ~= "tower_19_2" and not string.match(newName,"rock") then
+        buildTime = buildTime/4
+    end
+    
     local bScale = GetUnitKV(newName, "Scale") or 0
     local fTimeBuildingCompleted = GameRules:GetGameTime() + buildTime
     local fInitialModelScale = 0.2
@@ -1417,6 +1446,7 @@ end
     * Removes a building, removing it from the gridnav, with an optional parameter to skip particle effects
 ]] --
 function BuildingHelper:RemoveBuilding(building, bSkipEffects)
+    local hero = building:GetOwner()
     if building.blockers then
         for _, v in pairs(building.blockers) do UTIL_Remove(v) end
     end
@@ -1448,7 +1478,10 @@ function BuildingHelper:RemoveBuilding(building, bSkipEffects)
             ParticleManager:ReleaseParticleIndex(building.fireEffectParticle)
         end
     end
-    
+    if building:GetKeyValue("MineCost") then
+        local mine = building:GetKeyValue("MineCost")
+        PlayerResource:ModifyMine(hero, -mine)
+    end
     Timers:CreateTimer(0.3, function() UTIL_Remove(building) end)
 end
 
@@ -1470,10 +1503,10 @@ function BuildingHelper:StartBuilding(builder)
     local pathing_size = buildingTable:GetVal("BlockPathingSize", "number")
     
     -- Check gridnav and cancel if invalid
-    if not BuildingHelper:ValidPosition(construction_size, location, builder,
-    callbacks) or
-    playersHero.disabledBuildings[building:GetUnitName()] or
-    builder:HasAbility("build_" .. unitName) == false then
+    if not BuildingHelper:ValidPosition(construction_size, location, builder, callbacks) 
+        or playersHero.disabledBuildings[building:GetUnitName()] 
+        or builder:HasAbility("build_" .. unitName) == false 
+    then
     
     -- Remove the model particle and Advance Queue
     BuildingHelper:AdvanceQueue(builder)
@@ -1488,17 +1521,43 @@ function BuildingHelper:StartBuilding(builder)
     return
     end
     
-    if IdBaseAreaBlock(location) ~= nil then 
-        DebugPrint("NOT! IsInsideBaseArea")
+    if BuildingHelper:IdBaseAreaBlock(location) ~= nil then 
         return false
     end
     
-    if not IsInsideBaseArea(playersHero, location, unitName, true) then 
-        DebugPrint("NOT! IsInsideBaseArea")
-        SendErrorMessage(playerID, "#error_place_is_taken")
+    if unitName == "flag" and GameRules.PlayersBase[playerID] ~= nil then
+        if BuildingHelper:IdBaseArea(builder) == GameRules.PlayersBase[playerID] then
+            
+        else
+            BuildingHelper:AdvanceQueue(builder)
+    BuildingHelper:ClearWorkParticles(work)
+    
+    -- Remove pedestal
+    BuildingHelper:RemoveEntity(work.entity.prop)
+    
+    -- Building canceled, refund resources
+    work.refund = true
+    callbacks.onConstructionCancelled(work)
+            SendErrorMessage(playerID, "error_place_is_flag")
+            return false 
+        end
+    end
+
+    if not BuildingHelper:IsInsideBaseArea(builder, builder, unitName, true) then 
+         -- Remove the model particle and Advance Queue
+    BuildingHelper:AdvanceQueue(builder)
+    BuildingHelper:ClearWorkParticles(work)
+    
+    -- Remove pedestal
+    BuildingHelper:RemoveEntity(work.entity.prop)
+    
+    -- Building canceled, refund resources
+    work.refund = true
+    callbacks.onConstructionCancelled(work)
+     --   SendErrorMessage(playerID, "error_place_is_taken")
         return false
     end
-    
+
     BuildingHelper:print(
         "Initializing Building Entity: " .. unitName .. " at " ..
     VectorString(location))
@@ -1516,7 +1575,7 @@ function BuildingHelper:StartBuilding(builder)
         building = CreateUnitByName(unitName, location, false, playersHero,
         player, builder:GetTeam())
         building:SetNeverMoveToClearSpace(true)
-        else
+    else
         building:RemoveModifierByName("modifier_out_of_world")
         building:RemoveEffects(EF_NODRAW)
     end
@@ -1594,7 +1653,7 @@ function BuildingHelper:StartBuilding(builder)
         building:SetHealth(nInitialHealth)
         
         local bScale = buildingTable:GetVal("Scale", "bool") -- whether we should scale the building.
-        local fInitialModelScale = 0.2 -- initial size
+        local fInitialModelScale = 0.5 -- initial size
         local fMaxScale = building.overrideMaxScale or
         buildingTable:GetVal("MaxScale", "float") or 1 -- the amount to scale to
         local fScaleInterval = (fMaxScale - fInitialModelScale) /
@@ -1693,7 +1752,7 @@ function BuildingHelper:StartBuilding(builder)
                                 -- Consume Builder
                                 if bConsumesBuilder then
                                     --null
-                                else
+                                    else
                                     BuildingHelper:ShowBuilder(builder)
                                 end
                                 
@@ -2415,13 +2474,8 @@ function BuildingHelper:ValidPosition(size, location, unit, callbacks)
     -- Check enemy units blocking the area
     local construction_radius = size * 64
     local target_type = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-    local flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES +
-    DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE +
-    DOTA_UNIT_TARGET_FLAG_NO_INVIS
-    local enemies = FindUnitsInRadius(unit:GetTeamNumber(), location, nil,
-        construction_radius,
-        DOTA_UNIT_TARGET_TEAM_ENEMY, target_type,
-    flags, FIND_ANY_ORDER, false)
+    local flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES  
+    local enemies = FindUnitsInRadius(unit:GetTeamNumber(), location, nil, construction_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, target_type, flags, FIND_ANY_ORDER, false)
     for _, enemy in pairs(enemies) do
         local origin = enemy:GetAbsOrigin()
         if not IsCustomBuilding(enemy) and
@@ -2435,14 +2489,14 @@ function BuildingHelper:ValidPosition(size, location, unit, callbacks)
     end
     if BuildingHelper:EnemyIsInsideBuildingArea(hero:GetAbsOrigin(), location,size) and buildingName ~= "tent" and
         (GameRules:GetGameTime() - GameRules.startTime > (1200 / GameRules.MapSpeed)) then -- остальное
-        local baseIndex = IdBaseArea(location)
+        local baseIndex = BuildingHelper:IdBaseArea(unit)
         if baseIndex ~= nil and GameRules.PlayersBase[playerID] ~= nil then
             if baseIndex == GameRules.PlayersBase[playerID] then
                 return true
             end        
         end
         if callbacks.onConstructionFailed then
-            SendErrorMessage(hero:GetPlayerOwnerID(), "#error_construction_for_yourself")
+            SendErrorMessage(hero:GetPlayerOwnerID(), "error_construction_for_yourself")
             callbacks.onConstructionFailed()
             return false
         end
@@ -2550,59 +2604,67 @@ function BuildingHelper:AreaMeetsCriteria(size, location, grid_type, option)
     end
 end
 
-function IsInsideBaseArea(unit, location, nameBuilding, build)
+function BuildingHelper:IsInsideBaseArea(unit, location, nameBuilding, build)
     local hero = unit:IsRealHero() and unit or unit:GetOwner()
     local playerID = hero:GetPlayerOwnerID()
-    local baseIndex = IdBaseArea(location)
-    DebugPrint("IsInsideBaseArea ")
-    
+    local baseIndex = BuildingHelper:IdBaseArea(location)
+
+    DebugPrint("FLAG")
+    DebugPrint(hero:FindAbilityByName("build_flag"):GetCooldownTime())
     if baseIndex ~= nil then
-        if GameRules.PlayersBase[playerID] == nil or GameRules.PlayersBase[playerID] ~= baseIndex then
+        if GameRules.PlayersBase[playerID] ~= baseIndex then
             for pID = 0, DOTA_MAX_TEAM_PLAYERS do
                 if PlayerResource:IsValidPlayerID(pID) then
                     if GameRules.PlayersBase[pID] == baseIndex then
-                        DebugPrint("GameRules.PlayersBase[pID] " .. GameRules.PlayersBase[pID])
-                        DebugPrint("baseIndex " .. baseIndex)
-                        SendErrorMessage(playerID, "#error_place_is_taken")
+                        SendErrorMessage(playerID, "error_place_is_taken")
                         return false
                     end
                 end
             end
+            
             if GameRules.PlayersBase[playerID] == nil and nameBuilding == "flag" and build then
                 GameRules.PlayersBase[playerID] = baseIndex
-                DebugPrint("Your Base " .. baseIndex)
-                DebugPrint("Your ID " .. playerID)
-                DebugPrintTable(GameRules.base)
                 return true
-                else 
+            else 
                 return true
             end
-            else
+
+        elseif hero:FindAbilityByName("build_flag"):GetCooldownTime() == 0 and nameBuilding ~= "flag" then
+            SendErrorMessage(playerID, "error_need_put_flag")
+            return false
+        else
             return true  
         end
-        elseif nameBuilding == "flag" then
-        SendErrorMessage(playerID, "#error_place_is_flag")
+    elseif nameBuilding == "flag" then
+        SendErrorMessage(playerID, "error_place_is_flag")
         return false
-        else 
+    else 
         return true
     end
 end
 
-function IdBaseArea(location)
+function BuildingHelper:IdBaseArea(location)
     for index, shopTrigger in ipairs(GameRules.base) do
-        if IsInsideBoxEntity(shopTrigger, location) then
-            DebugPrint("IdBaseArea index " .. index)
-            return index
+        if shopTrigger:IsTouching(location) then
+            DebugPrint("truee")
+      --      if location:GetUnitName() == "npc_dota_units_base2" then
+        --        location:ForceKill(true)
+        --    end
+            DebugPrint(shopTrigger:entindex())
+            DebugPrint(index)
+            return shopTrigger:entindex()
         end
     end
+   -- if location:GetUnitName() == "npc_dota_units_base2" then
+   --     location:ForceKill(true)
+   -- end
     return nil
 end
 
-function IdBaseAreaBlock(location)
+function BuildingHelper:IdBaseAreaBlock(location)
     for index, shopTrigger in ipairs(GameRules.baseBlock) do
         if IsInsideBoxEntity(shopTrigger, location) then
-            DebugPrint("IdBaseArea index " .. index)
-            return index
+            return shopTrigger:entindex()
         end
     end
     return nil
@@ -2642,17 +2704,23 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
     local pathing_size = buildingTable:GetVal("BlockGridNavSize", "number")
     local callbacks = playerTable.activeCallbacks
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-    
-    if IdBaseAreaBlock(location) ~= nil then 
-        DebugPrint("NOT! IsInsideBaseArea")
+    ---local unit = CreateUnitByName("npc_dota_hero_treant", location , true, player, player, player:GetTeamNumber())
+
+   -- unit:NextMovePeer()
+    if BuildingHelper:IdBaseAreaBlock(location) ~= nil then 
         return false
     end
     
-    if not IsInsideBaseArea(hero, location, buildingName, false) then 
-        DebugPrint("NOT! IsInsideBaseArea")
-        return false
-    end
-    
+    --DebugPrint(location)
+   -- DebugPrint(unit:GetAbsOrigin())
+   -- if not BuildingHelper:IsInsideBaseArea(hero, hero, buildingName, false) then 
+   --     if buildingName == "flag" then 
+   --         SendErrorMessage(playerID, "error_dont_place_flag_out_base")
+   --         return false
+   --     end
+   --     return false
+   -- end
+
     --[[if hero.disabledBuildings[buildingName] == true then
         return
     end]]
@@ -2668,10 +2736,26 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
         local result = callbacks.onPreConstruction(location)
         if result == false then return end
     end
+    if buildingName == nil then
+        return
+    end
+    if not builder:HasAbility("build_" .. buildingName) then
+        SendErrorMessage(playerID, "error_take_normal_builder")
+        return
+    end
     
-    BuildingHelper:print("AddToQueue " .. builder:GetUnitName() .. " " ..
-        builder:GetEntityIndex() .. " -> location " ..
-    VectorString(location))
+    if builder.buildingQueue ~= nil then
+        DebugPrint(#builder.buildingQueue)
+        if string.match(buildingName, "gold_mine") and #builder.buildingQueue > 0 then  
+            SendErrorMessage(playerID, "error_limit_queue_wisp")
+            return
+        elseif #builder.buildingQueue  > 20 then
+            SendErrorMessage(playerID, "error_limit_queue")
+            return
+        end
+    end
+
+    BuildingHelper:print("AddToQueue " .. builder:GetUnitName() .. " " .. builder:GetEntityIndex() .. " -> location " .. VectorString(location))
     
     -- Make the new work entry
     local work = {
@@ -2696,8 +2780,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
         else
         -- Adjust the model position z
         local model_offset = GetUnitKV(buildingName, "ModelOffset") or
-        GetUnitKV(buildingName, "ModelGhostOffset") or
-        0
+        GetUnitKV(buildingName, "ModelGhostOffset") or 0
         local model_location = Vector(location.x, location.y,
         location.z + model_offset)
         
@@ -2720,6 +2803,8 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
         entity:AddNewModifier(entity, nil, "modifier_out_of_world", {})
         work.entity = entity
         
+        
+
         local modelParticle = ParticleManager:CreateParticleForPlayer(
             "particles/buildinghelper/ghost_model.vpcf",
         PATTACH_CUSTOMORIGIN, nil, player)
@@ -2765,7 +2850,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
             Vector(scale, 0, 0)) -- Scale
             work.propParticleIndex = prop.pedestalParticle
         end
-        
+    
         -- Adjust the Model Orientation
         local yaw = buildingTable:GetVal("ModelRotation", "float")
         entity:SetAngles(0, -yaw, 0)
@@ -2854,7 +2939,7 @@ function BuildingHelper:AdvanceQueue(builder)
     if (builder.move_to_build_timer) then
         Timers:RemoveTimer(builder.move_to_build_timer)
     end
-    
+
     if builder.buildingQueue and #builder.buildingQueue > 0 then
         BuildingHelper:PrintQueue(builder)
         
@@ -3041,11 +3126,18 @@ function BuildingHelper:ClearQueue(builder)
             work.callbacks.onConstructionCancelled(work)
         end
     end
+    ExecuteOrderFromTable({
+        UnitIndex = builder:GetEntityIndex(),
+        OrderType = DOTA_UNIT_ORDER_STOP,
+        Queue = false
+    })
 end
 
 -- Remove the entity if it was not marked as a bh dummy
 function BuildingHelper:RemoveEntity(ent)
-    if ent and not ent.BHDUMMY then UTIL_Remove(ent) end
+    if ent and not ent.BHDUMMY then 
+        UTIL_Remove(ent) 
+    end
 end
 
 function BuildingHelper:ClearWorkParticles(work)
@@ -3295,21 +3387,43 @@ return towerPos
 end
 
 -- Used to find if a position is insde the trigger entity bounds
-function BuildingHelper:IsInsideEntityBounds(entity, location)
+function BuildingHelper:IsInsideEntityBounds(entity)
     local origin = entity:GetAbsOrigin()
     local bounds = entity:GetBounds()
     local min = bounds.Mins
     local max = bounds.Maxs
-    local X = location.x
-    local Y = location.y
-    local minX = min.x + origin.x
-    local minY = min.y + origin.y
-    local maxX = max.x + origin.x
-    local maxY = max.y + origin.y
-    local betweenX = X >= minX and X <= maxX
-    local betweenY = Y >= minY and Y <= maxY
+    local minX = min.x + origin.x + 8
+    local minY = min.y + origin.y + 8
+    local maxX = max.x + origin.x - 8
+    local maxY = max.y + origin.y - 8
+    minX = GridNav:WorldToGridPosX(minX)
+    minY = GridNav:WorldToGridPosY(minY)
+
+    maxX = GridNav:WorldToGridPosX(maxX)
+    maxY = GridNav:WorldToGridPosY(maxY)
     
-    return betweenX and betweenY
+    --BuildingHelper:print("minY " .. minY .. " maxY " .. maxY)
+    --BuildingHelper:print("minX " .. minX .. " maxX " .. maxX)
+
+    --BuildingHelper:print("min.y " .. min.y .. " max.y " .. max.y)
+    --BuildingHelper:print("min.x " .. min.x .. " max.x " .. max.x)
+    
+    --BuildingHelper:print("origin.x " .. origin.x .. " origin.y " .. origin.y)
+
+    
+    for y = minY, maxY do
+        for x = minX, maxX do
+            local gridX = GridNav:GridPosToWorldCenterX(x)
+            local gridY = GridNav:GridPosToWorldCenterY(y)
+            --BuildingHelper:print("BuildingHelper.GridTypes[BLOCKED]")
+          -- BuildingHelper:print("gridY " .. gridY .. " gridX " .. gridX)
+          -- BuildingHelper:print("y  " .. y .. " x " .. x)
+            -- BuildingHelper.Grid[y][x] = BuildingHelper.GridTypes["BLOCKED"]
+            BuildingHelper.Terrain[y][x] = BuildingHelper.GridTypes["BLOCKED"]
+           -- BuildingHelper:print("BuildingHelper.Terrain[y][x] " .. BuildingHelper.Terrain[y][x])
+        end
+    end
+
 end
 
 function BuildingHelper:IsInsideEntityConstructionArea(entity, location)
@@ -3351,31 +3465,38 @@ end
 
 -- Builders are stored in a nettable in addition to the builder label
 function IsBuilder(unit)
-    local table = CustomNetTables:GetTableValue("builders", tostring(unit:GetEntityIndex()))
-    if unit ~= nil then
+if unit == nil then
+    return false
+end
+local table = CustomNetTables:GetTableValue("builders", tostring(unit:GetEntityIndex()))
+if unit ~= nil then
+    if unit:GetUnitLabel() ~= nil then 
         return unit:GetUnitLabel() == "builder" or (table and (table["IsBuilder"] == 1)) or unit:HasAbility("repair") or false
     else
-        return false
+        return (table and (table["IsBuilder"] == 1)) or unit:HasAbility("repair") or false
     end
+else
+    return false
+end
 end
 
 function CDOTA_BaseNPC:GetFollowRange(target)
-    return self:GetHullRadius() + target:GetHullRadius() + 100
+return self:GetHullRadius() + target:GetHullRadius() + 100
 end
 
 function IsLumberHarvester(unit)
-    return unit:HasAbility("gather_lumber_8") or
-    unit:HasAbility("gather_lumber_4") or
-    unit:HasAbility("gather_lumber_2") or
-    unit:HasAbility("gather_lumber_1")
+return unit:HasAbility("gather_lumber_8") or
+unit:HasAbility("gather_lumber_4") or
+unit:HasAbility("gather_lumber_2") or
+unit:HasAbility("gather_lumber_1")
 end
 
 function IsCustomBuilding(unit) return unit:HasModifier("modifier_building") end
 
 function BuildingHelper:AddModifierBuilding(building)
-    local magicImmune = BuildingHelper.Settings["MAGIC_IMMUNE_BUILDINGS"]
-    local deniable = BuildingHelper.Settings["DENIABLE_BUILDINGS"]
-    local disableTurning = GetUnitKV(name, "DisableTurning") == 1 or
+local magicImmune = BuildingHelper.Settings["MAGIC_IMMUNE_BUILDINGS"]
+local deniable = BuildingHelper.Settings["DENIABLE_BUILDINGS"]
+local disableTurning = GetUnitKV(name, "DisableTurning") == 1 or
 BuildingHelper.Settings["DISABLE_BUILDING_TURNING"]
 building:AddNewModifier(building, nil, "modifier_building", {
 disable_turning = disableTurning,

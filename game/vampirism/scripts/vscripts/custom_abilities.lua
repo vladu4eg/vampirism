@@ -3,6 +3,10 @@ require('libraries/entity')
 require('trollnelves2')
 require('wearables')
 require('error_debug')
+--LinkLuaModifier("modifier_all_vision",
+--    "libraries/modifiers/modifier_all_vision.lua",
+--LUA_MODIFIER_MOTION_NONE)
+
 --Ability for tents to give gold
 function GainGoldCreate(event)
 	if IsServer() then
@@ -23,12 +27,48 @@ end
 function GainGoldDestroy(event)
 	if IsServer() then
 		local caster = event.caster
-		local hero = caster:GetOwner()				
+		local hero = caster:GetOwner()
+		if not hero then
+			return
+		end				
 		local level = caster:GetLevel()
 		local amountPerSecond = 2^(level-1) * GameRules.MapSpeed
+		if not hero.goldPerSecond then
+			return
+		end
 		hero.goldPerSecond = hero.goldPerSecond - amountPerSecond
 		local dataTable = { entityIndex = caster:GetEntityIndex() }
 		CustomGameEventManager:Send_ServerToTeam(caster:GetTeamNumber(), "gold_gain_stop", dataTable)
+	end
+end
+
+function ItemGetGem(event)
+	local data = {}
+	local caster = event.caster
+	local playerID = caster:GetPlayerOwnerID()
+	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
+	data.Gem = 10
+	data.Gold = 0
+	data.playerID = playerID
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
+		Shop.GetGem(data, callback)
+		local item = caster:FindItemInInventory("item_get_gem")
+		caster:RemoveItem(item)
+	end
+end
+
+function ItemGetGold(event)
+	local data = {}
+	local caster = event.caster
+	local playerID = caster:GetPlayerOwnerID()
+	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
+	data.Gem = 0
+	data.Gold = 10
+	data.playerID = playerID
+	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
+		Shop.GetGem(data, callback)
+		local item = caster:FindItemInInventory("item_get_gold")
+		caster:RemoveItem(item)
 	end
 end
 
@@ -39,23 +79,24 @@ function ItemEffect(event)
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "2"
 	data.Srok = "01/09/2020"
+	data.PlayerID = playerID
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
-		Stats.GetVip(data, callback)
+		Shop.GetVip(data, callback)
 		local item = caster:FindItemInInventory("item_vip")
 		caster:RemoveItem(item)
 	end
 end
 
 function ItemEvent(event)
-	DebugPrintTable(event)
 	local data = {}
 	local caster = event.caster
 	local playerID = caster:GetPlayerOwnerID()
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "3"
 	data.Srok = "01/09/2020"
+	data.PlayerID = playerID
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
-		Stats.GetVip(data, callback)
+		Shop.GetVip(data, callback)
 		local item = caster:FindItemInInventory(event.ability:GetAbilityName())
 		caster:RemoveItem(item)
 	end
@@ -68,8 +109,9 @@ function ItemEventStresS(event)
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "3"
 	data.Srok = "01/09/2020"
+	data.PlayerID = playerID
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
-		Stats.GetVip(data, callback)
+		Shop.GetVip(data, callback)
 		local item = caster:FindItemInInventory("item_winter_stress")
 		caster:RemoveItem(item)
 	end
@@ -82,16 +124,15 @@ function ItemEventDesert(event)
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "24"
 	data.Srok = "01/09/2020"
-	
+	data.PlayerID = playerID
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
-		Stats.GetVip(data, callback)
+		Shop.GetVip(data, callback)
 		local item = caster:FindItemInInventory("item_event_desert")
 		caster:RemoveItem(item)
 	end
 end
 
 function ItemEventWinter(event)
-	DebugPrintTable(event.ability)
 	local data = {}
 	local caster = event.caster
 	local playerID = caster:GetPlayerOwnerID()
@@ -100,39 +141,37 @@ function ItemEventWinter(event)
 	data.Srok = "01/09/2020"
 	
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
-		Stats.GetVip(data, callback)
+		Shop.GetVip(data, callback)
 		local item = caster:FindItemInInventory("item_event_winter")
 		caster:RemoveItem(item)
 	end
 end
 
 function ItemEventHelheim(event)
-	DebugPrintTable(event.ability)
 	local data = {}
 	local caster = event.caster
 	local playerID = caster:GetPlayerOwnerID()
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "29"
 	data.Srok = "01/09/2020"
-	
+	data.PlayerID = playerID
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
-		Stats.GetVip(data, callback)
+		Shop.GetVip(data, callback)
 		local item = caster:FindItemInInventory("item_event_helheim")
 		caster:RemoveItem(item)
 	end
 end
 
 function ItemEventBirthday(event)
-	DebugPrintTable(event.ability)
 	local data = {}
 	local caster = event.caster
 	local playerID = caster:GetPlayerOwnerID()
 	data.SteamID = tostring(PlayerResource:GetSteamID(playerID))
 	data.Num = "23"
 	data.Srok = "01/09/2020"
-	
+	data.PlayerID = playerID
 	if GameRules.PlayersCount >= MIN_RATING_PLAYER then
-		Stats.GetVip(data, callback)
+		Shop.GetVip(data, callback)
 		local item = caster:FindItemInInventory("item_event_birthday")
 		caster:RemoveItem(item)
 	end
@@ -175,15 +214,25 @@ function shrapnel_start_charge( keys )
 	caster.shrapnel_charges = maximum_charges
 	caster.start_charge = false
 	caster.shrapnel_cooldown = 0.0
+	if caster.first == nil then
+		caster.first = true
+	end
 	
+
 	ability:ApplyDataDrivenModifier( caster, caster, modifierName, {} )
 	caster:SetModifierStackCount( modifierName, caster, maximum_charges )
-	
+	if keys.caster:GetUnitName() == "npc_dota_hero_bear" and caster.first then
+		caster.first = false
+		return
+	end
 	-- create timer to restore stack
 	Timers:CreateTimer( function()
 		-- Restore charge
 		if caster.start_charge and caster.shrapnel_charges < maximum_charges then
 			-- Calculate stacks
+			if ability == nil or caster == nil then
+				return nil
+			end
 			local next_charge = caster.shrapnel_charges + 1
 			caster:RemoveModifierByName( modifierName )
 			if next_charge ~= maximum_charges then
@@ -280,18 +329,33 @@ function RevealArea( event )
 	local status, nextCall = Error_debug.ErrorCheck(function() 
 		local caster = event.caster
 		local point = event.target_points[1]
-		local visionRadius = string.match(GetMapName(),"standart") and event.Radius*0.58 or string.match(GetMapName(),"arena") and event.Radius*0.58 or event.Radius
+		local visionRadius = string.match(GetMapName(),"1x1") and event.Radius*0.35 or string.match(GetMapName(),"arena") and event.Radius*0.58 or event.Radius
 		local visionDuration = event.Duration
 		AddFOWViewer(caster:GetTeamNumber(), point, visionRadius, visionDuration, false)
-		local units = FindUnitsInRadius(caster:GetTeamNumber(), point , nil, visionRadius , DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
 		local timeElapsed = 0
-		
+		--local unit = CreateUnitByName("npc_dota_units_base_reveal", point , true, nil, nil, caster:GetTeamNumber())
+
+		--unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+    	--unit:AddNewModifier(unit, nil, "modifier_phased", {})
+		--unit:AddNewModifier(unit, nil, "modifier_invisible", {})
+		--unit:AddNewModifier(unit, nil, "modifier_invisible_truesight_immune", {})
+		--unit:AddNewModifier(unit, nil, "modifier_kill", {duration = visionDuration})
+		--unit:SetDayTimeVisionRange(visionRadius)
+	--	unit:SetNightTimeVisionRange(visionRadius)
 		Timers:CreateTimer(0.03,function()
+			local units = FindUnitsInRadius(caster:GetTeamNumber(), point , nil, visionRadius , DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL  , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
 			for _,unit in pairs(units) do
 				if unit ~= nil then
-					if unit:HasModifier("modifier_invisible") then
+					if unit:HasModifier("modifier_invisible") and not unit:HasModifier("modifier_invisible_truesight_immune") then -- 
 						unit:RemoveModifierByName("modifier_invisible")
 					end
+					if unit:GetUnitName() == "event_boss_halloween" or unit:GetUnitName() == "event_line_boss_halloween" then 
+						unit:AddNewModifier(unit, unit, "modifier_invisible_truesight_immune", {Duration = 60})
+					end
+
+					--if not unit:HasModifier("modifier_all_vision") then
+					--	unit:AddNewModifier(unit, unit, "modifier_all_vision", {duration=5})
+					--end
 				end
 			end
 			timeElapsed = timeElapsed + 0.03
@@ -304,17 +368,26 @@ end
 
 function TeleportTo (event)
 	local caster = event.caster
+	local hull = caster:GetHullRadius()
 	for i=1,#GameRules.trollTps do
 		local units = FindUnitsInRadius(caster:GetTeamNumber(), GameRules.trollTps[i] , nil, 200 , DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO , DOTA_UNIT_TARGET_FLAG_NONE, 0 , false)
 		if #units == 0 then
+		--	caster:SetHullRadius(1) --160
 			FindClearSpaceForUnit( caster , GameRules.trollTps[i] , true )
+			
 			break
 		end
 	end
+	caster:AddNewModifier(caster, nil, "modifier_phased", {Duration = 1})
+	--caster:SetHullRadius(hull) --160
 end
 
 function GoldOnAttack (event)
-	if IsServer() then
+	if IsServer() and (event.unit:GetUnitName() ~= 'npc_dota_hero_doom_bringer' 
+					or event.unit:GetUnitName() ~= 'npc_dota_hero_phantom_assassin'  
+					or event.unit:GetUnitName() ~= 'npc_dota_hero_tidehunter'
+					or event.unit:GetUnitName() ~= 'event_boss_halloween'
+					or event.unit:GetUnitName() ~= 'npc_dota_hero_lina' ) then
 		local caster = event.caster
 		local dmg = math.floor(event.DamageDealt) * GameRules.MapSpeed
 		PlayerResource:ModifyGold(caster,dmg)
@@ -372,12 +445,14 @@ function ExchangeLumber(event)
 				end
 			end
 		end
-		
+	--	if PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) ~= 2 and GameRules.PlayersBase[caster:GetPlayerOwnerID()] ~= GameRules.PlayersBase[playerID] then
+--			SendErrorMessage(caster:GetPlayerOwnerID(), "error_not_your_hero")
+	--		return false
+	--	end
 		--Buy wood
 		if amount > 0 then
-			DebugPrint("Buying " .. amount .. " wood for " .. price .. " gold!")
 			if price > PlayerResource:GetGold(playerID) then
-				SendErrorMessage(playerID, "#error_not_enough_gold")
+				SendErrorMessage(playerID, "error_not_enough_gold")
 				return false
 				else
 				PlayerResource:ModifyGold(hero,-price,true)
@@ -391,9 +466,8 @@ function ExchangeLumber(event)
 			else
 			amount = -amount
 			price = price + increasePrice
-			DebugPrint("Selling " .. amount .. " wood for " .. price .. " gold!")
 			if amount > PlayerResource:GetLumber(playerID) then
-				SendErrorMessage(playerID, "#error_not_enough_lumber")
+				SendErrorMessage(playerID, "error_not_enough_lumber")
 				return false
 				else
 				PlayerResource:ModifyGold(hero,price,true)
@@ -421,29 +495,34 @@ function SpawnUnitOnSpellStart(event)
 		PlayerResource:ModifyLumber(hero,-lumber_cost)
 		PlayerResource:ModifyFood(hero,food)
 		PlayerResource:ModifyWisp(hero,wisp)
+	--	if PlayerResource:GetConnectionState(hero:GetPlayerOwnerID()) ~= 2 and GameRules.PlayersBase[caster:GetPlayerOwnerID()] ~= GameRules.PlayersBase[playerID] then
+	--		SendErrorMessage(caster:GetPlayerOwnerID(), "error_not_your_hero")
+	--		caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
+	--		return false
+	--	end
 		if PlayerResource:GetGold(playerID) < 0 then
-			SendErrorMessage(playerID, "#error_not_enough_gold")
+			SendErrorMessage(playerID, "error_not_enough_gold")
 			caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
 			return false
 		end
 		if PlayerResource:GetLumber(playerID) < 0 then
-			SendErrorMessage(playerID, "#error_not_enough_lumber")
+			SendErrorMessage(playerID, "error_not_enough_lumber")
 			caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
 			return false
 		end
-		if hero.food > GameRules.maxFood[playerID] and food ~= 0 then
-			SendErrorMessage(playerID, "#error_not_enough_food")
+		if hero.food > GameRules.maxFood and food ~= 0 then
+			SendErrorMessage(playerID, "error_not_enough_food")
 			caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
 			return false
 		end
 		if hero.wisp > GameRules.maxWisp and wisp ~= 0 then
-			SendErrorMessage(playerID, "#error_not_enough_wisp")
+			SendErrorMessage(playerID, "error_not_enough_wisp")
 			caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
 			return false
 		end
 		if tonumber(string.match(unit_name,"%d+")) ~= nil then
 			if tonumber(string.match(unit_name,"%d+")) >= 1 and tonumber(string.match(unit_name,"%d+")) <= 6 and string.match(unit_name,"%a+") == "wisp" and (GameRules:GetGameTime() - GameRules.startTime) > NO_CREATE_WISP/GameRules.MapSpeed then
-				SendErrorMessage(playerID, "#error_not_create_wisp")
+				SendErrorMessage(playerID, "error_not_create_wisp")
 				caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
 				return false
 			end
@@ -482,7 +561,10 @@ function SpawnUnitOnChannelSucceeded(event)
 						UpdateModel(unit, "models/items/courier/ig_dragon/ig_dragon_flying.vmdl", 1.2)    
 						elseif string.match(GetMapName(),"helheim") then 
 						wearables:RemoveWearables(unit)
-						UpdateModel(unit, "models/items/courier/dc_demon/dc_demon_flying.vmdl", 1.2) 
+						UpdateModel(unit, "models/items/courier/dc_demon/dc_demon_flying.vmdl", 1.2)
+						elseif string.match(GetMapName(),"china") then 
+						wearables:RemoveWearables(unit)
+						UpdateModel(unit, "models/items/courier/green_jade_dragon/green_jade_dragon_flying.vmdl", 1.4) 
 					end
 					--elseif parts["3"] == "normal" and unit_name == "gold_wisp" then
 					--		wearables:RemoveWearables(unit)
@@ -638,7 +720,6 @@ end
 
 function CancelGather(event)
 	if IsServer() then
-		DebugPrint("Cancel gather---------------------------------------------------------------------")
 		local caster = event.caster
 		local ability = event.ability
 		
@@ -679,6 +760,7 @@ function TrollBuff(keys)
 	if caster:GetUnitName() == 'tower_19' or caster:GetUnitName() == 'tower_19_1' or caster:GetUnitName() == 'tower_19_2' then
 		keys.ability:StartCooldown(180)
 	end
+	EmitGlobalSound("Hero_TrollWarlord.BattleTrance.Cast")
 end
 
 function GoldMineCreate(keys)
@@ -732,7 +814,7 @@ function HpRegenModifier(keys)
 	end	
 	if caster and caster.hpReg then
 		caster.hpReg = caster.hpReg + keys.Amount
-		CustomGameEventManager:Send_ServerToAllClients("custom_hp_reg", { value=(caster.hpReg-caster.hpRegDebuff),unit=caster:GetEntityIndex() })
+		CustomGameEventManager:Send_ServerToAllClients("custom_hp_reg", { value=(max(caster.hpReg-caster.hpRegDebuff,0)),unit=caster:GetEntityIndex() })
 	end
 	end)
 end
@@ -756,33 +838,33 @@ function BuyItem(event)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
 	if not IsInsideShopArea(hero) and item_name ~=  "item_book_of_agility" and item_name ~=  "item_book_of_strength" and item_name ~=  "item_book_of_intelligence" then
-		SendErrorMessage(playerID, "#error_shop_out_of_range")
+		SendErrorMessage(playerID, "error_shop_out_of_range")
 		ability:EndCooldown()
 		return
 	end
 	if gold_cost > PlayerResource:GetGold(playerID) then
-		SendErrorMessage(playerID, "#error_not_enough_gold")
+		SendErrorMessage(playerID, "error_not_enough_gold")
 		ability:EndCooldown()
 		return
 	end
 	if lumber_cost > PlayerResource:GetLumber(playerID) then
-		SendErrorMessage(playerID, "#error_not_enough_lumber")
+		SendErrorMessage(playerID, "error_not_enough_lumber")
 		ability:EndCooldown()
 		return
 	end
 	if hero:GetNumItemsInInventory() >= 6 then
 		hero:DropStash()
-		SendErrorMessage(playerID, "#error_full_inventory")
+		SendErrorMessage(playerID, "error_full_inventory")
 		ability:EndCooldown()
 		return		
 	end
 	if hero:FindItemInInventory("item_disable_repair_2") ~= nil and item_name == 'item_disable_repair_2'  then
-		SendErrorMessage(playerID, "#error_full_inventory")
+		SendErrorMessage(playerID, "error_full_inventory")
 		ability:EndCooldown()
 		return		
 	end
 	if item_name == 'item_troll_boots_3' and (GameRules:GetGameTime() - GameRules.startTime) < (7200 / GameRules.MapSpeed) then
-		SendErrorMessage(playerID, "#error_no_time_boots")
+		SendErrorMessage(playerID, "error_no_time_boots")
 		ability:EndCooldown()
 		return	
 	end
@@ -816,8 +898,16 @@ function BuySkill(event)
 	local bearHero
 	item_name = string.gsub(item_name, "item_", "")
 	
+	if hero == nil then
+		return
+	end
+
+	if GameRules.test2 == true then
+		hero = GameRules.trollHero
+	end
+
 	if hero ~= GameRules.trollHero then
-		SendErrorMessage(playerID, "#error_buy_skill_only_troll")
+		SendErrorMessage(playerID, "error_buy_skill_only_troll")
 		return
 	end
 	
@@ -832,28 +922,28 @@ function BuySkill(event)
 	end
 	
 	if not checkBear then
-		SendErrorMessage(playerID, "#error_no_bear_team")
+		SendErrorMessage(playerID, "error_no_bear_team")
 		return
 	end
 	
 	if not IsInsideShopArea(hero) then
-		SendErrorMessage(playerID, "#error_shop_out_of_range")
+		SendErrorMessage(playerID, "error_shop_out_of_range")
 		ability:EndCooldown()
 		return
 	end
 	if gold_cost > PlayerResource:GetGold(playerID) then
-		SendErrorMessage(playerID, "#error_not_enough_gold")
+		SendErrorMessage(playerID, "error_not_enough_gold")
 		ability:EndCooldown()
 		return
 	end
 	if lumber_cost > PlayerResource:GetLumber(playerID) then
-		SendErrorMessage(playerID, "#error_not_enough_lumber")
+		SendErrorMessage(playerID, "error_not_enough_lumber")
 		ability:EndCooldown()
 		return
 	end 
 	
 	if bearHero:HasAbility(item_name) then
-		SendErrorMessage(playerID, "#error_bear_have_skill")
+		SendErrorMessage(playerID, "error_bear_have_skill")
 		ability:EndCooldown()
 		return	
 	end
@@ -920,18 +1010,18 @@ function BuyLumberTroll(event)
 	end
 	
 	if distance > 1000 and not noDistance then
-		SendErrorMessage(playerID, "#error_shop_out_of_range")
+		SendErrorMessage(playerID, "error_shop_out_of_range")
 		return false
 	end	
 	
 	if amount > 0 then
 		if price > PlayerResource:GetGold(playerID) then
-			SendErrorMessage(playerID, "#error_not_enough_gold")
+			SendErrorMessage(playerID, "error_not_enough_gold")
 			return false
 		end
 		else
 		if -amount > PlayerResource:GetLumber(playerID) then
-			SendErrorMessage(playerID, "#error_not_enough_lumber")
+			SendErrorMessage(playerID, "error_not_enough_lumber")
 			return false
 		end
 	end
@@ -941,11 +1031,24 @@ function BuyLumberTroll(event)
 end
 
 function StealGold(event)
+	local status, nextCall = Error_debug.ErrorCheck(function() 
 	local caster = event.caster
 	local target = event.target
 	local playerID = GameRules.trollID
 	local hero = GameRules.trollHero
-	local sum = math.ceil(hero:GetNetworth()*0.003)+10
+	local sum = math.ceil(hero:GetNetworth()*0.002)+10
+	local trollCount = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_BADGUYS)
+		for i = 1, trollCount do
+			local pID = PlayerResource:GetNthPlayerIDOnTeam(DOTA_TEAM_BADGUYS, i)
+			if PlayerResource:IsValidPlayerID(pID) then 
+				local playerHero = PlayerResource:GetSelectedHeroEntity(pID) or false
+				if playerHero then
+					if playerHero:IsTroll() or playerHero:IsWolf() then
+						sum = math.max( sum,  math.ceil(playerHero:GetNetworth()*0.003)+10 )
+					end
+				end
+			end
+		end
 	local maxSum = 50000
 	local units = Entities:FindAllByClassname("npc_dota_creature")
 
@@ -953,7 +1056,7 @@ function StealGold(event)
 		local unit_name = unit:GetUnitName();
 		if unit_name == "troll_hut_6" or unit_name == "troll_hut_7" then
 			maxSum = 500000
-			sum = math.ceil(hero:GetNetworth()*0.005)+10
+			sum = math.ceil(hero:GetNetworth()*0.004)+10
 			caster:GiveMana(5)
 		end
 	end
@@ -962,7 +1065,7 @@ function StealGold(event)
 			sum = maxSum
 		end
 		else
-		SendErrorMessage(caster:GetPlayerOwnerID(), "#error_not_time")
+		SendErrorMessage(caster:GetPlayerOwnerID(), "error_not_time")
 		sum = 0
 	end
 	if sum > 0 then
@@ -980,6 +1083,8 @@ function StealGold(event)
 		end
 	end
 	PlayerResource:ModifyGold(caster,sum)
+	PopupGoldGain(caster,sum)
+	end)
 end
 
 function CheckStealGoldTarget(event)
@@ -988,7 +1093,7 @@ function CheckStealGoldTarget(event)
 	local pID = caster:GetMainControllingPlayer()
 	if not string.match(target:GetUnitName(),"troll_hut") then
 		caster:Interrupt()
-		SendErrorMessage(pID, "#error_castable_only_on_troll_hut")
+		SendErrorMessage(pID, "error_castable_only_on_troll_hut")
 		caster:SetMana(caster:GetMana() + 20)
 	end
 end
@@ -998,8 +1103,10 @@ function CommitSuicide(event)
 	local units = FindUnitsInRadius(caster:GetTeamNumber() , caster:GetAbsOrigin() , nil , 1500 , DOTA_UNIT_TARGET_TEAM_ENEMY ,  DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, 0, false)
 	local playerID = caster:GetMainControllingPlayer()
 	if #units > 0 then
-		SendErrorMessage(playerID, "#error_enemy_nearby")
-		else
+		SendErrorMessage(playerID, "error_enemy_nearby")
+	else
+		PlayerResource:RemoveFromSelection(playerID, caster)
+		BuildingHelper:ClearQueue(caster)
 		caster:ForceKill(true) --This will call RemoveBuilding
 		Timers:CreateTimer(10,function()
 			UTIL_Remove(caster)
@@ -1097,7 +1204,7 @@ function CheckNight(keys)
 	local caster = keys.caster
 	if GameRules:IsDaytime() then
 		caster:Interrupt()
-		SendErrorMessage(caster:GetPlayerOwnerID(), "#error_not_night")
+		SendErrorMessage(caster:GetPlayerOwnerID(), "error_not_night")
 	end
 end
 
@@ -1173,12 +1280,14 @@ function StackModifierCreated3(keys)
 	
 	local tar = target:FindModifierByName( "modifier_storm_bolt_datadriven" )
 	
-	if target:HasModifier("modifier_buff_counter_stun") and stack_count+1 == 2 and tar then
+	if target:HasModifier("modifier_buff_counter_stun") and stack_count+1 == 2 and tar and not target:IsWolf() then
 		tar:SetDuration(2,true)
-		elseif target:HasModifier("modifier_buff_counter_stun") and stack_count+1 == 3 and tar  then
+		elseif target:HasModifier("modifier_buff_counter_stun") and stack_count+1 == 3 and tar and not target:IsWolf() then
 		tar:SetDuration(1.5,true)
-		elseif target:HasModifier("modifier_buff_counter_stun") and stack_count+1 > 3 and tar  then
+		elseif target:HasModifier("modifier_buff_counter_stun") and stack_count+1 == 4 and tar and not target:IsWolf() then
 		tar:SetDuration(1,true)
+		elseif target:HasModifier("modifier_buff_counter_stun") and stack_count+1 > 4 and tar and not target:IsWolf() then
+		tar:SetDuration(0.5,true)
 	end
 end
 
@@ -1200,18 +1309,59 @@ function StackModifierCreated2(keys)
 	local tar2 = target:FindModifierByName( "modifier_disarmed" )
 	local tar3 = target:FindModifierByName( "invis_disabled" )
 	
-	if target:HasModifier("modifier_buff_counter") and stack_count+1 == 2 then
+	if target:HasModifier("modifier_buff_counter") and stack_count+1 == 2 and not target:IsWolf() then
 		tar:SetDuration(3,true)
 		tar2:SetDuration(3,true)
 		tar3:SetDuration(3,true)
-		elseif target:HasModifier("modifier_buff_counter") and stack_count+1 == 3 then
+	elseif target:HasModifier("modifier_buff_counter") and stack_count+1 == 3 and not target:IsWolf() then
 		tar:SetDuration(1.5,true)
 		tar2:SetDuration(1.5,true)
 		tar3:SetDuration(1.5,true)
-		elseif target:HasModifier("modifier_buff_counter") and stack_count+1 > 3 then
+	elseif target:HasModifier("modifier_buff_counter") and stack_count+1 > 3 and not target:IsWolf() then
 		tar:SetDuration(1,true)
 		tar2:SetDuration(1,true)
 		tar3:SetDuration(1,true)
+	end
+	FlagItem(keys)
+end
+
+
+function GlyphItem(keys)
+	local caster = keys.caster
+	local target = keys.target
+	local ability = keys.ability
+	local time = keys.Modifier
+	local playerID = caster:GetPlayerID()
+	
+	if string.match(GetMapName(),"clanwars") and GameRules.PlayersBase[playerID] == nil then
+		SendErrorMessage(playerID, "error_need_put_flag")
+		return
+	end
+
+	if target then
+		target:AddNewModifier(target, target, "modifier_fountain_glyph", {Duration = time})
+		FlagItem(keys)
+	end
+end
+
+function FlagItem(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local baseID = BuildingHelper:IdBaseArea(caster)
+	local playerID = caster:GetPlayerID()
+	local koef = 1.5
+	if string.match(GetMapName(),"clanwars") then
+		koef = 3
+	end
+	if baseID ~= nil and baseID ~= GameRules.PlayersBase[playerID] then
+		for pID = 0, DOTA_MAX_TEAM_PLAYERS do
+			if PlayerResource:IsValidPlayerID(pID) then
+				if GameRules.PlayersBase[pID] == baseID then
+					ability:StartCooldown(ability:GetCooldown(1) * koef)
+					return
+				end
+			end
+		end
 	end
 end
 
@@ -1235,7 +1385,6 @@ function troll_buff(keys)
 end		
 
 function GiveResourcesRandom(event)
-    DebugPrint("Give skill, event source index: ")
     local targetID = event.target
     local casterID = event.casterID
     local gold = PlayerResource:GetGold(casterID)
@@ -1248,7 +1397,7 @@ function GiveResourcesRandom(event)
             if gold and lumber then
                 if PlayerResource:GetGold(casterID) < gold or
                     PlayerResource:GetLumber(casterID) < lumber then
-                    SendErrorMessage(casterID, "#error_not_enough_resources")
+                    SendErrorMessage(casterID, "error_not_enough_resources")
                     return
 				end
                 PlayerResource:ModifyGold(casterHero, -gold, true)
@@ -1275,12 +1424,12 @@ function GiveResourcesRandom(event)
                     GameRules:SendCustomMessageToTeam(text, casterHero:GetTeamNumber(),0, 0)
 				end
             else
-                SendErrorMessage(event.casterID, "#error_enter_only_digits")
+                SendErrorMessage(event.casterID, "error_enter_only_digits")
 			end
             else
-            SendErrorMessage(event.casterID, "#error_select_only_your_allies")
+            SendErrorMessage(event.casterID, "error_select_only_your_allies")
 		end
         else
-        SendErrorMessage(event.casterID, "#error_type_only_digits")
+        SendErrorMessage(event.casterID, "error_type_only_digits")
 	end
 end

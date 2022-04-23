@@ -77,11 +77,14 @@ function SpiritBearSpawn( event )
 			caster.bear:RemoveAbility("attack_gold_wisp")
 			caster.bear:RemoveAbility("reveal_area")
 			caster.bear:RemoveAbility("troll_teleport")
+			caster.bear:RemoveAbility("bear_movespeed")
+			caster.bear:RemoveModifierByName("bear_movespeed")
+			caster.bear:RemoveModifierByName("gold_wisp_on_attack")
 		end
 		
 		else 
 		ability:EndCooldown()
-		SendErrorMessage(player, "#error_need_buy_hut_7")
+		SendErrorMessage(player, "error_need_buy_hut_7")
 	end
 end
 
@@ -125,6 +128,7 @@ function SpiritBearLevel( event )
 		caster.bear:RemoveAbility("attack_gold_wisp")
 		caster.bear:RemoveAbility("reveal_area")
 		caster.bear:RemoveAbility("troll_teleport")
+		caster.bear:RemoveModifierByName("gold_wisp_on_attack")
 	end
 end
 

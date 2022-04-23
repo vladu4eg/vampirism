@@ -19,7 +19,10 @@ function chatcommand:OnPlayerChat(event)
 		local text = "Total rating bonus for this match " .. (GameRules.BonusPercent * 100) .. "%!"
 		GameRules:SendCustomMessage("<font color='#00FF80'>" .. text ..  "</font>" , 1, 1)
 		lastCommandChat[event.playerid] = GameRules:GetGameTime() 
-		elseif event.text == "!list" and PlayerResource:GetSteamAccountID(event.playerid) == 201083179 then
+		elseif event.text == "!list" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 155143382) then
 		for pID = 0,DOTA_MAX_TEAM_PLAYERS do
 			if PlayerResource:IsValidPlayerID(pID) then
 				local text = "Nick: " .. PlayerResource:GetPlayerName(pID) .. " pID: " .. pID
@@ -29,7 +32,7 @@ function chatcommand:OnPlayerChat(event)
 		elseif string.match(event.text,"%D+") == "!kick" and PlayerResource:GetSteamAccountID(event.playerid) == 201083179 then
 		local id_kick = tonumber(string.match(event.text,"%d+"))
 		local hero_kick = PlayerResource:GetSelectedHeroEntity(id_kick)
-		if hero:GetTeamNumber() == hero_kick:GetTeamNumber() then
+		--if hero:GetTeamNumber() == hero_kick:GetTeamNumber() then
 			hero_kick:ForceKill(true)
 			if hero_kick.units ~= nil then
 				for i=1,#hero_kick.units do
@@ -41,17 +44,40 @@ function chatcommand:OnPlayerChat(event)
 			end
 			UTIL_Remove(hero_kick)
 			SendToServerConsole("kick " .. PlayerResource:GetPlayerName(id_kick))
-		end
+		--end
 		elseif string.match(event.text,"%D+") == "!kill" and PlayerResource:GetSteamAccountID(event.playerid) == 201083179 then
 		local id_kick = tonumber(string.match(event.text,"%d+"))
 		local hero_kick = PlayerResource:GetSelectedHeroEntity(id_kick)
 		hero_kick:ForceKill(true)
-		elseif event.text == "!drop" and PlayerResource:GetSteamAccountID(event.playerid) == 201083179 then
+		elseif event.text == "!drop" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 155143382)  then
 		local spawnPoint = hero:GetAbsOrigin()	
 		local newItem = CreateItem("item_vip", nil, nil )
 		local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
 		local dropRadius = RandomFloat( 50, 100 )
 		newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ) )
+		elseif event.text == "!gem" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 155143382)  then
+		local spawnPoint = hero:GetAbsOrigin()	
+		local newItem = CreateItem("item_get_gem", nil, nil )
+		local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
+		local dropRadius = RandomFloat( 50, 100 )
+		newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ) )
+
+		elseif event.text == "!gold" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 155143382)  then
+		local spawnPoint = hero:GetAbsOrigin()	
+		local newItem = CreateItem("item_get_gold", nil, nil )
+		local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
+		local dropRadius = RandomFloat( 50, 100 )
+		newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ) )
+
 		elseif string.match(event.text,"%D+") == "!delete" and PlayerResource:GetSteamAccountID(event.playerid) == 201083179 then
 		local id_kick = tonumber(string.match(event.text,"%d+"))
 		local hero_kick = PlayerResource:GetSelectedHeroEntity(id_kick)
@@ -65,12 +91,13 @@ function chatcommand:OnPlayerChat(event)
 				end
 			end
 		end
+		
 		elseif event.text == "!event" and GameRules:GetGameTime() - GameRules.startTime > 60 and 
 		(lastCommandChat[event.playerid] == nil or lastCommandChat[event.playerid] + 120 < GameRules:GetGameTime() - GameRules.startTime) then
 		local steamID = tostring(PlayerResource:GetSteamID(event.playerid))
 		local pID = tonumber(event.playerid)
 		DebugPrint(pID)
-		Stats.RequestEvent(pID, steamID, callback)
+		Shop.RequestEvent(pID, steamID, callback)
 		lastCommandChat[event.playerid] = GameRules:GetGameTime() 
 		elseif event.text == "!test" then
 		if GameRules:IsCheatMode() then 
@@ -85,23 +112,163 @@ function chatcommand:OnPlayerChat(event)
 			TROLL_SPAWN_TIME = 5
 			PRE_GAME_TIME = 10
 		end
+
+	elseif event.text == "!troll" then
+		if GameRules:IsCheatMode() then 
+			GameRules.test = true
+			GameRules.test2 = true
+			GameRules.trollHero =  hero
+        	GameRules.trollID = event.playerid
+			TROLL_SPAWN_TIME = 5
+			PRE_GAME_TIME = 10
+			local units = Entities:FindAllByClassname("npc_dota_creature")
+			for _, unit in pairs(units) do
+				local unit_name = unit:GetUnitName();
+				if string.match(unit_name, "shop") or
+					string.match(unit_name, "troll_hut") then
+					unit:SetOwner(hero)
+					unit:SetControllableByPlayer(event.playerid, true)
+					unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+					unit:AddNewModifier(unit, nil, "modifier_phased", {})
+					if string.match(unit_name, "troll_hut") then
+						unit.ancestors = {}
+						ModifyStartedConstructionBuildingCount(hero, unit_name, 1)
+						ModifyCompletedConstructionBuildingCount(hero, unit_name, 1)
+						BuildingHelper:AddModifierBuilding(unit)
+						BuildingHelper:BlockGridSquares(GetUnitKV(unit_name, "ConstructionSize"), 0, unit:GetAbsOrigin())
+					end
+					elseif string.match(unit_name, "npc_dota_units_base2") then
+					unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+					unit:AddNewModifier(unit, nil, "modifier_phased", {})
+				end
+			end
+		end
+
 		elseif event.text == "!notest" then
 		if GameRules:IsCheatMode() then 
 			GameRules.test = false
 			GameRules.test2 = false
 		end
+		elseif event.text == "!mute" then
+			if GameRules.Mute[event.playerid] == nil then
+				GameRules.Mute[event.playerid] = true
+			else
+				GameRules.Mute[event.playerid] = nil
+			end		 
 		elseif event.text == "!fps" then
 			GameRules.PlayersFPS[event.playerid] = true
 		elseif event.text == "!unfps" then
 			GameRules.PlayersFPS[event.playerid] = false
 		elseif event.text == "!birthday" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
 		or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
-		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 ) then
+		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 155143382) then
 		local spawnPoint = hero:GetAbsOrigin()	
 		local newItem = CreateItem("item_event_birthday", nil, nil )
 		local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
 		local dropRadius = RandomFloat( 50, 100 )
 		newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ) )
+
+		elseif string.match(event.text,"%D+") == "!doom" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 155143382)
+		then
+        local info = {}
+    	info.PlayerID = event.playerid
+		local id_kick = tonumber(string.match(event.text,"%d+"))
+   		info.hero = PlayerResource:GetSelectedHeroEntity(id_kick)
+		Pets.DeletePet(info)
+		UTIL_Remove(hero)
+		PlayerResource:ReplaceHeroWith(id_kick, "npc_dota_hero_doom_bringer", 0, 0)
+        hero = PlayerResource:GetSelectedHeroEntity(id_kick)
+        PlayerResource:SetCustomTeamAssignment(id_kick, DOTA_TEAM_CUSTOM_1) -- A workaround for wolves sometimes getting stuck on elves team, I don't know why or how it happens.
+        local pos = Vector(0, -640, 256)
+		FindClearSpaceForUnit(hero, pos, true)
+		hero:AddItemByName("item_dmg_14")
+        hero:AddItemByName("item_armor_13")
+        hero:AddItemByName("item_hp_12")
+        hero:AddItemByName("item_hp_reg_12")
+		hero:AddItemByName("item_dmg_14")
+		hero:CalculateStatBonus(true)
+
+	elseif string.match(event.text,"%D+") == "!lina" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
+	or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
+	or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 
+	or PlayerResource:GetSteamAccountID(event.playerid) == 155143382)
+	then
+	local info = {}
+	info.PlayerID = event.playerid
+	local id_kick = tonumber(string.match(event.text,"%d+"))
+   	info.hero = PlayerResource:GetSelectedHeroEntity(id_kick)
+	Pets.DeletePet(info)
+	UTIL_Remove(hero)
+	PlayerResource:ReplaceHeroWith(id_kick, "npc_dota_hero_lina", 0, 0)
+	hero = PlayerResource:GetSelectedHeroEntity(id_kick)
+	PlayerResource:SetCustomTeamAssignment(id_kick, DOTA_TEAM_CUSTOM_1) -- A workaround for wolves sometimes getting stuck on elves team, I don't know why or how it happens.
+	local pos = Vector(0, -640, 256)
+	FindClearSpaceForUnit(hero, pos, true)
+	hero:AddItemByName("item_aghanims_shard")
+	hero:CalculateStatBonus(true)
+
+		elseif string.match(event.text,"%D+") == "!phantom" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 155143382)
+		then
+        local info = {}
+    	info.PlayerID = event.playerid
+		local id_kick = tonumber(string.match(event.text,"%d+"))
+		info.hero = PlayerResource:GetSelectedHeroEntity(id_kick)
+		Pets.DeletePet(info)
+		UTIL_Remove(hero)
+		PlayerResource:ReplaceHeroWith(id_kick, "npc_dota_hero_phantom_assassin", 0, 0)
+        hero = PlayerResource:GetSelectedHeroEntity(id_kick)
+        PlayerResource:SetCustomTeamAssignment(id_kick, DOTA_TEAM_CUSTOM_2) -- A workaround for wolves sometimes getting stuck on elves team, I don't know why or how it happens.
+        local pos = Vector(0, -640, 256)
+		FindClearSpaceForUnit(hero, pos, true)
+		hero:AddItemByName("item_flicker")
+		hero:CalculateStatBonus(true)
+
+		elseif string.match(event.text,"%D+") == "!tide" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 155143382)
+		then
+        local info = {}
+    	info.PlayerID = event.playerid
+		local id_kick = tonumber(string.match(event.text,"%d+"))
+		info.hero = PlayerResource:GetSelectedHeroEntity(id_kick)
+		Pets.DeletePet(info)
+		UTIL_Remove(hero)
+		PlayerResource:ReplaceHeroWith(id_kick, "npc_dota_hero_tidehunter", 0, 0)
+        hero = PlayerResource:GetSelectedHeroEntity(id_kick)
+        PlayerResource:SetCustomTeamAssignment(id_kick, DOTA_TEAM_CUSTOM_3) -- A workaround for wolves sometimes getting stuck on elves team, I don't know why or how it happens.
+        local pos = Vector(0, -640, 256)
+		FindClearSpaceForUnit(hero, pos, true)
+		hero:CalculateStatBonus(true)
+
+		elseif string.match(event.text,"%D+") == "!noboss" and (PlayerResource:GetSteamAccountID(event.playerid) == 201083179 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 337000240 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 183899786 
+		or PlayerResource:GetSteamAccountID(event.playerid) == 155143382)
+		then
+        local info = {}
+    	info.PlayerID = event.playerid
+		local id_kick = tonumber(string.match(event.text,"%d+"))
+		info.hero = PlayerResource:GetSelectedHeroEntity(id_kick)
+		Pets.DeletePet(info)
+		UTIL_Remove(hero)
+		PlayerResource:ReplaceHeroWith(id_kick, "npc_dota_hero_dark_willow", 0, 0)
+        hero = PlayerResource:GetSelectedHeroEntity(id_kick)
+        PlayerResource:SetCustomTeamAssignment(id_kick, DOTA_TEAM_GOODGUYS) -- A workaround for wolves sometimes getting stuck on elves team, I don't know why or how it happens.
+        local pos = Vector(0, -640, 256)
+		FindClearSpaceForUnit(hero, pos, true)
+		hero:CalculateStatBonus(true)
+
+	--elseif event.text == "!skin" then
+	--	wearables:RemoveWearables(hero)
+	--	SetModelVip(hero, "633")
 		--elseif event.text == "!xp" then
 		--	GameRules:SendCustomMessage("<font color='#00FF80'>" .. hero:GetCurrentXP() ..  "</font>" , 1, 1)
 		--elseif event.text == "!xpup" then
@@ -169,7 +336,7 @@ function chatcommand:OnPlayerChat(event)
 	--data.SteamID = tostring(PlayerResource:GetSteamID(event.playerid))
 	--data.Num = "2"
 	--data.Srok = "01/09/2020"
-	--Stats.GetVip(data, callback)
+	--Shop.GetVip(data, callback)
 	--http.SendRequest("post", "/test", "228")
 	
 	--elseif event.text == "get" then

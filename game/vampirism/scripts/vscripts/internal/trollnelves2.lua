@@ -29,7 +29,9 @@ function trollnelves2:_Inittrollnelves2()
   GameRules:SetHideKillMessageHeaders(true)
   GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 17)
   GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 17)
-  
+  GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_1, 6)
+  GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_2, 6)
+  GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_3, 6)
   
   -- Setup game mode
   mode = GameRules:GetGameModeEntity()     
@@ -65,6 +67,7 @@ function trollnelves2:_Inittrollnelves2()
   ListenToGameEvent("player_disconnect", Dynamic_Wrap(trollnelves2, 'OnDisconnect'), self)
   ListenToGameEvent('player_chat', Dynamic_Wrap(chatcommand, 'OnPlayerChat'), self)
   ListenToGameEvent('dota_item_picked_up', Dynamic_Wrap(trollnelves2, 'OnItemPickedUp'), self)
+  -- ListenToGameEvent('dota_inventory_item_added', Dynamic_Wrap(trollnelves2, 'OnItemAddedInv'), self)
   
   
   -- Panorama event listeners
@@ -77,11 +80,17 @@ function trollnelves2:_Inittrollnelves2()
   CustomGameEventManager:RegisterListener("choose_flag_side", FlagGive)
   CustomGameEventManager:RegisterListener("donate_player_take", PlayerTake )
   CustomGameEventManager:RegisterListener("SelectPart", Dynamic_Wrap(wearables, 'SelectPart'))
+  CustomGameEventManager:RegisterListener("SelectSkin", Dynamic_Wrap(wearables, 'SelectSkin'))
+  CustomGameEventManager:RegisterListener("BuyShopItem", Dynamic_Wrap(Shop, 'BuyShopItem'))
   CustomGameEventManager:RegisterListener("SetDefaultPart", Dynamic_Wrap(wearables, 'SetDefaultPart'))
   CustomGameEventManager:RegisterListener("SetDefaultPets", Dynamic_Wrap(SelectPets, 'SetDefaultPets'))
+  CustomGameEventManager:RegisterListener("SetDefaultSkin", Dynamic_Wrap(wearables, 'SetDefaultSkin'))
   CustomGameEventManager:RegisterListener("UpdateTops", Dynamic_Wrap(top, 'UpdateTops'))
   
   CustomGameEventManager:RegisterListener("SelectPets", Dynamic_Wrap(SelectPets, 'SelectPets'))
+  CustomGameEventManager:RegisterListener("OpenChestAnimation", Dynamic_Wrap(Shop, 'OpenChestAnimation'))
+
+  CustomGameEventManager:RegisterListener( "SelectVO", Dynamic_Wrap(Shop,'SelectVO'))
   
   CustomNetTables:SetTableValue("building_settings", "team_choice_time", { value = TEAM_CHOICE_TIME })
   

@@ -62,7 +62,7 @@ function Team.GetScore(team)
 		if PlayerResource:IsValidPlayerID(pID) then
 			local hero = PlayerResource:GetSelectedHeroEntity(pID)
 			if hero ~= nil then
-				if not hero:IsTroll() and team == 2 then
+				if not hero:IsTroll() then
 					sum = sum + PlayerResource:GetScore(pID,2)
 					count = count + 1
 				elseif team == 3 then

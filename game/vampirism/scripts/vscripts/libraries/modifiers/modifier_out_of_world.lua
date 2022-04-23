@@ -31,8 +31,10 @@ if IsServer() then
 
     function modifier_out_of_world:OnDestroy( params )
         local unit = self:GetParent()
-        unit:SetDayTimeVisionRange(unit.originalDayVision)
-        unit:SetNightTimeVisionRange(unit.originalNightVision)
+        if unit.originalDayVision ~= nil and unit.originalNightVision ~= nil  then
+            unit:SetDayTimeVisionRange(unit.originalDayVision)
+            unit:SetNightTimeVisionRange(unit.originalNightVision)
+        end
         unit:RemoveModifierByName("modifier_stunned")
     end
 

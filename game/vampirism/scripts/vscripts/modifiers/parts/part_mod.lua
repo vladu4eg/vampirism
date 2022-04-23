@@ -4,9 +4,9 @@ function part_mod:GetEffectName()
     local partcls = {
     "particles/econ/items/dazzle/dazzle_ti6_gold/dazzle_ti6_shallow_grave_gold.vpcf", -- 1
     "particles/econ/courier/courier_greevil_orange/courier_greevil_orange_ambient_3.vpcf",--2
-    "particles/econ/courier/courier_hyeonmu_ambient/courier_hyeonmu_ambient.vpcf",--3
+    "particles/econ/events/ti7/fountain_regen_ti7_lvl3.vpcf",--3
     "particles/econ/events/ti8/ti8_hero_effect.vpcf",--4
-    "particles/econ/courier/courier_hermit_crab/hermit_crab_skady_ambient.vpcf",--5
+    "particles/units/heroes/hero_mars/mars_arena_of_blood_heal.vpcf",--5
     "particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf",--6
     "particles/my_new/courier_roshan_darkmoon.vpcf",--7
     "particles/econ/events/ti7/ti7_hero_effect.vpcf",--8
@@ -38,16 +38,74 @@ function part_mod:GetEffectName()
     "particles/econ/events/diretide_2020/emblem/fall20_emblem_v2_effect.vpcf", --33
     "particles/econ/events/diretide_2020/emblem/fall20_emblem_v1_effect.vpcf", --34
 	"particles/econ/events/diretide_2020/emblem/fall20_emblem_effect.vpcf", --35
-
-    "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_casterribbons_arcana1.vpcf", --36 top2-3
+    
+    "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_casterribbons_arcana1.vpcf", -- 36 топ2-3 винтер
     "particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_freezing_field_snow_arcana1.vpcf", --37 top1
     
     "particles/econ/events/fall_major_2016/radiant_fountain_regen_fm06_lvl3.vpcf", -- 38 top1 spring
     "particles/econ/events/fall_major_2016/force_staff_fm06.vpcf", -- 39 top2 spring
     "particles/econ/events/fall_major_2016/force_staff_fm06_glow_trail.vpcf", -- 40 top3 sring
 
+
     "particles/econ/items/omniknight/omniknight_fall20_immortal/omniknight_fall20_immortal_degen_aura_debuff.vpcf", -- 41 TOP1 SUMMER
-    "particles/econ/events/ti10/aghanim_aura_ti10/agh_aura_ti10.vpcf", --TOP2-3 SUMMER 42
+    "particles/econ/events/ti10/aghanim_aura_ti10/agh_aura_ti10.vpcf", --TOP2 SUMMER 42
+    "particles/econ/events/spring_2021/agh_aura_spring_2021_lvl2.vpcf", --TOP2 SUMMER 43
+    
+    "particles/econ/events/summer_2021/summer_2021_emblem_effect.vpcf", --44 донат 12
+    "particles/econ/events/spring_2021/fountain_regen_spring_2021_lvl3.vpcf", --45 топ патреон
+
+    "particles/econ/events/fall_2021/fall_2021_emblem_game_effect.vpcf", -- 46 donate 13
+    "particles/units/heroes/hero_void_spirit/planeshift/void_spirit_planeshift_untargetable.vpcf", -- 47 event Alma
+
+
+
+
+    "particles/econ/items/huskar/huskar_2021_immortal/huskar_2021_immortal_burning_spear_debuff.vpcf", -- 48 event direc
+
+    "particles/econ/events/fall_2021/fountain_regen_fall_2021_lvl3.vpcf",  -- winter TOP2 49
+    "particles/econ/items/effigies/status_fx_effigies/ambientfx_effigy_wm16_dire_lvl3.vpcf", -- winter TOP3 50
+    
+    "particles/tve_magic_aghanim_pulse_ambient_c.vpcf", -- ивент 51
+
+    "particles/units/heroes/hero_oracle/oracle_fatesedict_arc_pnt.vpcf", -- TOP2 52
+    "particles/units/heroes/hero_oracle/oracle_fatesedict.vpcf",  -- TOP 1 53 
+    "particles/units/heroes/hero_oracle/oracle_fatesedict_arc_thin.vpcf", -- TOP3 54
+
+    "particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_buff.vpcf", -- TOP1 55
+    "particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_pulse.vpcf", -- TOP2 56
+    "particles/units/heroes/hero_omniknight/omniknight_heavenly_grace_beam.vpcf", -- TOP3  57
+
+    "particles/econ/items/ember_spirit/ember_ti9/ember_ti9_flameguard.vpcf", -- ТОП шар 58
+
+    -- ивент гуд
+    "particles/econ/items/omniknight/omni_ti8_head/omniknight_repel_buff_ti8.vpcf", -- синяя фигня с кругом  59
+    "particles/econ/items/oracle/oracle_ti10_immortal/oracle_ti10_immortal_purifyingflames.vpcf", -- грин с кругом  60
+    "particles/econ/items/silencer/silencer_ti6/silencer_last_word_status_ti6.vpcf", -- фил с кругом  61
+    "particles/econ/treasures/aghanim_2021_treasure/aghanim_2021_treasure_ambient.vpcf", -- син кольцо 62
+    "particles/units/heroes/hero_spirit_breaker/spirit_breaker_haste_owner.vpcf", -- ивент 63
+    "particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield.vpcf", -- сфера медузы грин 64
+    "particles/econ/items/omniknight/omni_2021_immortal/omni_2021_immortal.vpcf", -- кольцо огня от омника 65
+
+    -- ивент
+    "particles/units/heroes/hero_rubick/rubick_doom_ring.vpcf", -- биг метка 66
+    "particles/units/heroes/hero_rubick/rubick_doom_sigil_c.vpcf", -- метка мини 67
+    "particles/units/heroes/hero_earth_spirit/espirit_bouldersmash_pushrocks.vpcf", -- камни 68
+    "particles/econ/items/bane/slumbering_terror/bane_slumber_nightmare.vpcf", -- son 69
+    "particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf", -- аура дума кольцо ОГОнь 70
+    "particles/econ/courier/courier_hermit_crab/hermit_crab_skady_ambient.vpcf", -- хрень топ10 71
+    "particles/econ/courier/courier_hyeonmu_ambient/courier_hyeonmu_ambient.vpcf",  -- хрень донат7 72 
+    
+    "particles/tve_void_spirit_planeshift.vpcf", -- крылья гуд 73
+    "particles/tve_slark_fall20_shadow_dance.vpcf", -- аква 74
+    "particles/tve_cold_monkey_king_arcana_crown_fire_core.vpcf",  -- сфера 75
+    
+
+
+
+
+
+
+
     
     "particles/econ/courier/courier_dc/dccourier_angel_flame.vpcf", -- ангелы и лед
     

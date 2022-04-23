@@ -17,7 +17,7 @@ function CDOTA_PlayerResource:SetSelectedHero(playerID, heroName)
     local player = PlayerResource:GetPlayer(playerID)
 	if player == nil then
         GameRules.disconnectedHeroSelects[playerID] = heroName
-        return
+        return 
 	end
     player:SetSelectedHero(heroName)
 end
@@ -128,23 +128,23 @@ function CDOTA_PlayerResource:GetAllStats(pID)
 end
 
 function CDOTA_PlayerResource:ModifyFood(hero,food)
+	if hero == nil then
+		return
+	end
     food = string.match(food,"[-]?%d+") or 0
     local playerID = hero:GetPlayerOwnerID()
-	if hero.food ~= nil then
-		if GameRules.maxFood[playerID] == nil then
-			GameRules.maxFood[playerID] = 30
-		end
     hero.food = hero.food + food
 	CustomGameEventManager:Send_ServerToTeam(hero:GetTeam(), "player_food_changed", {
 		playerID = playerID,
 		food = math.floor(hero.food),
-		maxFood = GameRules.maxFood[playerID],
+		maxFood = GameRules.maxFood,
 	})
-	DebugPrint("maxFood = GameRules.maxFood[playerID] " .. GameRules.maxFood[playerID])
-	end
 end
 
 function CDOTA_PlayerResource:ModifyWisp(hero,wisp)
+	if hero == nil then
+		return
+	end
     wisp = string.match(wisp,"[-]?%d+") or 0
     local playerID = hero:GetPlayerOwnerID()
     hero.wisp = hero.wisp + wisp
@@ -152,6 +152,20 @@ function CDOTA_PlayerResource:ModifyWisp(hero,wisp)
 		playerID = playerID,
 		wisp = math.floor(hero.wisp),
 		maxWisp = GameRules.maxWisp,
+	})
+end
+
+function CDOTA_PlayerResource:ModifyMine(hero, mine)
+	if hero == nil then
+		return
+	end
+    mine = string.match(mine,"[-]?%d+") or 0
+    local playerID = hero:GetPlayerOwnerID()
+    hero.mine = hero.mine + mine
+	CustomGameEventManager:Send_ServerToTeam(hero:GetTeam(), "player_mine_changed", {
+		playerID = playerID,
+		mine = math.floor(hero.mine),
+		maxMine = GameRules.maxMine,
 	})
 end
 
@@ -169,8 +183,7 @@ end
 
 function CDOTA_PlayerResource:GetType(pID)
 	local heroName = PlayerResource:GetSelectedHeroName(pID)
-    return string.match(heroName,TROLL_HERO[1]) and "troll"
-	or string.match(heroName,TROLL_HERO[2]) and "troll"
+    return string.match(heroName,TROLL_HERO) and "troll"
 	or string.match(heroName,ANGEL_HERO[1]) and "angel"
 	or string.match(heroName,ANGEL_HERO[2]) and "angel"
 	or string.match(heroName,WOLF_HERO[1]) and "wolf"
@@ -196,7 +209,7 @@ function CDOTA_PlayerResource:GetScoreBonusGoldGained(pID)
 	local add = playerSum/teamAvg > 0 and 0 or 1
 	playerSum = math.abs(playerSum)
 	teamAvg = math.abs(teamAvg)
-	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*goldGainedImportance/10))
+	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*goldGainedImportance/5))
 	value = math.min(goldGainedImportance,value)
 	return (value*sign)
 	
@@ -231,7 +244,7 @@ function CDOTA_PlayerResource:GetScoreBonusLumberGained(pID)
 	local add = playerSum/teamAvg > 0 and 0 or 1
 	playerSum = math.abs(playerSum)
 	teamAvg = math.abs(teamAvg)
-	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*lumberGainedImportance/10))
+	local value = math.floor((math.max(playerSum,teamAvg)/math.min(playerSum,teamAvg)*lumberGainedImportance/5))
 	value = math.min(lumberGainedImportance,value)
 	if team == 3 then
 		return 0
@@ -263,7 +276,7 @@ function CDOTA_PlayerResource:GetScoreBonusRank(pID)
 	local allyTeamScore = Team.GetAverageScore(allyTeam)
 	local enemyTeamScore = Team.GetAverageScore(enemyTeam)
 	local sign = allyTeamScore > enemyTeamScore and -1 or 1
-	local value = math.floor((math.abs(enemyTeamScore - allyTeamScore))*rankImportance/7000)
+	local value = math.floor((math.abs(enemyTeamScore - allyTeamScore))*rankImportance/5000)
 	value = math.min(rankImportance,value)
 	return (value*sign)
 end
@@ -282,7 +295,7 @@ function CDOTA_BaseNPC:IsElf()
     return self:GetUnitName() == ELF_HERO
 end
 function CDOTA_BaseNPC:IsTroll()
-    return self:GetUnitName() == TROLL_HERO[1] or self:GetUnitName() == TROLL_HERO[2] 
+    return self:GetUnitName() == TROLL_HERO
 end
 function CDOTA_BaseNPC:IsAngel()
 	return self:GetUnitName() == ANGEL_HERO[1] or self:GetUnitName() == ANGEL_HERO[2] 
@@ -298,18 +311,18 @@ function CDOTA_BaseNPC:GetNetworth()
     for i = 0, 5, 1 do
         local item = self:GetItemInSlot(i)
         if item then
-            local item_name = item:GetAbilityName()
-            local gold_cost = GetItemKV(item_name)["AbilitySpecial"]["02"]["gold_cost"]
-            local lumber_cost = GetItemKV(item_name)["AbilitySpecial"]["03"]["lumber_cost"]
-            sum = sum + gold_cost + lumber_cost * 64000
+			local item_name = item:GetAbilityName()
+			if GetItemKV(item_name) ~= nil then
+            	local gold_cost = GetItemKV(item_name)["AbilitySpecial"]["02"]["gold_cost"]
+            	local lumber_cost = GetItemKV(item_name)["AbilitySpecial"]["03"]["lumber_cost"]
+            	sum = sum + gold_cost + lumber_cost * 64000
+			end     
 		end
 	end
 	if self:HasItemInInventory("item_disable_repair_2") then
 		sum = sum + 12288000
 	end
-	if self:IsTroll() then
-		sum = sum + PlayerResource:GetGold(self:GetPlayerOwnerID()) + (PlayerResource:GetLumber(self:GetPlayerOwnerID()) * 64000)
-	elseif self:IsWolf() then
+	if self:IsTroll() or self:IsWolf() then
 		sum = sum + PlayerResource:GetGold(self:GetPlayerOwnerID()) + (PlayerResource:GetLumber(self:GetPlayerOwnerID()) * 64000)
 	else
 		sum = sum + PlayerResource:GetGold(self:GetPlayerOwnerID())

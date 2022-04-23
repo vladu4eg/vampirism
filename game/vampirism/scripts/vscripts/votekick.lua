@@ -6,6 +6,10 @@ local lastKickTime = {}
 
 function VotekickStart(eventSourceIndex, event)
 	local playerName
+	if string.match(GetMapName(),"clanwars") or string.match(GetMapName(),"1x1") then
+        SendErrorMessage(event.casterID, "error_not_kick_cw")
+        return 
+    end 
 	if event.target ~= nil then
 		local hero = PlayerResource:GetSelectedHeroEntity(event.target)
 		local ctrHeroID = PlayerResource:GetSelectedHeroEntity(event.casterID)
@@ -13,7 +17,13 @@ function VotekickStart(eventSourceIndex, event)
 		if ctrHeroID:IsTroll() and team == DOTA_TEAM_BADGUYS  then
 			playerName = PlayerResource:GetPlayerName(event.target)
 			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(event.casterID), "show_votekick_options", {["name"] = playerName, ["id"] = event.target})
+			if lastKickTime[event.target] == nil then
+				lastKickTime[event.target] = -240
+			end
 		end
+		if ctrHeroID:IsAngel() then
+			return 
+		end 
 		if ctrHeroID:IsElf() and team == DOTA_TEAM_GOODGUYS and PlayerResource:GetConnectionState(event.target) == 2 
 			and (lastKickTime[event.target] == nil or lastKickTime[event.target] + 240 < GameRules:GetGameTime())
 			and (checkVote == nil or checkVote + 40 < GameRules:GetGameTime()) then	
@@ -60,17 +70,20 @@ function VoteKick(eventSourceIndex, event)
 		and PlayerResource:GetSteamAccountID(event.playerID1) ~= 990264201 
 		and PlayerResource:GetSteamAccountID(event.playerID1) ~= 337000240 
 		and PlayerResource:GetSteamAccountID(event.playerID1) ~= 183899786 
-		and PlayerResource:GetSteamAccountID(event.playerID1) ~= 231745186 
 		and PlayerResource:GetSteamAccountID(event.playerID1) ~= 129697246 
 		then
-		UTIL_Remove(hero)
+		hero:AddNewModifier(nil, nil, "modifier_stunned", nil)
+		hero:AddNewModifier(nil, nil, "modifier_invulnerable", nil)
+        hero:AddNewModifier(nil, nil, "modifier_phased", nil)
+
 		SendToServerConsole("kick " .. PlayerResource:GetPlayerName(event.playerID1))
 		votes[ event.playerID1 ] = 0
 		GameRules.KickList[event.playerID1] = 1
 		CheckWolfInTeam(hero)
+		return nil
 	end
 	if event.vote == 1 and (PlayerResource:GetSteamAccountID(event.casterID) == 201083179 or PlayerResource:GetSteamAccountID(event.casterID) == 990264201 
-		or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786 or PlayerResource:GetSteamAccountID(event.casterID) == 231745186) then
+		or PlayerResource:GetSteamAccountID(event.casterID) == 337000240 or PlayerResource:GetSteamAccountID(event.casterID) == 183899786) then
 		votes[ event.playerID1 ] = votes[ event.playerID1 ] + 3
 	end
 	local disKick = 0
@@ -85,7 +98,7 @@ function VoteKick(eventSourceIndex, event)
 			if (votes[ event.playerID1 ]/countVote[event.playerID1]) >= PERC_KICK_PLAYER + disKick and countVote[event.playerID1] >= MIN_PLAYER_KICK
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 201083179 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 990264201 
 				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 337000240 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 183899786 
-				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 231745186 and PlayerResource:GetSteamAccountID(event.playerID1) ~= 129697246 
+				and PlayerResource:GetSteamAccountID(event.playerID1) ~= 129697246 
 				then
 				GameRules.PlayersBase[event.playerID1] = nil
 				GameRules.KickList[event.playerID1] = 1

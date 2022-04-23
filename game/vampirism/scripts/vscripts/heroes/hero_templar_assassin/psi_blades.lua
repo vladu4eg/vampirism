@@ -73,7 +73,9 @@ function DealDamage(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-
+	if target:IsWolf() then
+		ability.first_target_damage = ability.first_target_damage * 2.5
+	end
 	-- Applies the damage to the attack target
 	ApplyDamage({victim = target, attacker = caster, damage = ability.first_target_damage, damage_type = ability:GetAbilityDamageType()})
 end

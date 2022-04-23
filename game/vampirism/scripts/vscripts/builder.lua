@@ -5,6 +5,8 @@ require('wearables')
 require('drop')
 require('error_debug')
 require('settings')
+LinkLuaModifier("modifier_all_vision",
+   "libraries/modifiers/modifier_all_vision.lua", LUA_MODIFIER_MOTION_NONE)
 CheckBarak3 = false
 -- A build ability is used (not yet confirmed)
 function Build( event )
@@ -16,7 +18,11 @@ function Build( event )
     local playerID = hero:GetPlayerOwnerID()
     local gold_cost = ability:GetSpecialValueFor("gold_cost")
     local lumber_cost = ability:GetSpecialValueFor("lumber_cost")
-    
+	local mine_cost = ability:GetSpecialValueFor("MineCost")
+
+    DebugPrint("--------------------------------------------------------------------")
+    DebugPrint(caster:GetEntityIndex())
+    local status, nextCall = Error_debug.ErrorCheck(function()
     -- Makes a building dummy and starts panorama ghosting
     BuildingHelper:AddBuilding(event)
     
@@ -25,19 +31,40 @@ function Build( event )
         
         -- Check for minimum height if defined
         if not BuildingHelper:MeetsHeightCondition(vPos) then
-            SendErrorMessage(playerID, "#error_invalid_build_position")
+            SendErrorMessage(playerID, "error_invalid_build_position")
             return false
         end
+
+       -- if building_name == "flag" and GameRules.PlayersBase[playerID] ~= nil then
+      --      SendErrorMessage(playerID, "error_place_is_flag")
+      --      return false 
+     --   end
         
         -- If not enough resources to queue, stop
         if PlayerResource:GetGold(playerID) < gold_cost then
-            SendErrorMessage(playerID, "#error_not_enough_gold")
+            SendErrorMessage(playerID, "error_not_enough_gold")
             return false
         end
         if PlayerResource:GetLumber(playerID) < lumber_cost then
-            SendErrorMessage(playerID, "#error_not_enough_lumber")
+            SendErrorMessage(playerID, "error_not_enough_lumber")
             return false
         end
+
+        if mine_cost ~= nil then
+            if mine_cost ~= 0 then
+            DebugPrint(mine_cost)
+            DebugPrint(hero.mine)
+            DebugPrint(GameRules.maxMine )
+            if hero.mine > GameRules.maxMine  then
+                SendErrorMessage(playerID, "error_not_enough_mine")
+                caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
+                return false
+            else
+                PlayerResource:ModifyMine(hero, mine_cost)
+            end
+            end
+        end
+
         return true
     end)
     
@@ -45,7 +72,7 @@ function Build( event )
     event:OnBuildingPosChosen(function(vPos)
         PlayerResource:ModifyGold(hero,-gold_cost)
         PlayerResource:ModifyLumber(hero,-lumber_cost)
-        EmitSoundOnClient("DOTA_Item.ObserverWard.Activate", PlayerResource:GetPlayer(playerID))
+        EmitSoundOnEntityForPlayer("DOTA_Item.ObserverWard.Activate", hero, hero:GetPlayerOwnerID())
     end)
     
     -- The construction failed and was never confirmed due to the gridnav being blocked in the attempted area
@@ -63,10 +90,11 @@ function Build( event )
         if work.refund and work.refund == true and not work.repair then
             PlayerResource:ModifyGold(hero,gold_cost,true)
             PlayerResource:ModifyLumber(hero,lumber_cost,true)
+            PlayerResource:ModifyMine(hero, -mine_cost)
         end
     end)
     
-    --local status, nextCall = Debug.ErrorCheck(function() 
+     
         -- A building unit was created
         event:OnConstructionStarted(function(unit)
             BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
@@ -85,9 +113,12 @@ function Build( event )
             end
             --unit:RemoveModifierByName("modifier_invulnerable")
             unit:AddNewModifier(nil, nil, "modifier_stunned", {})
-            FindClearSpaceForUnit(caster, caster:GetAbsOrigin(), true)
-            caster:AddNewModifier(caster, nil, "modifier_phased", {duration=0.03})
             
+            if  caster.work then
+                FindClearSpaceForUnit(caster, caster:GetAbsOrigin(), true)
+                caster:AddNewModifier(caster, nil, "modifier_phased", {duration=0.03})
+            end
+               
             local unitName = unit:GetUnitName()
             ModifyStartedConstructionBuildingCount(hero, unitName, 1)
             table.insert(hero.units, unit)
@@ -97,8 +128,12 @@ function Build( event )
             if building_name ~= "flag" then
                 unit:AddItem(item)
             elseif building_name == "flag" then 
-                unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+            --    unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
                 unit:AddNewModifier(unit, nil, "modifier_phased", {})
+                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                local abil = hero:FindAbilityByName("build_flag")
+                abil:StartCooldown(999999) 
+                -- unit:SetCustomHealthLabel(tostring(PlayerResource:GetPlayerName(playerID)) ,  255, 255, 255)
             end
             
             for i=0, unit:GetAbilityCount()-1 do
@@ -112,8 +147,9 @@ function Build( event )
                     end
                 end
             end
+
         end)
-    --end)
+    
     
     
     
@@ -138,12 +174,15 @@ function Build( event )
         -- Give the unit their original attack capability
         unit:RemoveModifierByName("modifier_stunned")
         local itemBuildingDestroy = CreateItem("item_building_destroy", nil, nil)
-        if building_name ~= "flag"  then
+       -- if building_name ~= "flag"  then
             unit:AddItem(itemBuildingDestroy)
-        elseif building_name == "flag" then 
-            unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
-            unit:AddNewModifier(unit, nil, "modifier_phased", {})
-        end
+            if building_name == "flag" then 
+             --   unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})
+                unit:AddNewModifier(unit, nil, "modifier_phased", {})
+                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                local abil = hero:FindAbilityByName("build_flag")
+                abil:StartCooldown(999999) 
+            end
         unit.attackers = {}
         
         for i=0, unit:GetAbilityCount()-1 do
@@ -163,6 +202,20 @@ function Build( event )
             CustomGameEventManager:Send_ServerToPlayer(player, "unit_upgrade_complete", { })
         end
         
+        if (string.match(building_name, "tent") or string.match(building_name, "barracks")) and string.match(GetMapName(),"clanwars") and GameRules.tent[playerID] ~= nil then
+            --local hero2 = PlayerResource:GetSelectedHeroEntity(playerID)
+            --if hero2:HasModifier("modifier_kill") then
+           --     hero2:AddNewModifier(hero2, hero2, "modifier_kill", {duration = 9999999})
+           -- end
+           GameRules.tent[playerID] = nil
+           hero:AddNewModifier(hero, hero, "modifier_all_vision", {Duration=10})
+           hero:AddNewModifier(hero, hero, "modifier_creep_slow", {Duration=10})
+        end
+        if not BuildingHelper:IsInsideBaseArea(building, building, NewBuildingName, true) and not string.match(NewBuildingName,"troll_hut") then
+            CancelBuilding(event)
+            SendErrorMessage(playerID, "error_not_upgrade_flag_base")
+            return false
+        end
     end)
     
     -- These callbacks will only fire when the state between below half health/above half health changes.
@@ -175,13 +228,7 @@ function Build( event )
         --BuildingHelper:print("" ..unit:GetUnitName().. " is above half health.")        
     end)
 	
-
-    if building_name == "tent" then
-        GameRules.maxFood[playerID] = 50
-        PlayerResource:ModifyFood(hero, 0)
-    end
-
-    --	if building_name == "tent" and IsInsideBaseArea(hero) == false then
+    --	if building_name == "tent" and BuildingHelper:IsInsideBaseArea(hero) == false then
 	--	local check = false
 	--	DebugPrint("Test1")
     --		for _,base in ipairs(playersBase) do
@@ -199,6 +246,7 @@ function Build( event )
 	--		DebugPrint("Test3.2")
 	--	end
     --	end
+end)
 end
 
 -- Called when the Cancel ability-item is used
@@ -210,8 +258,8 @@ function CancelBuilding( keys )
     BuildingHelper:print("CancelBuilding "..building:GetUnitName().." "..building:GetEntityIndex())
     
     -- Refund here
-    PlayerResource:ModifyGold(hero,building.gold_cost,true)
-    PlayerResource:ModifyLumber(hero,building.lumber_cost,true)
+   -- PlayerResource:ModifyGold(hero,building.gold_cost,true)
+   -- PlayerResource:ModifyLumber(hero,building.lumber_cost,true)
     
     building:ForceKill(true)
     Timers:CreateTimer(0.1,function()
@@ -224,13 +272,63 @@ function DestroyBuilding( keys )
     local units = FindUnitsInRadius(building:GetTeamNumber() , building:GetAbsOrigin() , nil , 1500 , DOTA_UNIT_TARGET_TEAM_ENEMY ,  DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, 0, false)
     local ownerID = building:GetPlayerOwnerID()
     local playerID = building:GetMainControllingPlayer()
+    local hero = building:GetOwner()
     if #units > 0 then
-        SendErrorMessage(playerID, "#error_enemy_nearby")
+        SendErrorMessage(playerID, "error_enemy_nearby")
     elseif PlayerResource:GetConnectionState(ownerID) == 3 then
-        SendErrorMessage(playerID, "#error_not_destroy_building")
+        SendErrorMessage(playerID, "error_not_destroy_building")
     else
+        if building:GetUnitName() == "flag" then
+            for pID = 0, DOTA_MAX_TEAM_PLAYERS do
+                if PlayerResource:IsValidPlayerID(pID) then
+                    if GameRules.PlayersBase[pID] == GameRules.PlayersBase[playerID] and pID ~= playerID then
+                      --  GameRules.PlayersBase[pID] = nil
+                        GameRules.countFlag[pID] = nil
+                    --    local hero2 = PlayerResource:GetSelectedHeroEntity(pID)
+                    --    local abil2 = hero:FindAbilityByName("build_flag")
+                   --     abil2:StartCooldown(300) 
+                    end
+                end
+            end
+            
+            local abil2 = hero:FindAbilityByName("build_flag")
+            abil2:EndCooldown()
+            abil2:StartCooldown(300) 
+            GameRules.PlayersBase[ownerID] = nil
+            GameRules.countFlag[ownerID] = nil
+            if string.match(GetMapName(),"clanwars") then
+                hero:AddNewModifier(hero, hero, "modifier_all_vision", {Duration=10})
+                hero:AddNewModifier(hero, hero, "modifier_creep_slow", {Duration=10})
+                --hero:AddNewModifier(hero, hero, "modifier_silencer_last_word_disarm", {Duration=20})
+            end
+        elseif string.match(GetMapName(),"clanwars") and (string.match(building:GetUnitName(), "tent") or string.match(building:GetUnitName(), "barracks")) then 
+            hero:AddNewModifier(hero, hero, "modifier_all_vision", {Duration=10})
+            hero:AddNewModifier(hero, hero, "modifier_creep_slow", {Duration=10})
+        end
+        
+        if (string.match(building:GetUnitName(), "tent") or string.match(building:GetUnitName(), "barracks")) and string.match(GetMapName(),"clanwars") then
+           -- local hero2 = PlayerResource:GetSelectedHeroEntity(playerID)
+           -- hero2:AddNewModifier(hero2, hero2, "modifier_kill", {duration = TIMER_KILL_CW})
+           GameRules.tent[ownerID] = 1
+           Timers:CreateTimer(function()
+                local elf = PlayerResource:GetSelectedHeroEntity(ownerID)
+                if elf == nil or GameRules.tent[ownerID] == nil then
+                    return nil
+                end
+                if GameRules.tent[ownerID] < TIMER_KILL_CW then
+                    GameRules.tent[ownerID] = GameRules.tent[ownerID] + 5
+                    SendErrorMessage(ownerID, "NEED TO BUILD A TENT! You will die in " .. TIMER_KILL_CW - GameRules.tent[ownerID])
+                    return 5
+                else 
+                    ApplyDamage({victim = elf, attacker = GameRules.trollHero, damage = 100, damage_type = DAMAGE_TYPE_PHYSICAL }) 
+                    return nil
+                end
+           end)
+        end
+        
         building:ForceKill(false)
     end
+    
 end
 
 function UpgradeBuilding( event )
@@ -240,6 +338,22 @@ function UpgradeBuilding( event )
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local upgrades = GetUnitKV(building:GetUnitName(),"Upgrades")
     local buildTime = GetUnitKV(NewBuildingName,"BuildTime")
+  --  local baseID = BuildingHelper:IdBaseArea(building)
+  --  if baseID ~= nil and baseID ~= GameRules.PlayersBase[playerID] and GameRules.PlayersBase[playerID] ~= nil then
+  --      SendErrorMessage(playerID, "error_not_upgrade_flag_base")
+  --      return false
+  --  end
+    if not string.match(NewBuildingName,"troll_hut") then
+        if not BuildingHelper:IsInsideBaseArea(building, building, NewBuildingName, true) then
+            CancelBuilding(event)
+            SendErrorMessage(playerID, "error_not_upgrade_flag_base")
+            return false
+        end
+    end
+    if GameRules.MapSpeed == 4 and NewBuildingName ~= "tower_19" and NewBuildingName ~= "tower_19_1" and NewBuildingName ~= "tower_19_2" and not string.match(NewBuildingName,"rock") then
+        buildTime = buildTime/4
+    end
+    
     local gold_cost
     local lumber_cost
     local parts = CustomNetTables:GetTableValue("Particles_Tabel",tostring(building:GetPlayerOwnerID()))
@@ -260,21 +374,21 @@ function UpgradeBuilding( event )
         end
     end
     if gold_cost > PlayerResource:GetGold(playerID) then
-        SendErrorMessage(playerID, "#error_not_enough_gold")
+        SendErrorMessage(playerID, "error_not_enough_gold")
         return false
     end
     if lumber_cost > PlayerResource:GetLumber(playerID) then
-        SendErrorMessage(playerID, "#error_not_enough_lumber")
+        SendErrorMessage(playerID, "error_not_enough_lumber")
         return false
     end
     -- if GameRules.MapSpeed >= 4 and NewBuildingName == 'tower_19' then
-    --    SendErrorMessage(playerID, "#error_not_upgrade_tower19_x4")
+    --    SendErrorMessage(playerID, "error_not_upgrade_tower19_x4")
     --     return false
     --  end
 	building:AddNewModifier(nil, nil, "modifier_stunned", {}) 
 	
     local newBuilding
-    --local status, nextCall = Debug.ErrorCheck(function() 
+    --local status, nextCall = Error_debug.ErrorCheck(function() 
         newBuilding = BuildingHelper:UpgradeBuilding(building,NewBuildingName)
    -- end)
     local newBuildingName = newBuilding:GetUnitName()
@@ -330,6 +444,7 @@ function UpgradeBuilding( event )
         GameRules.MultiMapSpeed = 2
     end
     local p
+    local p12 = nil
     if parts ~= nil then    
         if parts["3"] == "normal" then
             if newBuildingName == "tower_11" then
@@ -352,8 +467,8 @@ function UpgradeBuilding( event )
                 wearables:AttachWearable(newBuilding, "models/items/drow/ti6_immortal_cape/mesh/drow_ti6_immortal_cape.vmdl")        
                 wearables:AttachWearable(newBuilding, "models/items/drow/frostfeather_huntress_arms/frostfeather_huntress_arms.vmdl")
                 wearables:AttachWearable(newBuilding, "models/items/drow/frostfeather_huntress_legs/frostfeather_huntress_legs.vmdl") 
-                p = ParticleManager:CreateParticle("particles/econ/items/drow/drow_ti6_gold/drow_ti6_ambient_gold.vpcf", 1, newBuilding)
-                ParticleManager:SetParticleControlEnt(p, 1, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
+                p12 = ParticleManager:CreateParticle("particles/econ/items/drow/drow_ti6_gold/drow_ti6_ambient_gold.vpcf", 1, newBuilding)
+                ParticleManager:SetParticleControlEnt(p12, 1, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
                 elseif newBuildingName == "tower_13" then
                 --wearables:RemoveWearables(newBuilding)
                 -- wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_weapon/ti6_windranger_weapon.vmdl")
@@ -376,11 +491,16 @@ function UpgradeBuilding( event )
                 wearables:AttachWearable(newBuilding, "models/items/windrunner/windrunner_arcana/wr_arcana_weapon.vmdl")
                 --local p = ParticleManager:CreateParticle("particles/econ/items/windrunner/windrunner_battleranger/windrunner_battleranger_bowstring_ambient.vpcf", 0, newBuilding)
                 --ParticleManager:SetParticleControlEnt(p, 0, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
-                p = ParticleManager:CreateParticle("particles/econ/items/windrunner/windranger_arcana/windranger_arcana_bow_ambient.vpcf", 1, newBuilding)
-                ParticleManager:SetParticleControlEnt(p, 1, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
+              --  p = ParticleManager:CreateParticle("particles/econ/items/windrunner/windranger_arcana/windranger_arcana_bow_ambient.vpcf", 1, newBuilding)
+              --  ParticleManager:SetParticleControlEnt(p, 1, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true)
                 --p = ParticleManager:CreateParticle("particles/econ/items/windrunner/windranger_arcana/windranger_arcana_bowstring_ambient.vpcf", 3, newBuilding)
                 --ParticleManager:SetParticleControlEnt(p, 3, newBuilding, PATTACH_POINT_FOLLOW, "attach_hook",  newBuilding:GetAbsOrigin(), true)
-                
+                elseif newBuildingName == "tower_12_1" then
+                wearables:RemoveWearables(newBuilding)
+                wearables:AttachWearable(newBuilding, "models/items/ancient_apparition/extremely_cold_shackles_tail/extremely_cold_shackles_tail.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/ancient_apparition/extremely_cold_shackles_shoulder/extremely_cold_shackles_shoulder.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/ancient_apparition/extremely_cold_shackles_head/extremely_cold_shackles_head.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/ancient_apparition/extremely_cold_shackles_arms/extremely_cold_shackles_arms.vmdl")
                 elseif newBuildingName == "tower_14"  then
                 wearables:RemoveWearables(newBuilding)
                 wearables:AttachWearable(newBuilding, "models/items/vengefulspirit/fallenprincess_head/fallenprincess_head.vmdl")
@@ -455,46 +575,69 @@ function UpgradeBuilding( event )
                 elseif string.match(GetMapName(),"helheim") and newBuildingName == "true_sight_tower" then 
                 wearables:RemoveWearables(newBuilding)
                 UpdateModel(newBuilding, "models/items/wards/dire_ward_eye/dire_ward_eye.vmdl", 1)   
-                --elseif newBuildingName == "rock_18" then
-                --   wearables:RemoveWearables(newBuilding)
-                --   UpdateModel(newBuilding, "models/items/world/towers/ti10_radiant_tower/ti10_radiant_tower.vmdl", 0.3)
-                --elseif newBuildingName == "rock_19" then
-                --   wearables:RemoveWearables(newBuilding)
-                -- UpdateModel(newBuilding, "models/items/world/towers/ti10_radiant_tower/ti10_radiant_tower_model_editor.vmdl", 0.3)
-                --elseif newBuildingName == "mother_of_nature" and parts["3"] == "normal" then
-                --    wearables:RemoveWearables(newBuilding)
-                --    wearables:AttachWearable(newBuilding, "models/items/enchantress/dota_plus_enchantress_belt_/dota_plus_enchantress_belt_.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/enchantress/dota_plus_enchantress_weapon/dota_plus_enchantress_weapon.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/enchantress/dota_plus_enchantress_arm_/dota_plus_enchantress_arm_.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/enchantress/dota_plus_enchantress_head/dota_plus_enchantress_head.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/enchantress/dota_plus_enchantress_neck/dota_plus_enchantress_neck.vmdl")
-                -- elseif newBuildingName == "trader_3" and parts["3"] == "normal" then
-                --    wearables:RemoveWearables(newBuilding)
-                --    wearables:AttachWearable(newBuilding, "models/items/shredder/mad_destructor_armor/mad_destructor_armor.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/shredder/mad_destructor_back/mad_destructor_back.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/shredder/mad_destructor_shoulder/mad_destructor_shoulder.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/shredder/mad_destructor_head/mad_destructor_head.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/shredder/mad_destructor_weapon/mad_destructor_weapon.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/shredder/mad_destructor_offhand/mad_destructor_offhand.vmdl")
-                -- elseif newBuildingName == "research_lab2" and parts["3"] == "normal" then
-                --    wearables:RemoveWearables(newBuilding)
-                --    wearables:AttachWearable(newBuilding, "models/items/alchemist/stove_guardian_armor/stove_guardian_armor.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/alchemist/stove_guardian_arms/stove_guardian_arms.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/alchemist/stove_guardian_weapon/stove_guardian_weapon.vmdl")
-                --   wearables:AttachWearable(newBuilding, "models/items/alchemist/stove_guardian_off_hand/stove_guardian_off_hand.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/alchemist/stove_guardian_neck/stove_guardian_neck.vmdl")
-                --    wearables:AttachWearable(newBuilding, "models/items/alchemist/stove_guardian_back/stove_guardian_back.vmdl")    
-                --    wearables:AttachWearable(newBuilding, "models/items/alchemist/stove_guardian_shoulder/stove_guardian_shoulder.vmdl")
-                
+                elseif string.match(GetMapName(),"china") and newBuildingName == "true_sight_tower" then 
+                wearables:RemoveWearables(newBuilding)
+                UpdateModel(newBuilding, "models/items/wards/chinese_ward/chinese_ward.vmdl", 1)  
+            end
+        end
+            
+        if parts["46"] == "normal" then
+        if newBuildingName == "tower_12" then
+            wearables:RemoveWearables(newBuilding)
+            if p12 ~= nil then
+                ParticleManager:DestroyParticle(p12, false)  
+            end
+            
+                wearables:AttachWearable(newBuilding, "models/items/drow/wandering_ranger_head/wandering_ranger_head.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/drow/wandering_ranger_back/wandering_ranger_back.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/drow/wandering_ranger_arms/wandering_ranger_arms.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/drow/wandering_ranger_weapon/wandering_ranger_weapon.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/drow/wandering_ranger_shoulder/wandering_ranger_shoulder.vmdl")        
+                wearables:AttachWearable(newBuilding, "models/items/drow/wandering_ranger_misc/wandering_ranger_misc.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/drow/wandering_ranger_legs/wandering_ranger_legs.vmdl")
+                newBuilding.BountyWeapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/drow/wandering_ranger_weapon/wandering_ranger_weapon.vmdl"})
+                newBuilding.BountyWeapon:FollowEntity(newBuilding, true)
+                p = ParticleManager:CreateParticle("particles/econ/items/drow/drow_2022_cc/drow_2022_cc_weapon.vpcf", PATTACH_ABSORIGIN_FOLLOW, newBuilding.BountyWeapon)
+                ParticleManager:SetParticleControlEnt(p, 1, newBuilding, PATTACH_POINT_FOLLOW, nil, newBuilding:GetOrigin(), true) 
+                p = ParticleManager:CreateParticle("particles/econ/items/drow/drow_2022_cc/drow_2022_cc_quiver.vpcf", 2, newBuilding)
+                ParticleManager:SetParticleControlEnt(p, 2, newBuilding, PATTACH_POINT_FOLLOW, "follow_origin", newBuilding:GetAbsOrigin(), true) 
+        
+            elseif newBuildingName == "tower_13" then
+                wearables:RemoveWearables(newBuilding)
+                wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_back/ti6_windranger_back.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_head/ti6_windranger_head.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_offhand/ti6_windranger_offhand.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_shoulder/ti6_windranger_shoulder.vmdl")
+                wearables:AttachWearable(newBuilding, "models/items/windrunner/ti6_windranger_weapon/ti6_windranger_weapon.vmdl")
+             --   newBuilding.BountyWeapon = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/items/windrunner/ti6_windranger_weapon/ti6_windranger_weapon.vmdl"})
+            --    newBuilding.BountyWeapon:FollowEntity(newBuilding, true)
+              --  p = ParticleManager:CreateParticle("particles/econ/items/windrunner/windrunner_battleranger/windrunner_battleranger_bowstring_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, newBuilding.BountyWeapon)
+              --  ParticleManager:SetParticleControlEnt(p, 1, newBuilding, PATTACH_POINT_FOLLOW, nil, newBuilding:GetOrigin(), true)
+        elseif newBuildingName == "tower_21"  then
+            wearables:RemoveWearables(newBuilding)
+            wearables:AttachWearable(newBuilding, "models/items/hoodwink/hood_2021_blossom_weapon/hood_2021_blossom_weapon.vmdl")
+            wearables:AttachWearable(newBuilding, "models/items/hoodwink/hood_2021_blossom_armor/hood_2021_blossom_armor.vmdl")
+            wearables:AttachWearable(newBuilding, "models/items/hoodwink/hood_2021_blossom_tail/hood_2021_blossom_tail.vmdl")
+            wearables:AttachWearable(newBuilding, "models/items/hoodwink/hood_2021_blossom_back/hood_2021_blossom_back.vmdl")
+        
             end
         end
     end
-    if newBuildingName == "barracks_3" and not CheckBarak3 then
+    if newBuildingName == "barracks_3" and (not CheckBarak3 or string.match(GetMapName(),"clanwars")) then
         if GameRules.Bonus[playerID] == nil then
             GameRules.Bonus[playerID] = 0
         end
         GameRules.Bonus[playerID] = GameRules.Bonus[playerID] + 2
         CheckBarak3 = true
+        local roll_chance = RandomFloat(0, 500)
+        if roll_chance <= CHANCE_DROP_GEM_BARRACKS_3 then
+            local spawnPoint = newBuilding:GetAbsOrigin()	
+            local newItem = CreateItem( "item_get_gem", nil, nil )
+            local dropRadius = RandomFloat( 250, 450 )
+            local randRadius = spawnPoint + RandomVector( dropRadius )
+            CreateItemOnPositionForLaunch( randRadius, newItem )
+            newItem:LaunchLootInitialHeight( false, 0, 250, 0.5, randRadius ) 
+        end
     end
     Timers:CreateTimer(buildTime,function()
         if newBuilding:IsNull() or not newBuilding:IsAlive() then
@@ -512,14 +655,5 @@ function UpgradeBuilding( event )
             UpdateUpgrades(value)
         end
     end)
-
-    if newBuilding:GetUnitName() == "tent_2" then
-        GameRules.maxFood[playerID] = 100
-        PlayerResource:ModifyFood(hero, 0)
-    elseif newBuilding:GetUnitName() == "tent_3"  then
-        GameRules.maxFood[playerID] = 300
-        PlayerResource:ModifyFood(hero, 0)
-    end
-
 end
 

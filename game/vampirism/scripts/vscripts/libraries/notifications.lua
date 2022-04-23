@@ -17,7 +17,7 @@ NOTIFICATIONS_VERSION = "0.89"
     -continue: An optional (leave as nil for false) boolean which tells the notification system to add this notification to the current notification line if 'true'.  
       This lets you place multiple individual notification pieces on the same overall notification.
   -For Labels, there is one additional mandatory parameter:
-    -text:  The text to display in the notification.  Can provide localization tokens ("#addonname") or non-localized text.
+    -text:  The text to display in the notification.  Can provide localization tokens ("#addonname") or non-Localized text.
   -For HeroImages, there is two additional parameters:
     -hero:  (Mandatory) The hero name, e.g. "npc_dota_hero_axe".
     -imagestyle:  (Optional)  The image style to display for this hero image.  Default when 'nil' is 'icon'.  'portrait' and 'landscape' are two other options.

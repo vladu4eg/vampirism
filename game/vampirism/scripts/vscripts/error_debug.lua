@@ -1,6 +1,6 @@
 Error_debug = Error_debug or {}
 local dedicatedServerKey = GetDedicatedServerKeyV2("1")
-local isTesting = IsInToolsMode() and false
+
 Error_debug.server = "https://tve3.us/debug/" -- "https://localhost:5001/test/" --
 
 function Error_debug.SendData(data,callback)
