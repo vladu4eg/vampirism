@@ -95,11 +95,10 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
       else if (RIGHT_CLICK)
         return OnRightButtonPressed()
 
-    if (LEFT_CLICK)
-      return OnLeftButtonPressed()
-    else if (RIGHT_CLICK)
-      return OnRightButtonPressed()
-
-  }
+      if (LEFT_CLICK)
+       return OnLeftButtonPressed()
+      else if (RIGHT_CLICK)
+        return OnRightButtonPressed()
+    }
   return CONTINUE_PROCESSING_EVENT
 } )

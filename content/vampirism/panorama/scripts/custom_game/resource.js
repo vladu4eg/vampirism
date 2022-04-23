@@ -55,6 +55,16 @@ function OnPlayerWispChanged(args) {
   //  UpdateWispValue();
 }
 
+function OnPlayerMineChanged(args) {
+    // $.Msg("Player wisp changed: ", args);
+    // var playerID = args.playerID;
+    // var wisp = args.wisp;
+    // var maxWisp = args.maxWisp;
+   //  ui.playerWisp[playerID] = wisp;
+    // ui.playerMaxWisp[playerID] = maxWisp;
+   //  UpdateWispValue();
+ }
+
 function UpdateFoodValue() {
     var playerID = Players.GetLocalPlayer();
     var food = ui.playerFood[playerID];
@@ -143,7 +153,7 @@ function PlayerPickedHero(args) {
     // Better be safe and just get local player id.
     var localId = Players.GetLocalPlayer();
     var hero = Players.GetPlayerSelectedHero(localId);
-    var panelVisibility = hero === "npc_dota_hero_lina"  ? "visible" : "collapse";
+    var panelVisibility = hero === "npc_dota_hero_treant"  ? "visible" : "collapse";
     $("#CheeseLumberPricePanel").style.visibility = panelVisibility;
 }
 
@@ -157,5 +167,6 @@ function PlayerPickedHero(args) {
     GameEvents.Subscribe("gold_gain_start", GoldGainStarted);
     GameEvents.Subscribe("gold_gain_stop", GoldGainStopped);
 	GameEvents.Subscribe("player_wisp_changed", OnPlayerWispChanged);
+    GameEvents.Subscribe("player_mine_changed", OnPlayerMineChanged);
     GameEvents.Subscribe("dota_player_pick_hero", PlayerPickedHero);
 })();

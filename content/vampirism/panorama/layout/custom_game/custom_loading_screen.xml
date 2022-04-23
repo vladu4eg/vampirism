@@ -12,7 +12,7 @@
 		<Label id = "LoadingText" text = "#loading_text_no_troll" html = "true"/>
 	</Panel> 
 	<Panel class="Hud" hittest="false"> 
-		<Button id="DonateToggleButton" onactivate="ExternalBrowserGoToURL('https://discord.gg/zwYYbex')"> 
+		<Button id="DonateToggleButton" onactivate="ExternalBrowserGoToURL('https://discord.gg/tve3')"> 
 			<Panel id="Arrow" />
 		</Button> 
 	</Panel>

@@ -25,7 +25,7 @@
 						<Button id="PatreonButton" onactivate="ExternalBrowserGoToURL('https://patreon.com/troll_vs_elves3')">
                         	<Label hittest="false" id="patreonbuttontext" text="#patreonbuttontext"/>
 						</Button>
-						<Button id="PatreonButton1" onactivate="ExternalBrowserGoToURL('https://paypal.me/vladu4eg')">
+						<Button id="PatreonButton1" onactivate="ExternalBrowserGoToURL('https://paypal.me/elves3')">
                         	<Label hittest="false" id="patreonbuttontext" text="#patreonbuttontext1"/>
 						</Button>
 						<Button id="PatreonButton2" onactivate="ExternalBrowserGoToURL('https://donate.stream/en/vladu4eg')">
