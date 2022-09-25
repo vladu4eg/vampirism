@@ -398,6 +398,16 @@ function trollnelves2:OnEntityKilled(keys)
         if string.match(killed:GetUnitName(),"troll_hut") then
             hero = GameRules.trollHero
         end
+        if killed:GetUnitName() == "tent" then
+            GameRules.maxFood[killedPlayerID] = 0
+            PlayerResource:ModifyFood(hero, 0)
+        elseif killed:GetUnitName() == "tent_2" then
+            GameRules.maxFood[killedPlayerID] = 0
+            PlayerResource:ModifyFood(hero, 0)
+        elseif killed:GetUnitName() == "tent_3" then
+            GameRules.maxFood[killedPlayerID] = 0
+            PlayerResource:ModifyFood(hero, 0)
+        end
         if hero and hero.units and hero.alive then -- hero.units can contain other units besides buildings
             for i = #hero.units, 1, -1 do
                 if not hero.units[i]:IsNull() then

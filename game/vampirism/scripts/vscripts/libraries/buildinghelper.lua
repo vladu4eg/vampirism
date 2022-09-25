@@ -869,7 +869,7 @@ function BuildingHelper:OrderFilter(order)
             local unit_name = shop:GetUnitName()
             if string.match(unit_name, "shop") or string.match(unit_name, "troll_hut") then
                 shop.buyer = issuerID
-                if string.match(unit_name, "troll_hut") and string.match(EntIndexToHScript(abilityIndex):GetAbilityName(),"upgrade_to") and PlayerResource:GetSelectedHeroEntity(issuerID):GetUnitName() ~= TROLL_HERO and GameRules.test2 == false then
+                if string.match(unit_name, "troll_hut") and string.match(EntIndexToHScript(abilityIndex):GetAbilityName(),"upgrade_to") and PlayerResource:GetSelectedHeroEntity(issuerID):GetUnitName() ~= TROLL_HERO[0] and GameRules.test2 == false then
                     SendErrorMessage(issuerID, "error_only_troll_can_upgrade")
                     return false
                 end

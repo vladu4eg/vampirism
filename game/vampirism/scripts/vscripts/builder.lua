@@ -216,6 +216,10 @@ function Build( event )
             SendErrorMessage(playerID, "error_not_upgrade_flag_base")
             return false
         end
+        if building_name == "tent" then
+            GameRules.maxFood[playerID] = 50
+            PlayerResource:ModifyFood(hero, 0)
+        end
     end)
     
     -- These callbacks will only fire when the state between below half health/above half health changes.
@@ -391,6 +395,13 @@ function UpgradeBuilding( event )
     --local status, nextCall = Error_debug.ErrorCheck(function() 
         newBuilding = BuildingHelper:UpgradeBuilding(building,NewBuildingName)
    -- end)
+   if newBuilding:GetUnitName() == "tent_2" then
+    GameRules.maxFood[playerID] = 100
+    PlayerResource:ModifyFood(hero, 0)
+elseif newBuilding:GetUnitName() == "tent_3"  then
+    GameRules.maxFood[playerID] = 300
+    PlayerResource:ModifyFood(hero, 0)
+end
     local newBuildingName = newBuilding:GetUnitName()
     newBuilding.state = "complete"
     

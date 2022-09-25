@@ -510,7 +510,7 @@ function SpawnUnitOnSpellStart(event)
 			caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
 			return false
 		end
-		if hero.food > GameRules.maxFood and food ~= 0 then
+		if hero.food > GameRules.maxFood[playerID] and food ~= 0 then
 			SendErrorMessage(playerID, "error_not_enough_food")
 			caster:AddNewModifier(nil, nil, "modifier_stunned", {duration=0.03})
 			return false

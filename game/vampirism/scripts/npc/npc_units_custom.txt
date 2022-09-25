@@ -1570,8 +1570,8 @@
 	        "Count"     "1"
 	        "1"{
 				"unit_name"			"tent_2"
-				"gold_cost"			"50"
-				"lumber_cost"		"0"
+				"gold_cost"			"0"
+				"lumber_cost"		"800"
 			}
 	    }
 		"Requirements"{
@@ -1581,7 +1581,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"AbilityLayout"				"4"
-		"Ability1"					"gain_gold"
+		"Ability1"					""
 		"Ability2"					""
 		"Ability3"					""
 		"Ability4"					""
@@ -1590,8 +1590,8 @@
 	    // General
 	    //-----------------------------
 	    
-	    "ArmorPhysical"             "5"
-		"StatusHealth"              "30"
+	    "ArmorPhysical"             "4"
+		"StatusHealth"              "300"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -1641,18 +1641,18 @@
 	        "Count"     "1"
 	        "1"{
 				"unit_name"			"tent_3"
-				"gold_cost"			"100"
-				"lumber_cost"		"0"
+				"gold_cost"			"0"
+				"lumber_cost"		"2500"
 			}
 	    }
 		"Requirements"{
-			"rock_1"				"1"
+
 		}
 		
 		// Abilities
 		//----------------------------------------------------------------
 		"AbilityLayout"				"4"
-		"Ability1"					"gain_gold"
+		"Ability1"					""
 		"Ability2"					""
 		"Ability3"					""
 		"Ability4"					""
@@ -1661,8 +1661,8 @@
 	    // General
 	    //-----------------------------
 	    
-	    "ArmorPhysical"             "5"
-		"StatusHealth"              "30"
+	    "ArmorPhysical"             "4"
+		"StatusHealth"              "500"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -1707,23 +1707,14 @@
 	    //----------------------------- 
 	    "Level"                     "3"
 	    "BuildTime"                 "2"
-	    "Upgrades"
-	    {
-	        "Count"     "1"
-	        "1"{
-				"unit_name"			"tent_4"
-				"gold_cost"			"200"
-				"lumber_cost"		"0"
-			}
-	    }
+
 		"Requirements"{
-			"rock_4"				"1"
 		}
 		
 		// Abilities
 		//----------------------------------------------------------------
 		"AbilityLayout"				"4"
-		"Ability1"					"gain_gold"
+		"Ability1"					""
 		"Ability2"					""
 		"Ability3"					""
 		"Ability4"					""
@@ -1732,8 +1723,8 @@
 	    // General
 	    //-----------------------------
 	    
-	    "ArmorPhysical"             "5"
-		"StatusHealth"              "30"
+	    "ArmorPhysical"             "4"
+		"StatusHealth"              "3000"
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
@@ -1853,7 +1844,7 @@
 	    {
 	        "Count"     "1"
 	        "1"{
-				"unit_name"			"tent_6"
+				"unit_name"			"house_1"
 				"gold_cost"			"800"
 				"lumber_cost"		"32"
 			}
